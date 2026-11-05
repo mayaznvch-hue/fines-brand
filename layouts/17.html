@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Финес Студио — Telegram Web · макет 17</title>
+<meta name="description" content="Финес Студио: Telegram-боты, CRM-системы, веб-сервисы и интеграции для малого бизнеса. Тонкая работа для вашего бизнеса.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{min-height:100vh;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0}
+h1,h2,h3,h4{text-wrap:balance}
+p{text-wrap:pretty}
+@keyframes fspin{to{transform:rotate(360deg)}}
+.flogo{display:inline-flex;flex-direction:column;align-items:flex-start;font-family:'Onest',sans-serif;line-height:.82;--lg:30px;flex:none}
+.flogo .fw{font-weight:800;letter-spacing:-.05em;font-size:var(--lg);display:inline-flex;align-items:baseline}
+.flogo .fdot{width:.32em;height:.32em;margin-left:.03em;display:inline-block}
+.flogo .fs{font-size:max(11px,calc(var(--lg)*.4));font-weight:600;letter-spacing:.24em;opacity:.8;margin-top:.32em;padding-left:.05em}
+.mkbadge{position:fixed;bottom:10px;left:10px;z-index:9999;font:500 10.5px/1 'Onest',sans-serif;letter-spacing:.02em;padding:5px 10px;border-radius:99px;background:rgba(20,20,20,.78);color:#fff;pointer-events:none;white-space:nowrap;backdrop-filter:blur(6px);box-shadow:0 2px 10px rgba(0,0,0,.15)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}.rv.d5{transition-delay:.4s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@media (max-width:640px){.mkbadge{font-size:10px;bottom:6px;left:6px}}
+
+body{font-family:'Inter Tight',sans-serif;background:#a8c8b8;color:#0f1419;height:100vh;overflow:hidden}
+.app{display:grid;grid-template-columns:340px minmax(0,1fr);height:100vh;max-width:1400px;margin:0 auto;background:#fff;box-shadow:0 0 60px rgba(0,0,0,.15)}
+.side{border-right:1px solid #e4e4e4;display:flex;flex-direction:column;min-height:0}
+.sh{padding:14px 16px;display:flex;align-items:center;gap:14px;border-bottom:1px solid #eee}
+.sh .flogo{--lg:26px}
+.sh .srch{flex:1;background:#f1f1f4;border-radius:22px;padding:9px 14px;font-size:14px;color:#888}
+.chats{overflow:auto;flex:1}
+.ch{display:flex;gap:12px;padding:10px 12px;margin:2px 6px;border-radius:12px;cursor:pointer;transition:background .15s;align-items:center}
+.ch:hover{background:#f4f4f5}
+.ch.on{background:#3390ec;color:#fff}.ch.on .t,.ch.on .tm{color:#e6f1ff}
+.av{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff;flex:none;font-size:17px}
+.ch .n{font-weight:600;font-size:15px;display:flex;justify-content:space-between;gap:6px}
+.ch .t{font-size:14px;color:#707579;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ch .tm{font-size:12px;color:#999;font-weight:400}
+.ch>div:last-child{min-width:0;flex:1}
+.bdg{background:#3390ec;color:#fff;border-radius:10px;font-size:12px;padding:1px 7px;font-weight:600}
+.ch.on .bdg{background:#fff;color:#3390ec}
+.main{display:flex;flex-direction:column;min-height:0;background:linear-gradient(135deg,#c5dfb5,#99c4cf 50%,#d8d3a0)}
+.mh{background:#fff;padding:10px 18px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #e4e4e4}
+.mh b{display:block;font-size:16px}.mh span{font-size:13px;color:#707579}
+.mh a{margin-left:auto;background:#3390ec;color:#fff;padding:9px 18px;border-radius:20px;font-weight:600;font-size:14px}
+.feed{flex:1;overflow:auto;padding:20px 20px 30px;display:flex;flex-direction:column;gap:14px;align-items:center}
+.feed>*{flex:none}
+.date{background:rgba(0,0,0,.2);color:#fff;font-size:13px;font-weight:600;padding:4px 12px;border-radius:14px}
+.post{background:#fff;border-radius:16px 16px 16px 4px;max-width:620px;width:100%;box-shadow:0 1px 2px rgba(0,0,0,.12);overflow:hidden}
+.post .pc{padding:12px 14px 8px}
+.post .from{color:#f2501c;font-weight:600;font-size:14px;margin-bottom:4px}
+.post h2{font-size:22px;letter-spacing:-.02em;line-height:1.15;margin-bottom:8px}
+.post h1{font-size:34px;letter-spacing:-.03em;line-height:1.05;margin-bottom:10px}
+.post p{font-size:15px;line-height:1.45;margin-bottom:8px}
+.post .meta{display:flex;justify-content:flex-end;gap:8px;font-size:12px;color:#999;padding:0 14px 8px}
+.post .img{height:220px;background:linear-gradient(135deg,#f2501c,#ffc21a);display:grid;place-items:center}
+.post .img .flogo{--lg:74px;color:#1a1410}
+.reac{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 10px}
+.reac span{background:#e8f2fd;color:#3390ec;border-radius:14px;padding:3px 10px;font-size:13px;font-weight:600;cursor:pointer}
+.kbd{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;max-width:620px;width:100%}
+.kbd a{background:rgba(255,255,255,.6);backdrop-filter:blur(6px);color:#0f1419;text-align:center;padding:11px;border-radius:10px;font-size:14px;font-weight:600;transition:.15s}
+.kbd a:hover{background:rgba(255,255,255,.9)}
+.post ul{margin:4px 0 8px}.post li{list-style:none;font-size:15px;padding:3px 0}
+.post .mx{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:6px 0 8px}
+.post .mx div{background:#f4f4f5;border-radius:10px;padding:10px}
+.post .mx b{display:block;font-size:22px;color:#f2501c;letter-spacing:-.02em}.post .mx span{font-size:12.5px;color:#555}
+.poll div{margin:6px 0}.poll .lb{display:flex;justify-content:space-between;font-size:14px;font-weight:500}
+.poll .br{height:6px;border-radius:4px;background:#e8f2fd;margin-top:4px;overflow:hidden}.poll .br i{display:block;height:100%;background:#3390ec}
+.inp{background:#fff;padding:10px 16px;display:flex;gap:10px;align-items:center;border-top:1px solid #e4e4e4}
+.inp div{flex:1;background:#f1f1f4;border-radius:22px;padding:11px 16px;color:#888;font-size:14px}
+.inp a{width:44px;height:44px;border-radius:50%;background:#3390ec;color:#fff;display:grid;place-items:center;font-size:18px}
+@media(max-width:860px){body{height:auto;overflow:auto}.app{grid-template-columns:minmax(0,1fr);height:auto}.side{display:none}.main{min-height:100vh}.feed{overflow:visible;padding:14px 10px}.mh{position:sticky;top:0;z-index:5}.post h1{font-size:28px}.post .mx{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body id="top">
+<div class="mkbadge">Макет 17 · Telegram Web</div>
+<div class="app"><aside class="side"><div class="sh"><a class="flogo" href="#top" aria-label="Финес Студио"><span class="fw">финес<svg class="fdot" viewBox="0 0 20 20" aria-hidden="true"><g style="transform-origin:10px 10px;animation:fspin 3s linear infinite"><circle cx="7" cy="10" r="6" fill="#f2501c" style="mix-blend-mode:multiply"/><circle cx="13" cy="10" r="6" fill="#ffc21a" style="mix-blend-mode:multiply"/></g></svg></span><span class="fs">студио</span></a><div class="srch">Поиск</div></div><div class="chats"><div class="ch on"><div class="av" style="background:#f2501c">ФС</div><div><div class="n"><span>Финес Студио</span><span class="tm">12:04</span></div><div class="n" style="font-weight:400"><span class="t">Тонкая работа для вашего бизнеса</span><span class="bdg">3</span></div></div></div><div class="ch"><div class="av" style="background:#8b5a2b">З</div><div><div class="n"><span>Бот «Зерно» ☕</span><span class="tm">11:58</span></div><div class="n" style="font-weight:400"><span class="t">Заказ №1842 оплачен</span></div></div></div><div class="ch"><div class="av" style="background:#2c7a5b">С</div><div><div class="n"><span>CRM «СтройДвор»</span><span class="tm">11:40</span></div><div class="n" style="font-weight:400"><span class="t">Счёт собран за 2 клика</span></div></div></div><div class="ch"><div class="av" style="background:#c2185b">Л</div><div><div class="n"><span>Студия «Лак» 💅</span><span class="tm">10:12</span></div><div class="n" style="font-weight:400"><span class="t">Напоминание: завтра 14:30</span></div></div></div><div class="ch"><div class="av" style="background:#3a5bd9">Г</div><div><div class="n"><span>Гараж 24</span><span class="tm">вчера</span></div><div class="n" style="font-weight:400"><span class="t">Статус: покраска завершена</span></div></div></div><div class="ch"><div class="av" style="background:#7b1fa2">S</div><div><div class="n"><span>Speak Up</span><span class="tm">вчера</span></div><div class="n" style="font-weight:400"><span class="t">Новая заявка из квиза</span></div></div></div><div class="ch"><div class="av" style="background:#689f38">Г</div><div><div class="n"><span>Грядка 🥕</span><span class="tm">пн</span></div><div class="n" style="font-weight:400"><span class="t">Остатки обновлены</span></div></div></div></div></aside>
+<main class="main"><div class="mh"><div class="av" style="background:#f2501c;width:42px;height:42px">ФС</div><div><b>Финес Студио</b><span>канал студии · 2 418 подписчиков</span></div><a href="https://t.me/fines_studio">Написать</a></div>
+<div class="feed">
+<div class="date">Закреплённое</div>
+<section class="post rv"><div class="img"><a class="flogo" href="#top" aria-label="Финес Студио"><span class="fw">финес<svg class="fdot" viewBox="0 0 20 20" aria-hidden="true"><g style="transform-origin:10px 10px;animation:fspin 3s linear infinite"><circle cx="7" cy="10" r="6" fill="#f2501c" style="mix-blend-mode:multiply"/><circle cx="13" cy="10" r="6" fill="#ffc21a" style="mix-blend-mode:multiply"/></g></svg></span><span class="fs">студио</span></a></div><div class="pc"><div class="from">Финес Студио</div><h1>Тонкая работа для вашего бизнеса.</h1><p>Привет! Мы делаем Telegram-ботов, CRM-системы, веб-сервисы и интеграции для малого бизнеса. Этот сайт — тоже чат, потому что мы любим мессенджеры 🙂</p></div><div class="reac"><span>🔥 214</span><span>👍 160</span><span>❤️ 88</span></div><div class="meta">👁 12,4K · 09:00</div></section>
+<div class="kbd"><a href="#svc">🤖 Услуги</a><a href="#cs">📈 Кейсы</a><a href="#pr">💰 Цены</a><a href="https://t.me/fines_studio">✍️ Написать</a></div>
+<div class="date">Услуги</div>
+<section class="post rv" id="svc"><div class="pc"><div class="from">Финес Студио</div><h2>Что мы делаем</h2><ul><li><b>Telegram-боты</b> — <i style="color:#707579">от 40 000 ₽, 2–3 недели</i></li><li><b>CRM-системы</b> — <i style="color:#707579">от 120 000 ₽, 4–8 недель</i></li><li><b>Веб-сервисы</b> — <i style="color:#707579">от 150 000 ₽, 6–10 недель</i></li><li><b>Интеграции</b> — <i style="color:#707579">от 25 000 ₽, 1–2 недели</i></li><li><b>Сайты для бизнеса</b> — <i style="color:#707579">от 60 000 ₽, 2–4 недели</i></li></ul></div><div class="reac"><span>👍 96</span><span>🤝 41</span></div><div class="meta">👁 8,1K · 10:15</div></section>
+<div class="date">Кейсы</div>
+<section class="post rv" id="cs"><div class="pc"><div class="from">Финес Студио</div><h2>Результаты клиентов в цифрах 📈</h2><div class="mx"><div><b>31%</b><span>заказов идёт через бота · Сеть кофеен «Зерно»</span></div><div><b>18 → 6%</b><span>неявок после запуска · Студия маникюра «Лак»</span></div><div><b>15 мин</b><span>вместо 2 часов на заявку · Поставщик «СтройДвор»</span></div><div><b>−70%</b><span>звонков «ну что там?» · Автосервис «Гараж 24»</span></div><div><b>×2,4</b><span>заявок за три месяца · Школа «Speak Up»</span></div><div><b>+22%</b><span>к среднему чеку · Доставка «Грядка»</span></div></div><p>Подробно про каждый проект расскажем в личке.</p></div><div class="reac"><span>🔥 132</span><span>🤯 54</span></div><div class="meta">👁 9,7K · 11:30</div></section>
+<section class="post rv"><div class="pc"><div class="from">Финес Студио · отзыв</div><p style="font-size:16px">«Раньше администратор полдня отвечала в директ. Теперь бот записывает сам, а неявок стало втрое меньше.»</p><p style="color:#707579;font-size:14px">— Ирина Белова, владелица студии «Лак»</p></div><div class="meta">👁 6,2K · 12:00</div></section>
+<div class="date">Как работаем</div>
+<section class="post rv"><div class="pc"><div class="from">Финес Студио</div><h2>5 шагов до запуска</h2><ul><li>1. <b>Разбор задачи</b> — Созвон на 30 минут, бесплатно. Разбираемся, где теряются деньги и время. <i style="color:#707579">(1 день)</i></li><li>2. <b>Смета и ТЗ</b> — Фиксируем объём, цену и сроки в договоре. Без «а это уже доплата». <i style="color:#707579">(1–3 дня)</i></li><li>3. <b>Прототип</b> — Показываем кликабельный макет. Правим до того, как написана первая строка кода. <i style="color:#707579">(3–5 дней)</i></li><li>4. <b>Разработка</b> — Демо каждую неделю и доступ к тестовой версии. Вы видите прогресс, а не тишину. <i style="color:#707579">(1–8 недель)</i></li><li>5. <b>Запуск и поддержка</b> — Запускаем, обучаем команду, 30 дней гарантии. Дальше — поддержка по желанию. <i style="color:#707579">(всегда рядом)</i></li></ul></div><div class="meta">👁 7,3K · 13:20</div></section>
+<div class="date">Цены</div>
+<section class="post rv" id="pr"><div class="pc"><div class="from">Финес Студио</div><h2>Опрос: что вам нужно?</h2><div class="poll"><div><div class="lb"><span>Бот — от 40 000 ₽</span><span>46%</span></div><div class="br"><i style="width:46%"></i></div></div><div><div class="lb"><span>CRM — от 120 000 ₽</span><span>27%</span></div><div class="br"><i style="width:27%"></i></div></div><div><div class="lb"><span>Сайт — от 60 000 ₽</span><span>17%</span></div><div class="br"><i style="width:17%"></i></div></div><div><div class="lb"><span>Интеграция — от 25 000 ₽</span><span>10%</span></div><div class="br"><i style="width:10%"></i></div></div></div><p style="color:#707579;font-size:13px;margin-top:8px">1 204 голоса · цена фиксируется в договоре</p></div><div class="meta">👁 5,9K · 14:45</div></section>
+<div class="date">Вопросы</div>
+<section class="post rv"><div class="pc"><div class="from">Финес Студио</div><h2>FAQ</h2><p><b>Сколько стоит бот?</b><br>Простой бот записи или заявок — от 40 000 ₽. Точную цену называем после бесплатного разбора и фиксируем в договоре.</p><p><b>Сколько времени займёт разработка?</b><br>Бот — 2–3 недели, сайт — 2–4, CRM — 4–8. Срок прописываем в договоре вместе с этапами.</p><p><b>Код и доступы будут нашими?</b><br>Да. Передаём исходники, доступы к серверу и админкам. Права на результат — ваши по договору.</p><p><b>Как проходит оплата?</b><br>Работаем по договору, безнал для ИП и ООО. Обычно 50% на старте и 50% после приёмки.</p></div><div class="meta">👁 4,8K · 15:10</div></section>
+<div class="kbd"><a href="https://t.me/fines_studio" style="grid-column:1/-1;background:#3390ec;color:#fff">✈️ Написать в @fines_studio</a></div>
+</div><div class="inp"><div>Напишите сообщение…</div><a href="https://t.me/fines_studio" aria-label="Отправить">➤</a></div></main></div>
+<script>(function(){var els=document.querySelectorAll('.rv');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -5% 0px'});els.forEach(function(e){io.observe(e)})})();
+</script>
+</body>
+</html>

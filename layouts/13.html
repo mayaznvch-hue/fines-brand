@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Финес Студио — Таймлайн процесса · макет 13</title>
+<meta name="description" content="Финес Студио: Telegram-боты, CRM-системы, веб-сервисы и интеграции для малого бизнеса. Тонкая работа для вашего бизнеса.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{min-height:100vh;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0}
+h1,h2,h3,h4{text-wrap:balance}
+p{text-wrap:pretty}
+@keyframes fspin{to{transform:rotate(360deg)}}
+.flogo{display:inline-flex;flex-direction:column;align-items:flex-start;font-family:'Onest',sans-serif;line-height:.82;--lg:30px;flex:none}
+.flogo .fw{font-weight:800;letter-spacing:-.05em;font-size:var(--lg);display:inline-flex;align-items:baseline}
+.flogo .fdot{width:.32em;height:.32em;margin-left:.03em;display:inline-block}
+.flogo .fs{font-size:max(11px,calc(var(--lg)*.4));font-weight:600;letter-spacing:.24em;opacity:.8;margin-top:.32em;padding-left:.05em}
+.mkbadge{position:fixed;bottom:10px;left:10px;z-index:9999;font:500 10.5px/1 'Onest',sans-serif;letter-spacing:.02em;padding:5px 10px;border-radius:99px;background:rgba(20,20,20,.78);color:#fff;pointer-events:none;white-space:nowrap;backdrop-filter:blur(6px);box-shadow:0 2px 10px rgba(0,0,0,.15)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}.rv.d5{transition-delay:.4s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@media (max-width:640px){.mkbadge{font-size:10px;bottom:6px;left:6px}}
+
+body{font-family:'Manrope',sans-serif;background:#fbfaf7;color:#1a1916}
+.w{max-width:1100px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.btn{background:#f2501c;color:#fff;padding:13px 22px;border-radius:10px;font-weight:700;display:inline-block;transition:.2s}
+.btn:hover{background:#1a1916}
+.hero{padding:70px 0 40px;text-align:center}
+.hero .k{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#f2501c}
+.hero h1{font-size:clamp(38px,6vw,82px);letter-spacing:-.045em;line-height:1;font-weight:800;margin:16px auto 20px;max-width:900px}
+.hero p{font-size:19px;color:#5f5a50;max-width:620px;margin:0 auto 28px;line-height:1.5}
+.sum{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:30px}
+.sum span{background:#fff;border:1px solid #e8e4da;border-radius:99px;padding:10px 16px;font-size:14px;font-weight:600}
+.tl{position:relative;padding:60px 0 40px}
+.tl::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:repeating-linear-gradient(#d8d2c4 0 8px,transparent 8px 14px);transform:translateX(-1px)}
+.tl .prog{position:absolute;left:50%;top:0;width:2px;background:#f2501c;transform:translateX(-1px);height:0;transition:height .2s linear}
+.it{display:grid;grid-template-columns:minmax(0,1fr) 80px minmax(0,1fr);align-items:start;margin-bottom:56px;position:relative}
+.it .dot{grid-column:2;justify-self:center;width:52px;height:52px;border-radius:50%;background:#fff;border:2px solid #1a1916;display:grid;place-items:center;font-weight:800;position:relative;z-index:1;transition:.3s}
+.it.in .dot{background:#f2501c;border-color:#f2501c;color:#fff}
+.it .card{background:#fff;border:1px solid #e8e4da;border-radius:20px;padding:26px;box-shadow:0 14px 30px -24px rgba(0,0,0,.3)}
+.it:nth-child(odd) .card{grid-column:1;grid-row:1}
+.it:nth-child(even) .card{grid-column:3}
+.it .when{grid-row:1;align-self:center;font-weight:800;font-size:15px;color:#9b9486}
+.it:nth-child(odd) .when{grid-column:3;padding-left:10px}
+.it:nth-child(even) .when{grid-column:1;text-align:right;padding-right:10px}
+.card h3{font-size:24px;letter-spacing:-.02em;margin-bottom:8px}
+.card p{color:#5f5a50;line-height:1.55}
+.card .art{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px}
+.card .art span{font-size:12.5px;font-weight:700;background:#fff4e0;color:#8a5a00;padding:6px 10px;border-radius:8px}
+.card .you{margin-top:14px;font-size:14px;border-top:1px dashed #e8e4da;padding-top:12px}
+.card .you b{color:#f2501c}
+.sec{padding:80px 0;border-top:1px solid #e8e4da}
+.sec h2{font-size:clamp(30px,4vw,52px);letter-spacing:-.04em;line-height:1.02;font-weight:800;margin-bottom:36px}
+.svc{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.svc div{background:#fff;border:1px solid #e8e4da;border-radius:18px;padding:20px}
+.svc h3{font-size:17px;margin-bottom:6px}.svc p{font-size:13.5px;color:#5f5a50;line-height:1.5}
+.svc .d{margin-top:12px;font-size:13px;font-weight:800;color:#f2501c}
+.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cases div{padding:26px;border-radius:20px;background:#1a1916;color:#fff}
+.cases .m{font-size:42px;font-weight:800;color:#ffc21a;letter-spacing:-.04em}
+.cases .t{font-size:13px;color:#a8a194;margin-top:14px}
+.cases p{font-size:14px;color:#cfc9bd;margin-top:6px}
+.faq details{border-bottom:1px solid #e8e4da;padding:18px 0}.faq summary{font-weight:700;font-size:18px;cursor:pointer}.faq p{margin-top:8px;color:#5f5a50}
+.end{padding:90px 0;text-align:center}
+.end h2{font-size:clamp(34px,5vw,66px);letter-spacing:-.045em;line-height:1;margin-bottom:24px}
+footer{border-top:1px solid #e8e4da;padding:24px 0 40px;color:#9b9486;font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media(max-width:860px){.tl::before,.tl .prog{left:26px}.it{grid-template-columns:52px minmax(0,1fr);gap:16px}.it .dot{grid-column:1;grid-row:1/3}.it .card,.it:nth-child(odd) .card,.it:nth-child(even) .card{grid-column:2;grid-row:2}.it .when,.it:nth-child(odd) .when,.it:nth-child(even) .when{grid-column:2;grid-row:1;text-align:left;padding:0}.svc,.cases{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body id="top">
+<div class="mkbadge">Макет 13 · Таймлайн процесса</div>
+<div class="w">
+<header><a class="flogo" href="#top" aria-label="Финес Студио"><span class="fw">финес<svg class="fdot" viewBox="0 0 20 20" aria-hidden="true"><g style="transform-origin:10px 10px;animation:fspin 3s linear infinite"><circle cx="7" cy="10" r="6" fill="#f2501c" style="mix-blend-mode:multiply"/><circle cx="13" cy="10" r="6" fill="#ffc21a" style="mix-blend-mode:multiply"/></g></svg></span><span class="fs">студио</span></a><a class="btn" href="https://t.me/fines_studio">Начать с шага 1</a></header>
+<section class="hero"><span class="k rv">Финес Студио · как мы работаем</span><h1 class="rv d1">Тонкая работа — это когда каждый шаг понятен заранее.</h1><p class="rv d2">Пролистайте путь вашего проекта: от первого сообщения до запуска бота, CRM или веб-сервиса. Без тишины и сюрпризов.</p><div class="sum rv d3"><span>7 шагов</span><span>2–8 недель</span><span>демо каждую неделю</span><span>30 дней гарантии</span></div></section>
+<section class="tl" id="tl"><div class="prog" id="prog"></div><div class="it"><div class="dot">1</div><div class="card rv"><h3>Вы пишете нам</h3><p>В Telegram, парой строк: что болит и что хотите получить. Отвечаем в течение 15 минут.</p><div class="art"><span>📎 сообщение в @fines_studio</span></div><div class="you">От вас: <b>описать задачу своими словами</b></div></div><div class="when">День 0</div></div><div class="it"><div class="dot">2</div><div class="card rv"><h3>Бесплатный разбор</h3><p>Созвон на 30 минут. Задаём неудобные вопросы, ищем, где теряются клиенты и время, предлагаем 1–2 варианта решения.</p><div class="art"><span>📎 схема процесса</span><span>📎 варианты решения</span></div><div class="you">От вас: <b>30 минут на звонок</b></div></div><div class="when">День 1</div></div><div class="it"><div class="dot">3</div><div class="card rv"><h3>Смета и договор</h3><p>Фиксируем объём, цену и сроки. Всё, что не вошло, — отдельным списком, чтобы не было сюрпризов.</p><div class="art"><span>📎 ТЗ на 2–5 страниц</span><span>📎 смета</span><span>📎 договор</span></div><div class="you">От вас: <b>согласовать и внести 50%</b></div></div><div class="when">День 2–3</div></div><div class="it"><div class="dot">4</div><div class="card rv"><h3>Кликабельный прототип</h3><p>Показываем, как будет выглядеть бот или интерфейс. Правки на этом этапе стоят ноль рублей.</p><div class="art"><span>📎 прототип в Figma</span><span>📎 сценарии бота</span></div><div class="you">От вас: <b>посмотреть и прокомментировать</b></div></div><div class="when">День 4–8</div></div><div class="it"><div class="dot">5</div><div class="card rv"><h3>Разработка с демо</h3><p>Каждую пятницу — демо и доступ к тестовой версии. Видно, что сделано и что дальше.</p><div class="art"><span>📎 тестовый бот</span><span>📎 еженедельный отчёт</span></div><div class="you">От вас: <b>20 минут в неделю на демо</b></div></div><div class="when">Недели 2–6</div></div><div class="it"><div class="dot">6</div><div class="card rv"><h3>Запуск</h3><p>Переносим на боевой сервер, обучаем сотрудников, передаём доступы, код и документацию.</p><div class="art"><span>📎 исходники</span><span>📎 инструкция</span><span>📎 доступы</span></div><div class="you">От вас: <b>принять работу</b></div></div><div class="when">Финиш</div></div><div class="it"><div class="dot">7</div><div class="card rv"><h3>Гарантия и развитие</h3><p>Месяц бесплатно чиним всё, что сломалось. Дальше — поддержка от 5 000 ₽ в месяц или доработки по запросу.</p><div class="art"><span>📎 мониторинг</span><span>📎 чат поддержки</span></div><div class="you">От вас: <b>пользоваться и богатеть</b></div></div><div class="when">+30 дней</div></div></section>
+<section class="sec"><h2 class="rv">Что можно провести по этому пути</h2><div class="svc"><div class="rv d0"><h3>Telegram-боты</h3><p>Запись, заявки, оплата и рассылки прямо в мессенджере. Бот работает ночью и в выходные и не забывает перезвонить.</p><div class="d">2–3 недели · от 40 000 ₽</div></div><div class="rv d1"><h3>CRM-системы</h3><p>Своя CRM под ваш процесс, а не процесс под чужую CRM. Клиенты, сделки, склад, роли и отчёты в одном окне.</p><div class="d">4–8 недель · от 120 000 ₽</div></div><div class="rv d2"><h3>Веб-сервисы</h3><p>Личные кабинеты, бронирование, внутренние панели. Проектируем, пишем, запускаем и поддерживаем.</p><div class="d">6–10 недель · от 150 000 ₽</div></div><div class="rv d3"><h3>Интеграции</h3><p>Связываем 1С, amoCRM, Битрикс24, кассы, телефонию и Google Таблицы — данные больше не переносят руками.</p><div class="d">1–2 недели · от 25 000 ₽</div></div><div class="rv d4"><h3>Сайты для бизнеса</h3><p>Быстрые сайты, которые приводят заявки: лендинги, сайты услуг, каталоги. С аналитикой и ботом для заявок.</p><div class="d">2–4 недели · от 60 000 ₽</div></div></div></section>
+<section class="sec"><h2 class="rv">Проекты, которые прошли путь до конца</h2><div class="cases"><div class="rv d0"><div class="m">31%</div><b>заказов идёт через бота</b><div class="t">Сеть кофеен «Зерно» · Telegram-бот</div><p>Гости заказывают кофе по дороге и забирают без очереди. Бариста видят заказы на планшете.</p></div><div class="rv d1"><div class="m">18 → 6%</div><b>неявок после запуска</b><div class="t">Студия маникюра «Лак» · Telegram-бот</div><p>Клиентки записываются сами, бот напоминает за сутки и за два часа, мастера видят расписание.</p></div><div class="rv d2"><div class="m">15 мин</div><b>вместо 2 часов на заявку</b><div class="t">Поставщик «СтройДвор» · CRM</div><p>Остатки и цены подтягиваются из 1С, менеджер собирает счёт в два клика.</p></div></div></section>
+<section class="sec faq"><h2 class="rv">Вопросы по процессу</h2><details><summary>Сколько стоит бот?</summary><p>Простой бот записи или заявок — от 40 000 ₽. Точную цену называем после бесплатного разбора и фиксируем в договоре.</p></details><details><summary>Сколько времени займёт разработка?</summary><p>Бот — 2–3 недели, сайт — 2–4, CRM — 4–8. Срок прописываем в договоре вместе с этапами.</p></details><details><summary>Код и доступы будут нашими?</summary><p>Да. Передаём исходники, доступы к серверу и админкам. Права на результат — ваши по договору.</p></details><details><summary>Как проходит оплата?</summary><p>Работаем по договору, безнал для ИП и ООО. Обычно 50% на старте и 50% после приёмки.</p></details><details><summary>Что если после запуска что-то сломается?</summary><p>30 дней гарантии бесплатно. Дальше — поддержка от 5 000 ₽ в месяц или разовые доработки.</p></details><details><summary>Можно доработать то, что уже есть?</summary><p>Да. Берём на поддержку существующие боты, сайты и CRM — сначала делаем аудит кода.</p></details></section>
+<section class="end"><h2 class="rv">Шаг 1 занимает две минуты.</h2><a class="btn rv d1" style="font-size:18px;padding:18px 30px" href="https://t.me/fines_studio">Написать @fines_studio</a></section>
+<footer><span>© 2026 Финес Студио</span><span>Тонкая работа для вашего бизнеса.</span></footer></div>
+<script>(function(){var els=document.querySelectorAll('.rv');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -5% 0px'});els.forEach(function(e){io.observe(e)})})();
+const tl=document.getElementById('tl'),pg=document.getElementById('prog'),its=[...document.querySelectorAll('.it')];function up(){const r=tl.getBoundingClientRect();const h=Math.max(0,Math.min(r.height,innerHeight*.6-r.top));pg.style.height=h+'px';its.forEach(i=>i.classList.toggle('in',i.getBoundingClientRect().top<innerHeight*.6))}addEventListener('scroll',up,{passive:true});up();</script>
+</body>
+</html>

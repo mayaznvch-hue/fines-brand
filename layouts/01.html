@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Финес Студио — Швейцарский минимализм · макет 01</title>
+<meta name="description" content="Финес Студио: Telegram-боты, CRM-системы, веб-сервисы и интеграции для малого бизнеса. Тонкая работа для вашего бизнеса.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{min-height:100vh;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0}
+h1,h2,h3,h4{text-wrap:balance}
+p{text-wrap:pretty}
+@keyframes fspin{to{transform:rotate(360deg)}}
+.flogo{display:inline-flex;flex-direction:column;align-items:flex-start;font-family:'Onest',sans-serif;line-height:.82;--lg:30px;flex:none}
+.flogo .fw{font-weight:800;letter-spacing:-.05em;font-size:var(--lg);display:inline-flex;align-items:baseline}
+.flogo .fdot{width:.32em;height:.32em;margin-left:.03em;display:inline-block}
+.flogo .fs{font-size:max(11px,calc(var(--lg)*.4));font-weight:600;letter-spacing:.24em;opacity:.8;margin-top:.32em;padding-left:.05em}
+.mkbadge{position:fixed;bottom:10px;left:10px;z-index:9999;font:500 10.5px/1 'Onest',sans-serif;letter-spacing:.02em;padding:5px 10px;border-radius:99px;background:rgba(20,20,20,.78);color:#fff;pointer-events:none;white-space:nowrap;backdrop-filter:blur(6px);box-shadow:0 2px 10px rgba(0,0,0,.15)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}.rv.d5{transition-delay:.4s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@media (max-width:640px){.mkbadge{font-size:10px;bottom:6px;left:6px}}
+
+body{font-family:'Inter Tight',sans-serif;background:#fff;color:#111;font-size:16px;line-height:1.5}
+.w{max-width:1320px;margin:0 auto;padding:0 32px}
+.g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+header{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid #111}
+header .w{display:flex;align-items:center;justify-content:space-between;height:76px}
+nav{display:flex;gap:32px;font-size:14px}
+nav a:hover{color:#f2501c}
+.btn{display:inline-flex;align-items:center;gap:10px;background:#111;color:#fff;padding:14px 22px;font-weight:600;font-size:14px;transition:background .2s}
+.btn:hover{background:#f2501c}
+.hero{padding:96px 0 64px;border-bottom:1px solid #111}
+.hero .idx{grid-column:1/3;font-size:13px;color:#777}
+.hero h1{grid-column:3/13;font-size:clamp(44px,7.4vw,118px);line-height:.94;letter-spacing:-.045em;font-weight:700}
+.hero h1 em{font-style:normal;color:#f2501c}
+.hero .lead{grid-column:3/8;font-size:20px;margin-top:48px;color:#333}
+.hero .cta{grid-column:9/13;margin-top:48px;align-self:end;display:flex;flex-direction:column;gap:8px;font-size:13px;color:#777}
+.sec{padding:88px 0;border-bottom:1px solid #111}
+.sec .lab{grid-column:1/3;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.sec .lab span{display:block;color:#f2501c;font-size:44px;font-weight:700;letter-spacing:-.04em;margin-bottom:6px;text-transform:none}
+.sec .cont{grid-column:3/13}
+.srow{display:grid;grid-template-columns:60px minmax(0,1.2fr) minmax(0,2fr) 140px 120px;gap:24px;padding:26px 0;border-top:1px solid #ddd;align-items:baseline;transition:padding .25s}
+.srow:hover{padding-left:12px;color:#f2501c}
+.srow:hover p{color:#111}
+.srow b{font-size:26px;font-weight:600;letter-spacing:-.02em}
+.srow p{color:#555}
+.srow i{font-style:normal;font-size:14px;color:#777}
+.srow .pr{font-weight:600;text-align:right}
+.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.case{border-top:4px solid #111;padding-top:20px}
+.case .m{font-size:64px;font-weight:700;letter-spacing:-.05em;line-height:1;color:#f2501c}
+.case .ml{font-size:14px;color:#555;margin:6px 0 22px}
+.case h3{font-size:20px;letter-spacing:-.01em}
+.case .c{font-size:13px;color:#777;margin-top:4px}
+.case p{margin-top:12px;color:#444;font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.st .n{font-size:13px;color:#777;border-bottom:1px solid #111;padding-bottom:10px;margin-bottom:16px;display:flex;justify-content:space-between}
+.st h3{font-size:19px;margin-bottom:8px}
+.st p{font-size:14px;color:#555}
+.price{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid #111}
+.pl{padding:32px;border-right:1px solid #111}
+.pl:last-child{border-right:0}
+.pl.hot{background:#111;color:#fff}
+.pl .t{font-size:14px;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.pl .p{font-size:40px;font-weight:700;letter-spacing:-.04em;margin:18px 0 4px}
+.pl .f{font-size:14px;opacity:.65;margin-bottom:24px}
+.pl li{list-style:none;padding:9px 0;border-top:1px solid rgba(128,128,128,.3);font-size:15px}
+.pl.hot .p{color:#f2501c}
+.faq details{border-top:1px solid #ddd;padding:22px 0}
+.faq summary{font-size:22px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;letter-spacing:-.01em}
+.faq summary::after{content:'+';color:#f2501c;font-weight:400}
+.faq details[open] summary::after{content:'−'}
+.faq p{margin-top:12px;color:#555;max-width:720px}
+.contact{padding:120px 0 64px}
+.contact h2{grid-column:1/10;font-size:clamp(40px,6vw,96px);line-height:.95;letter-spacing:-.045em}
+.contact .side{grid-column:10/13;align-self:end;font-size:15px;color:#555}
+.contact .side a.tg{display:block;font-size:28px;font-weight:700;color:#f2501c;margin-bottom:10px;letter-spacing:-.02em}
+footer{border-top:1px solid #111;padding:24px 0;font-size:13px;color:#777}
+footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:980px){.g{grid-template-columns:minmax(0,1fr)}.hero .idx,.hero h1,.hero .lead,.hero .cta,.sec .lab,.sec .cont,.contact h2,.contact .side{grid-column:1/-1}.sec .lab{margin-bottom:28px}.srow{grid-template-columns:40px minmax(0,1fr);row-gap:6px}.srow p,.srow i,.srow .pr{grid-column:2}.srow .pr{text-align:left}.cases,.steps,.price{grid-template-columns:minmax(0,1fr)}.pl{border-right:0;border-bottom:1px solid #111}nav{display:none}}
+@media(max-width:640px){.w{padding:0 18px}.hero{padding:56px 0 40px}.sec{padding:56px 0}.btn{padding:12px 16px}}
+</style>
+</head>
+<body id="top">
+<div class="mkbadge">Макет 01 · Швейцарский минимализм</div>
+
+<header><div class="w"><a class="flogo" href="#top" aria-label="Финес Студио"><span class="fw">финес<svg class="fdot" viewBox="0 0 20 20" aria-hidden="true"><g style="transform-origin:10px 10px;animation:fspin 3s linear infinite"><circle cx="7" cy="10" r="6" fill="#f2501c" style="mix-blend-mode:multiply"/><circle cx="13" cy="10" r="6" fill="#ffc21a" style="mix-blend-mode:multiply"/></g></svg></span><span class="fs">студио</span></a><nav><a href="#s">Услуги</a><a href="#c">Кейсы</a><a href="#p">Процесс</a><a href="#pr">Цены</a><a href="#f">Вопросы</a></nav><a class="btn" href="https://t.me/fines_studio">Обсудить задачу →</a></div></header>
+<section class="hero"><div class="w g">
+<div class="idx rv">Студия разработки<br>с 2021 года</div>
+<h1 class="rv d1">Тонкая <em>работа</em> для вашего бизнеса.</h1>
+<p class="lead rv d2">Делаем Telegram-ботов, CRM-системы и веб-сервисы для малого бизнеса. Убираем ручную рутину, чтобы заявки не терялись, а вы занимались делом.</p>
+<div class="cta rv d3"><a class="btn" href="https://t.me/fines_studio">Написать в Telegram @fines_studio</a><span>Отвечаем в течение 15 минут в рабочее время</span></div>
+</div></section>
+<section class="sec" id="s"><div class="w g"><div class="lab"><span>01</span>Услуги</div><div class="cont">
+<div class="srow rv"><i>01</i><b>Telegram-боты</b><p>Запись, заявки, оплата и рассылки прямо в мессенджере. Бот работает ночью и в выходные и не забывает перезвонить.</p><i>2–3 недели</i><span class="pr">от 40 000 ₽</span></div><div class="srow rv"><i>02</i><b>CRM-системы</b><p>Своя CRM под ваш процесс, а не процесс под чужую CRM. Клиенты, сделки, склад, роли и отчёты в одном окне.</p><i>4–8 недель</i><span class="pr">от 120 000 ₽</span></div><div class="srow rv"><i>03</i><b>Веб-сервисы</b><p>Личные кабинеты, бронирование, внутренние панели. Проектируем, пишем, запускаем и поддерживаем.</p><i>6–10 недель</i><span class="pr">от 150 000 ₽</span></div><div class="srow rv"><i>04</i><b>Интеграции</b><p>Связываем 1С, amoCRM, Битрикс24, кассы, телефонию и Google Таблицы — данные больше не переносят руками.</p><i>1–2 недели</i><span class="pr">от 25 000 ₽</span></div><div class="srow rv"><i>05</i><b>Сайты для бизнеса</b><p>Быстрые сайты, которые приводят заявки: лендинги, сайты услуг, каталоги. С аналитикой и ботом для заявок.</p><i>2–4 недели</i><span class="pr">от 60 000 ₽</span></div>
+</div></div></section>
+<section class="sec" id="c"><div class="w g"><div class="lab"><span>02</span>Кейсы</div><div class="cont cases">
+<article class="case rv d0"><div class="m">31%</div><div class="ml">заказов идёт через бота</div><h3>Бот предзаказа с оплатой</h3><div class="c">Сеть кофеен «Зерно» · Telegram-бот</div><p>Гости заказывают кофе по дороге и забирают без очереди. Бариста видят заказы на планшете.</p></article><article class="case rv d1"><div class="m">18 → 6%</div><div class="ml">неявок после запуска</div><h3>Бот записи и напоминаний</h3><div class="c">Студия маникюра «Лак» · Telegram-бот</div><p>Клиентки записываются сами, бот напоминает за сутки и за два часа, мастера видят расписание.</p></article><article class="case rv d2"><div class="m">15 мин</div><div class="ml">вместо 2 часов на заявку</div><h3>CRM для отдела продаж + 1С</h3><div class="c">Поставщик «СтройДвор» · CRM</div><p>Остатки и цены подтягиваются из 1С, менеджер собирает счёт в два клика.</p></article><article class="case rv d0"><div class="m">−70%</div><div class="ml">звонков «ну что там?»</div><h3>Кабинет клиента со статусом ремонта</h3><div class="c">Автосервис «Гараж 24» · Веб-сервис</div><p>Клиент видит этапы, фото деталей и согласует допработы в кабинете.</p></article><article class="case rv d1"><div class="m">×2,4</div><div class="ml">заявок за три месяца</div><h3>Сайт, квиз и связка с amoCRM</h3><div class="c">Школа «Speak Up» · Сайт</div><p>Квиз подбирает курс, заявка сразу падает в воронку с тегами и источником.</p></article><article class="case rv d2"><div class="m">+22%</div><div class="ml">к среднему чеку</div><h3>Mini App каталог и склад</h3><div class="c">Доставка «Грядка» · Mini App</div><p>Каталог в Telegram, корзина, оплата и списание остатков без таблиц.</p></article>
+</div></div></section>
+<section class="sec" id="p"><div class="w g"><div class="lab"><span>03</span>Процесс</div><div class="cont steps">
+<div class="st rv d0"><div class="n"><span>01</span><span>1 день</span></div><h3>Разбор задачи</h3><p>Созвон на 30 минут, бесплатно. Разбираемся, где теряются деньги и время.</p></div><div class="st rv d1"><div class="n"><span>02</span><span>1–3 дня</span></div><h3>Смета и ТЗ</h3><p>Фиксируем объём, цену и сроки в договоре. Без «а это уже доплата».</p></div><div class="st rv d2"><div class="n"><span>03</span><span>3–5 дней</span></div><h3>Прототип</h3><p>Показываем кликабельный макет. Правим до того, как написана первая строка кода.</p></div><div class="st rv d3"><div class="n"><span>04</span><span>1–8 недель</span></div><h3>Разработка</h3><p>Демо каждую неделю и доступ к тестовой версии. Вы видите прогресс, а не тишину.</p></div><div class="st rv d4"><div class="n"><span>05</span><span>всегда рядом</span></div><h3>Запуск и поддержка</h3><p>Запускаем, обучаем команду, 30 дней гарантии. Дальше — поддержка по желанию.</p></div>
+</div></div></section>
+<section class="sec" id="pr"><div class="w g"><div class="lab"><span>04</span>Цены</div><div class="cont price rv">
+<div class="pl"><div class="t">Старт</div><div class="p">от 40 000 ₽</div><div class="f">Бот или лендинг</div><ul><li>до 10 сценариев или экранов</li><li>админ-панель</li><li>приём оплаты</li><li>30 дней поддержки</li></ul></div><div class="pl hot"><div class="t">Бизнес</div><div class="p">от 120 000 ₽</div><div class="f">CRM или веб-сервис</div><ul><li>роли и права доступа</li><li>интеграции с 1С, amoCRM</li><li>отчёты и выгрузки</li><li>60 дней поддержки</li></ul></div><div class="pl"><div class="t">Система</div><div class="p">от 300 000 ₽</div><div class="f">Бот + CRM + сайт</div><ul><li>связка всех каналов</li><li>выделенная команда</li><li>SLA и мониторинг</li><li>развитие по спринтам</li></ul></div>
+</div></div></section>
+<section class="sec faq" id="f"><div class="w g"><div class="lab"><span>05</span>Вопросы</div><div class="cont">
+<details><summary>Сколько стоит бот?</summary><p>Простой бот записи или заявок — от 40 000 ₽. Точную цену называем после бесплатного разбора и фиксируем в договоре.</p></details><details><summary>Сколько времени займёт разработка?</summary><p>Бот — 2–3 недели, сайт — 2–4, CRM — 4–8. Срок прописываем в договоре вместе с этапами.</p></details><details><summary>Код и доступы будут нашими?</summary><p>Да. Передаём исходники, доступы к серверу и админкам. Права на результат — ваши по договору.</p></details><details><summary>Как проходит оплата?</summary><p>Работаем по договору, безнал для ИП и ООО. Обычно 50% на старте и 50% после приёмки.</p></details><details><summary>Что если после запуска что-то сломается?</summary><p>30 дней гарантии бесплатно. Дальше — поддержка от 5 000 ₽ в месяц или разовые доработки.</p></details><details><summary>Можно доработать то, что уже есть?</summary><p>Да. Берём на поддержку существующие боты, сайты и CRM — сначала делаем аудит кода.</p></details>
+</div></div></section>
+<section class="contact"><div class="w g"><h2 class="rv">Расскажите о задаче. Ответим с идеей и оценкой.</h2><div class="side rv d2"><a class="tg" href="https://t.me/fines_studio">@fines_studio</a>Telegram — самый быстрый способ связаться. Первый разбор бесплатный.</div></div></section>
+<footer><div class="w"><span>© 2026 Финес Студио</span><span>Telegram-боты · CRM · веб-сервисы · интеграции</span><a href="https://t.me/fines_studio">@fines_studio</a></div></footer>
+<script>(function(){var els=document.querySelectorAll('.rv');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -5% 0px'});els.forEach(function(e){io.observe(e)})})();
+</script>
+</body>
+</html>

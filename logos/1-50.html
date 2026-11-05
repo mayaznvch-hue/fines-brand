@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Финес Студио — 50 вариантов логотипа</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;700;800&family=Unbounded:wght@300;500;700;900&family=Manrope:wght@300;500;800&family=Montserrat:wght@200;400;700;900&family=Playfair+Display:wght@500;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Russo+One&family=Comfortaa:wght@400;700&family=Marck+Script&family=Raleway:wght@200;500;800&family=Jost:wght@300;500;700&family=Rubik:wght@400;700;900&family=Prata&family=Oswald:wght@300;600&family=Exo+2:wght@300;700;900&family=Tenor+Sans&family=Forum&family=Yeseva+One&family=Caveat:wght@600&family=Press+Start+2P&family=Nunito:wght@300;800&family=Geologica:wght@200;600;800&family=Tektur:wght@500;800&family=Literata:ital,wght@0,400;1,500&family=Philosopher:wght@700&family=JetBrains+Mono:wght@400;700&display=block" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#ecebe7;font-family:Onest,sans-serif;color:#1c1b19;padding:28px}
+  h1{margin:0 0 4px;font-size:26px;letter-spacing:-.02em}
+  .sub{margin:0 0 22px;color:#6a675f;font-size:15px}
+  .grid{display:grid;grid-template-columns:repeat(4,350px);gap:16px}
+  .c{position:relative;height:230px;border-radius:18px;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+  .n{position:absolute;left:14px;top:12px;font:700 13px Onest,sans-serif;opacity:.55}
+  .cap{position:absolute;left:14px;right:14px;bottom:11px;font:400 12px/1.25 Onest,sans-serif;opacity:.6;text-align:left}
+  .lg{display:flex;align-items:center;gap:14px;margin-top:-12px}
+  .lg.v{flex-direction:column;gap:10px}
+  .lg svg.m{width:64px;height:64px;flex:none}
+  .lg.v svg.m{width:72px;height:72px}
+  .wm{display:flex;flex-direction:column;line-height:1}
+  .wm b{font-weight:inherit}
+  .wm i{font-style:normal}
+  .wm.row{flex-direction:row;align-items:baseline;gap:.35em}
+  .lg.v .wm{align-items:center;text-align:center}
+.c:target{box-shadow:0 0 0 3px #f2501c}</style></head>
+<body><a href="../" style="display:inline-block;margin-bottom:14px;font:600 14px Onest,sans-serif;color:#f2501c;text-decoration:none">← Все материалы Финес Студио</a>
+<h1>Финес Студио — 50 вариантов логотипа</h1>
+<p class="sub">Номер в левом верхнем углу. Назови номер (или несколько), и я доведу выбранный вариант и поставлю на сайт.</p>
+<div class="grid" id="g"></div>
+<script>
+const O='#f2501c';
+const T=(f,c,w=3)=>`stroke="${c}" stroke-width="${w}" fill="none" stroke-linecap="round" stroke-linejoin="round"`;
+const stem=(c,w=3,a=6,b=58)=>`<line x1="32" y1="${a}" x2="32" y2="${b}" ${T(0,c,w)}/>`;
+const ring=(c,w=3,rx=19,ry=14)=>`<ellipse cx="32" cy="32" rx="${rx}" ry="${ry}" ${T(0,c,w)}/>`;
+function spiral(c){let p=[];for(let t=0;t<=4.6*Math.PI;t+=.08){const r=1.2*Math.exp(.19*t);p.push((32+r*Math.cos(t)).toFixed(2)+','+(32+r*Math.sin(t)).toFixed(2))}return `<polyline points="${p.join(' ')}" ${T(0,c,2.6)}/>`}
+function pix(c,a){const P=['...#...','.#####.','#..#..#','#..#..#','#..#..#','.#####.','...#...'];let s='';P.forEach((r,y)=>[...r].forEach((ch,x)=>{if(ch==='#')s+=`<rect x="${7+x*7.2}" y="${7+y*7.2}" width="6.6" height="6.6" rx="1" fill="${x===3?a:c}"/>`}));return s}
+const L=[
+ // [название идеи, фон, текст, акцент, шрифт словесного знака, mark(fg,ac,bg,i), раскладка, стиль словесного знака]
+ ['Ф из кольца и тонкой линии', '#fbfaf7','#1c1b19',O,'Onest',(f,a)=>ring(a,3)+stem(f,3),'h','up'],
+ ['Ф из скобок', '#fbfaf7','#1c1b19',O,'Manrope',(f,a)=>`<path d="M25 13C10 19 10 45 25 51M39 13C54 19 54 45 39 51" ${T(0,a,3.4)}/>`+stem(f,3.4),'h','norm'],
+ ['Ф из фигурных скобок кода', '#14161c','#f4f1ea',O,'JetBrains Mono',(f,a)=>`<path d="M24 10c-8 0-6 12-6 16s-4 6-6 6c2 0 6 2 6 6s-2 16 6 16M40 10c8 0 6 12 6 16s4 6 6 6c-2 0-6 2-6 6s2 16-6 16" ${T(0,f,3)}/>`+stem(a,3.4,14,50),'h','mono'],
+ ['Ф из угловых скобок <|>', '#fbfaf7','#1c1b19',O,'Unbounded',(f,a)=>`<path d="M22 16 9 32l13 16M42 16l13 16-13 16" ${T(0,f,3.6)}/>`+stem(a,3.6,12,52),'h','up'],
+ ['Монограмма Ф на плитке', '#fbfaf7','#1c1b19',O,'Onest',(f,a)=>`<rect width="64" height="64" rx="16" fill="${a}"/>`+ring('#fff',3.2,17,12.5)+stem('#fff',3.2,10,54),'h','norm'],
+ ['Разрезанный круг', '#fbfaf7','#1c1b19',O,'Geologica',(f,a,b)=>`<circle cx="32" cy="32" r="25" fill="${a}"/><rect x="30.3" y="2" width="3.4" height="60" rx="1.7" fill="${b}"/>`,'h','up'],
+ ['Две половинки', '#fbfaf7','#1c1b19',O,'Montserrat',(f,a)=>`<path d="M29 12A20 20 0 0 0 29 52Z" fill="${a}"/><path d="M35 12A20 20 0 0 1 35 52Z" fill="${f}"/>`,'h','wide'],
+ ['Одна непрерывная линия', '#fbfaf7','#1c1b19',O,'Jost',(f,a)=>`<path d="M32 58V20C22 19 12 23 12 32s10 14 20 14 20-5 20-14-10-13-20-12V6" ${T(0,a,2.6)}/>`,'h','light'],
+ ['Игла с ушком (тонкая работа)', '#fbfaf7','#1c1b19',O,'Cormorant Garamond',(f,a)=>`<path d="M32 60 28.5 14a3.5 3.5 0 0 1 7 0Z" fill="${f}"/><ellipse cx="32" cy="14" rx="1.2" ry="4" fill="#fbfaf7"/><path d="M32 12C14 12 10 32 22 34s22-8 10-14" ${T(0,a,2.2)}/>`,'h','serif'],
+ ['Перо', '#f6f1e7','#2a2118','#b8752b','Playfair Display',(f,a,b)=>`<path d="M52 6C30 10 15 28 13 56 24 42 41 31 52 6Z" fill="${a}"/><path d="M13 56 42 18" ${T(0,b,1.6)}/>`,'h','serif'],
+ ['Огранка, бриллиант', '#0f1a2b','#eef2f8','#7cc4ff','Montserrat',(f,a)=>`<path d="M12 24 22 12h20l10 12-20 30Z" fill="${a}" fill-opacity=".14"/><path d="M12 24 22 12h20l10 12-20 30ZM12 24h40M22 12l6 12 4 30 4-30 6-12" ${T(0,a,2)}/>`,'h','wide'],
+ ['Мазок кистью', '#fbfaf7','#1c1b19',O,'Rubik',(f,a)=>`<path d="M7 44C18 22 38 13 57 16 41 19 27 29 16 49Z" fill="${a}"/><circle cx="50" cy="44" r="5" fill="${f}"/>`,'h','bold'],
+ ['Точка · линия · точка', '#fbfaf7','#1c1b19',O,'Onest',(f,a)=>`<circle cx="13" cy="32" r="6.5" fill="${a}"/><circle cx="51" cy="32" r="6.5" fill="${a}"/>`+stem(f,4),'h','up'],
+ ['Курсор в круге', '#14161c','#f4f1ea',O,'JetBrains Mono',(f,a)=>`<circle cx="32" cy="32" r="22" ${T(0,f,2.4)}/><rect x="29.5" y="14" width="5" height="36" rx="2" fill="${a}"><animate attributeName="opacity" values="1;1;0;0" dur="1.1s" repeatCount="indefinite"/></rect>`,'h','mono'],
+ ['Геометричная Ф из блоков', '#fbfaf7','#1c1b19',O,'Unbounded',(f,a)=>`<rect x="27" y="4" width="10" height="56" rx="2" fill="${f}"/><path d="M27 14h-6a12 12 0 0 0 0 24h6Z" fill="${a}"/><path d="M37 14h6a12 12 0 0 1 0 24h-6Z" fill="${a}"/>`,'h','up'],
+ ['Монограмма ФС', '#fbfaf7','#1c1b19',O,'Prata',(f,a)=>`<circle cx="32" cy="32" r="30" ${T(0,a,1.6)}/><text x="32" y="40.5" text-anchor="middle" font-family="Prata" font-size="22" fill="${f}">ФС</text>`,'h','serif'],
+ ['Монограмма ФС в рамке', '#111','#fff',O,'Tenor Sans',(f,a)=>`<rect x="3" y="3" width="58" height="58" ${T(0,f,1.6)}/><text x="32" y="41" text-anchor="middle" font-family="Tenor Sans" font-size="23" fill="${f}">Ф<tspan fill="${a}">С</tspan></text>`,'h','wide'],
+ ['Золотая спираль', '#f6f1e7','#2a2118','#b8752b','Cormorant Garamond',(f,a)=>spiral(a),'h','serif'],
+ ['Ползунки тонкой настройки', '#fbfaf7','#1c1b19',O,'Manrope',(f,a,b)=>`<path d="M14 8v48M32 8v48M50 8v48" ${T(0,f,2.6)}/><circle cx="14" cy="40" r="5" fill="${f}"/><circle cx="50" cy="22" r="5" fill="${f}"/><ellipse cx="32" cy="32" rx="9" ry="7" fill="${b}" ${T(0,a,3)}/>`,'h','norm'],
+ ['Прицел точности', '#fbfaf7','#1c1b19',O,'Exo 2',(f,a)=>`<circle cx="32" cy="32" r="20" ${T(0,f,2.6)}/><path d="M32 4v16M32 44v16M4 32h16M44 32h16" ${T(0,f,2.6)}/><circle cx="32" cy="32" r="4.5" fill="${a}"/>`,'h','up'],
+ ['Пиксельная Ф', '#14161c','#f4f1ea',O,'Press Start 2P',(f,a)=>pix(f,a),'h','pixel'],
+ ['Ф в движении', '#fbfaf7','#1c1b19',O,'Montserrat',(f,a)=>`<path d="M27 12A20 20 0 0 0 27 52Z" fill="${a}"/><path d="M37 12A20 20 0 0 1 37 52" ${T(0,f,3)}/>`+stem(f,3),'h','bold'],
+ ['Бесконечность', '#fbfaf7','#1c1b19',O,'Nunito',(f,a)=>`<path d="M32 32c-6-8-11-12-17-12a12 12 0 0 0 0 24c6 0 11-4 17-12s11-12 17-12a12 12 0 0 1 0 24c-6 0-11-4-17-12Z" ${T(0,a,3.4)}/>`,'h','round'],
+ ['Трафаретная Ф', '#ffd23f','#1c1b19','#1c1b19','Russo One',(f,a)=>`<ellipse cx="32" cy="32" rx="19" ry="14" ${T(0,f,7)} stroke-dasharray="20 5" stroke-linecap="butt"/><rect x="28.5" y="4" width="7" height="56" fill="${f}"/>`,'h','up'],
+ ['Терминал', '#0d1117','#e6edf3','#3fb950','JetBrains Mono',(f,a)=>`<rect x="3" y="9" width="58" height="46" rx="8" ${T(0,f,2.2)}/><path d="M13 25l8 7-8 7" ${T(0,a,3)}/><path d="M27 41h14" ${T(0,a,3)}/>`,'h','mono'],
+ ['Оригами', '#fbfaf7','#1c1b19',O,'Raleway',(f,a)=>`<path d="M14 6 50 6 32 22Z" fill="${a}"/><path d="M14 6 32 22 14 34Z" fill="#c43a12"/><path d="M14 34 32 22 40 34Z" fill="${a}" fill-opacity=".7"/><path d="M14 34 26 46 14 58Z" fill="#8f2a0c"/>`,'h','light'],
+ ['Ф в шестиугольнике', '#fbfaf7','#1c1b19',O,'Tektur',(f,a)=>`<path d="M32 3 57 17.5v29L32 61 7 46.5v-29Z" fill="${a}"/>`+ring('#fff',3,14,10)+stem('#fff',3,14,50),'h','tech'],
+ ['Рукописная подпись', '#fbfaf7','#1c1b19',O,'Marck Script',null,'w','script'],
+ ['Волна над словом', '#fbfaf7','#1c1b19',O,'Unbounded',null,'w','tilde'],
+ ['Классический серифный', '#f6f1e7','#2a2118','#b8752b','Playfair Display',null,'w','serifdot'],
+ ['Строчными с точкой', '#fbfaf7','#1c1b19',O,'Onest',null,'w','lowdot'],
+ ['Разрядка капителью', '#111','#f4f1ea',O,'Raleway',null,'w','spaced'],
+ ['Круглая печать', '#fbfaf7','#1c1b19',O,'Onest',(f,a,b,i)=>`<defs><path id="cp${i}" d="M32 32m-23 0a23 23 0 1 1 46 0a23 23 0 1 1-46 0"/></defs><circle cx="32" cy="32" r="31" fill="${a}"/><text font-family="Onest" font-weight="700" font-size="9" font-weight="800" letter-spacing="2.4" fill="#fff"><textPath href="#cp${i}" textLength="150">ФИНЕС • СТУДИО •</textPath></text>`+ring('#fff',2.6,9,6.5)+stem('#fff',2.6,22,42),'v','up'],
+ ['Шлиц винта', '#fbfaf7','#1c1b19',O,'Rubik',(f,a)=>`<circle cx="32" cy="32" r="25" fill="${a}"/><circle cx="32" cy="32" r="18" ${T(0,'#fff',2)} stroke-opacity=".5"/><rect x="28.5" y="10" width="7" height="44" rx="3.5" fill="#fff"/>`,'h','bold'],
+ ['Капля', '#eef6ff','#10243f','#1f5fe0','Nunito',(f,a)=>`<path d="M32 4C22 18 12 28 12 40a20 20 0 0 0 40 0C52 28 42 18 32 4Z" fill="${a}"/>`+ring('#fff',2.4,11,8.5).replace('cy="32"','cy="40"')+`<line x1="32" y1="26" x2="32" y2="54" ${T(0,'#fff',2.4)}/>`,'h','round'],
+ ['Линейка точности', '#fbfaf7','#1c1b19',O,'Oswald',(f,a)=>ring(a,4)+stem(f,4)+`<path d="M34 14h6M34 50h6" ${T(0,f,3)}/>`,'h','cond'],
+ ['Ф из двух полуколец', '#fbfaf7','#1c1b19',O,'Literata',(f,a)=>`<path d="M27 16a16 16 0 0 0 0 32" ${T(0,a,5)}/><path d="M37 16a16 16 0 0 1 0 32" ${T(0,a,5)}/><line x1="32" y1="6" x2="32" y2="58" ${T(0,f,4)}/>`,'h','serif'],
+ ['Ромб в ромбе', '#0f1a2b','#eef2f8','#d6b56a','Forum',(f,a)=>`<path d="M32 3 61 32 32 61 3 32Z" ${T(0,a,2)}/><path d="M32 18 46 32 32 46 18 32Z" fill="${a}"/>`,'h','wide'],
+ ['Узлы и связи', '#fbfaf7','#1c1b19',O,'Geologica',(f,a)=>`<path d="M32 8 12 32 32 56 52 32Z M32 8v48" ${T(0,f,2.4)}/><circle cx="32" cy="8" r="5" fill="${a}"/><circle cx="12" cy="32" r="5" fill="${f}"/><circle cx="52" cy="32" r="5" fill="${f}"/><circle cx="32" cy="56" r="5" fill="${a}"/>`,'h','up'],
+ ['Облачко чата с Ф', '#fbfaf7','#1c1b19','#2a9df4','Manrope',(f,a)=>`<path d="M10 6h44a6 6 0 0 1 6 6v30a6 6 0 0 1-6 6H26l-12 10v-10h-4a6 6 0 0 1-6-6V12a6 6 0 0 1 6-6Z" fill="${a}"/>`+`<ellipse cx="32" cy="27" rx="13" ry="9.5" ${T(0,'#fff',2.8)}/><line x1="32" y1="12" x2="32" y2="42" ${T(0,'#fff',2.8)}/>`,'h','bold'],
+ ['Искра', '#fbfaf7','#1c1b19',O,'Onest',(f,a)=>`<path d="M28 6c2 14 6 18 20 20-14 2-18 6-20 20-2-14-6-18-20-20 14-2 18-6 20-20Z" fill="${a}"/><path d="M50 40c1 6 3 8 9 9-6 1-8 3-9 9-1-6-3-8-9-9 6-1 8-3 9-9Z" fill="${f}"/>`,'h','norm'],
+ ['Пересечение кругов', '#fbfaf7','#1c1b19',O,'Jost',(f,a)=>`<circle cx="23" cy="32" r="17" fill="${a}" fill-opacity=".85"/><circle cx="41" cy="32" r="17" fill="${f}" fill-opacity=".85" style="mix-blend-mode:multiply"/>`+stem('#fff',2.4,18,46),'h','light'],
+ ['Волна сквозь кольцо', '#eef8f4','#0f2e24','#0d8a66','Nunito',(f,a)=>`<circle cx="32" cy="32" r="24" ${T(0,a,3)}/><path d="M10 32c4-8 8-8 11 0s7 8 11 0 7-8 11 0 7 8 11 0" ${T(0,f,3)}/>`,'h','round'],
+ ['Ф двух цветов', '#fbfaf7','#1c1b19',O,'Unbounded',(f,a)=>`<path d="M32 18C21 18 13 24 13 32s8 14 19 14" ${T(0,a,5)}/><path d="M32 18c11 0 19 6 19 14s-8 14-19 14" ${T(0,f,5)}/>`+`<line x1="32" y1="6" x2="32" y2="58" stroke="${f}" stroke-width="5" stroke-linecap="round"/>`,'h','up'],
+ ['Арка', '#f3eee6','#2b2621','#9a5b3a','Yeseva One',(f,a)=>`<path d="M12 60V30a20 20 0 0 1 40 0v30" ${T(0,a,3)}/>`+`<ellipse cx="32" cy="38" rx="11" ry="8" ${T(0,f,2.4)}/><line x1="32" y1="24" x2="32" y2="52" ${T(0,f,2.4)}/>`,'v','serif'],
+ ['Светящаяся сфера', '#0b0b12','#f4f1ea',O,'Onest',(f,a,b,i)=>`<defs><radialGradient id="rg${i}" cx="35%" cy="30%"><stop offset="0" stop-color="#ffb08a"/><stop offset=".55" stop-color="${a}"/><stop offset="1" stop-color="#7a1e05"/></radialGradient></defs><circle cx="32" cy="32" r="27" fill="url(#rg${i})"/>`+ring('#fff',3,15,11)+stem('#fff',3,12,52),'h','light'],
+ ['Мягкая капля-клякса', '#fbfaf7','#1c1b19','#3b2bd6','Caveat',(f,a)=>`<path d="M32 6c14 0 26 10 26 25S46 58 32 58 6 47 6 31 18 6 32 6Z" fill="${a}" transform="rotate(-12 32 32)"/>`+ring('#fff',3,12,9)+stem('#fff',3,16,48),'h','hand'],
+ ['Ф в круге-кнопке', '#fbfaf7','#1c1b19',O,'Unbounded',(f,a)=>`<circle cx="32" cy="32" r="31" fill="${f}"/>`+ring(a,4,15,11)+stem(a,4,12,52),'h','low'],
+ ['Щит', '#10172a','#eef2f8',O,'Russo One',(f,a)=>`<path d="M32 3 56 11v18c0 16-10 26-24 32C18 55 8 45 8 29V11Z" fill="${a}"/>`+ring('#fff',3,12,9).replace('cy="32"','cy="30"')+`<line x1="32" y1="16" x2="32" y2="46" ${T(0,'#fff',3)}/>`,'h','up'],
+ ['Плашка с меткой', '#fbfaf7','#1c1b19',O,'Unbounded',null,'w','block'],
+];
+const WM=(it)=>{const [, , fg, ac, font, , , st]=it;const N='Финес', S='Студио';
+ const base=`font-family:'${font}';color:${fg}`;
+ switch(st){
+  case 'up': return `<div class="wm" style="${base};font-weight:800;font-size:27px;letter-spacing:-.01em;text-transform:uppercase"><b>${N}</b><i style="font-size:16px;font-weight:600;letter-spacing:.01em;text-transform:none;color:${ac};margin-top:5px">${S}</i></div>`;
+  case 'norm': return `<div class="wm row" style="${base};font-weight:800;font-size:28px;letter-spacing:-.035em"><b>${N}</b><i style="font-weight:300;color:${ac}">${S.toLowerCase()}</i></div>`;
+  case 'mono': return `<div class="wm" style="${base};font-weight:700;font-size:25px"><b>${N.toLowerCase()}<span style="color:${ac}">_</span></b><i style="font-size:15px;font-weight:400;color:${ac};margin-top:6px">/студио</i></div>`;
+  case 'wide': return `<div class="wm" style="${base};font-weight:400;font-size:22px;letter-spacing:.32em;text-transform:uppercase"><b>${N}</b><i style="font-size:13px;font-weight:600;letter-spacing:.5em;color:${ac};margin-top:8px">${S}</i></div>`;
+  case 'light': return `<div class="wm" style="${base};font-weight:300;font-size:31px;letter-spacing:-.01em"><b>${N}</b><i style="font-size:14px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:${ac};margin-top:5px">${S}</i></div>`;
+  case 'serif': return `<div class="wm" style="${base};font-weight:500;font-size:33px;letter-spacing:-.01em"><b>${N}</b><i style="font-family:Onest;font-size:14px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:${ac};margin-top:6px">${S}</i></div>`;
+  case 'bold': return `<div class="wm" style="${base};font-weight:900;font-size:30px;letter-spacing:-.04em"><b>${N}</b><i style="font-size:14px;font-weight:400;color:${ac};margin-top:4px;letter-spacing:0">${S}</i></div>`;
+  case 'pixel': return `<div class="wm" style="${base};font-size:17px;line-height:1.3"><b>${N.toUpperCase()}</b><i style="font-size:11px;color:${ac};margin-top:8px">${S.toUpperCase()}</i></div>`;
+  case 'round': return `<div class="wm" style="${base};font-weight:700;font-size:28px;letter-spacing:-.02em"><b>${N}</b><i style="font-size:16px;font-weight:700;color:${ac};margin-top:4px">${S.toLowerCase()}</i></div>`;
+  case 'tech': return `<div class="wm" style="${base};font-weight:800;font-size:27px;text-transform:uppercase;letter-spacing:.02em"><b>${N}</b><i style="font-size:14px;font-weight:600;letter-spacing:.25em;color:${ac};margin-top:5px">${S.toUpperCase()}</i></div>`;
+  case 'cond': return `<div class="wm" style="${base};font-weight:600;font-size:32px;text-transform:uppercase;letter-spacing:.04em"><b>${N}</b><i style="font-size:14px;font-weight:600;letter-spacing:.35em;color:${ac};margin-top:4px">${S.toUpperCase()}</i></div>`;
+  case 'hand': return `<div class="wm" style="${base};font-weight:600;font-size:38px"><b>${N}</b><i style="font-family:Onest;font-size:15px;font-weight:600;color:${ac};margin-top:4px">${S.toLowerCase()}</i></div>`;
+  case 'low': return `<div class="wm row" style="${base};font-weight:500;font-size:28px;letter-spacing:-.03em"><b>${N.toLowerCase()}</b><i style="font-weight:400;color:${ac}">${S.toLowerCase()}</i></div>`;
+  case 'script': return `<div class="wm" style="align-items:center;${base}"><b style="font-size:58px;line-height:1.15">${N}</b><i style="font-family:Onest;font-weight:600;font-size:14px;letter-spacing:.45em;text-transform:uppercase;color:${ac};margin-top:8px;padding-left:.5em">${S}</i></div>`;
+  case 'tilde': return `<div class="wm" style="align-items:center;${base}"><svg width="120" height="16" viewBox="0 0 120 16"><path d="M4 11C22-1 38 15 60 7s38-8 56 2" stroke="${ac}" stroke-width="3" fill="none" stroke-linecap="round"/></svg><b style="font-size:40px;font-weight:900;letter-spacing:-.04em;text-transform:uppercase;margin-top:4px">${N}</b><i style="font-size:13px;font-weight:500;letter-spacing:.42em;text-transform:uppercase;color:${ac};margin-top:6px;padding-left:.42em">${S}</i></div>`;
+  case 'serifdot': return `<div class="wm" style="align-items:center;${base}"><b style="font-size:52px;font-weight:800;letter-spacing:-.02em">${N}<span style="color:${ac}">.</span></b><i style="font-family:Onest;font-size:15px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:${ac};margin-top:4px;padding-left:.35em">${S}</i></div>`;
+  case 'lowdot': return `<div class="wm" style="align-items:flex-start;${base}"><b style="font-size:58px;font-weight:800;letter-spacing:-.06em">${N.toLowerCase()}<span style="color:${ac}">.</span></b><i style="font-size:18px;font-weight:600;color:${ac};margin-top:2px;padding-left:4px">${S.toLowerCase()}</i></div>`;
+  case 'spaced': return `<div class="wm" style="align-items:center;${base}"><b style="font-size:36px;font-weight:500;letter-spacing:.3em;padding-left:.3em">ФИНЕС</b><span style="width:46px;height:2px;background:${ac};margin:12px 0"></span><i style="font-size:14px;font-weight:600;letter-spacing:.55em;padding-left:.55em;color:${ac}">СТУДИО</i></div>`;
+  case 'block': return `<div style="display:flex;align-items:stretch;border-radius:8px;overflow:hidden;font-family:'${font}'"><div style="background:${fg};color:#fff;font-weight:800;font-size:26px;letter-spacing:.02em;padding:14px 16px">ФИНЕС</div><div style="background:${ac};color:#fff;font-family:Onest;font-weight:600;font-size:15px;letter-spacing:.12em;padding:0 14px;display:flex;align-items:center">СТУДИО</div></div>`;
+ }};
+const g=document.getElementById('g');
+L.forEach((it,i)=>{const [idea,bg,fg,ac,font,mark,lay]=it;
+  const c=document.createElement('div');c.className='c';c.id='L'+(i+1);c.style.background=bg;c.style.color=fg;
+  const m=mark?`<svg class="m" viewBox="0 0 64 64">${mark(fg,ac,bg,i)}</svg>`:'';
+  c.innerHTML=`<span class="n">${i+1}</span>`+(lay==='w'?`<div class="lg">${WM(it)}</div>`:`<div class="lg ${lay==='v'?'v':''}">${m}${WM(it)}</div>`)+`<span class="cap">${idea}</span>`;
+  g.append(c);});
+document.title+=' ('+L.length+')';
+</script>
+</body></html>

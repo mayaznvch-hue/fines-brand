@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Финес Студио — ещё 50 логотипов (анимированные)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;600;800;900&family=JetBrains+Mono:wght@400;700;800&family=Unbounded:wght@500;800;900&family=Manrope:wght@400;600;800&family=Jost:wght@300;500;700&family=Geologica:wght@300;600;800&display=block" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#ecebe7;font-family:Onest,sans-serif;color:#1c1b19;padding:28px}
+  h1{margin:0 0 4px;font-size:26px;letter-spacing:-.02em}
+  .hint{margin:0 0 22px;color:#6a675f;font-size:15px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,340px);gap:16px}
+  .c{position:relative;height:230px;border-radius:18px;overflow:hidden;display:flex;align-items:center;justify-content:center;isolation:isolate}
+  .n{position:absolute;left:14px;top:12px;font:700 13px Onest,sans-serif;opacity:.55}
+  .cap{position:absolute;left:14px;right:14px;bottom:11px;font:400 12px/1.25 Onest,sans-serif;opacity:.6}
+  .lg{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:-12px}
+  .lg.row{flex-direction:row;gap:16px}
+  .w{display:flex;flex-direction:column;line-height:1;gap:6px}
+  .mono{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+  .sub{font-size:13px;font-weight:600;letter-spacing:.32em;text-transform:uppercase}
+  svg.m{width:64px;height:64px;flex:none;overflow:visible}
+  .rot{transform-box:view-box;transform-origin:32px 32px}
+  .fb{transform-box:fill-box;transform-origin:center}
+
+  /* курсоры и печать */
+  @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+  .bl{animation:blink 1.1s infinite}
+  .cb{display:inline-block;width:.55em;height:1em;vertical-align:-.15em;margin-left:.06em}
+  .caret{display:inline-block;width:.07em;height:.95em;vertical-align:-.1em;margin-left:.05em;border-radius:2px}
+  @keyframes type{0%,10%{width:0}50%,85%{width:var(--w)}95%,100%{width:0}}
+  .type{display:inline-block;overflow:hidden;white-space:nowrap;vertical-align:bottom;width:0;animation:type 5.5s infinite}
+  @keyframes mv{0%{left:0}20%{left:1ch}40%{left:2ch}60%{left:3ch}80%{left:4ch}100%{left:0}}
+  .bc{position:absolute;top:.02em;left:0;width:1ch;height:1.15em;background:#fff;mix-blend-mode:difference;animation:mv 3s steps(1,end) infinite}
+  @keyframes ld{0%,100%{opacity:.15}50%{opacity:1}}
+  @keyframes sel{0%,10%{width:0}45%,80%{width:5ch}95%,100%{width:0}}
+  @keyframes tagL{0%,100%{transform:translateX(0)}50%{transform:translateX(-.25em)}}
+  @keyframes tagR{0%,100%{transform:translateX(0)}50%{transform:translateX(.25em)}}
+  @keyframes slash{0%,100%{transform:translateY(0)}50%{transform:translateY(-.15em)}}
+
+  /* точки */
+  .dot{display:inline-block;width:.2em;height:.2em;border-radius:50%;margin-left:.04em;vertical-align:baseline}
+  @keyframes bounce{0%,55%,100%{transform:translateY(0)}15%{transform:translateY(-.6em)}30%{transform:translateY(0)}40%{transform:translateY(-.18em)}48%{transform:translateY(0)}}
+  @keyframes ping{0%{transform:scale(1);opacity:.9}80%,100%{transform:scale(2.6);opacity:0}}
+  .ping{position:relative}
+  .ping::after{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid currentColor;animation:ping 1.8s ease-out infinite}
+  @keyframes roll{0%{transform:translateX(3em);opacity:0}10%{opacity:1}35%,85%{transform:translateX(0)}100%{transform:translateX(0);opacity:0}}
+  @keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(242,80,28,0)}50%{box-shadow:0 0 16px 5px rgba(242,80,28,.8)}}
+  @keyframes morph{0%,30%{width:.2em;height:.2em;border-radius:50%}45%,80%{width:.55em;height:.09em;border-radius:2px}95%,100%{width:.2em;height:.2em;border-radius:50%}}
+  @keyframes cA{0%,45%{color:#1c1b19}50%,95%{color:#f2501c}100%{color:#1c1b19}}
+  @keyframes cB{0%,45%{color:#f2501c}50%,95%{color:#1c1b19}100%{color:#f2501c}}
+  @keyframes rise{0%,15%{opacity:0;transform:translateY(8px);letter-spacing:.9em}40%,85%{opacity:1;transform:none;letter-spacing:.32em}100%{opacity:0;letter-spacing:.32em}}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.55)}}
+  @keyframes shine{0%{left:-60%}45%,100%{left:130%}}
+  .pill{position:relative;overflow:hidden}
+  .pill::after{content:'';position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);animation:shine 3.2s ease-in-out infinite}
+  @keyframes grad{to{background-position:300% 0}}
+  .gt{background:linear-gradient(90deg,#f2501c,#ff2d7a,#7b3cff,#f2501c);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:grad 6s linear infinite}
+  @keyframes fill{0%,15%{background-position:0 0}55%,100%{background-position:0 100%}}
+  .of{-webkit-text-stroke:1.5px #1c1b19;color:transparent;background:linear-gradient(0deg,#1c1b19 50%,transparent 50%);background-size:100% 200%;-webkit-background-clip:text;background-clip:text;animation:fill 3.5s ease-in-out infinite alternate}
+  @keyframes up{0%{transform:translateY(.5em);opacity:0}15%,80%{transform:none;opacity:1}95%,100%{transform:none;opacity:0}}
+  .st>span{display:inline-block;animation:up 4.5s cubic-bezier(.2,.8,.2,1) infinite both}
+  @keyframes drop{0%,25%{transform:translateY(-1.6em);opacity:0}38%,80%{transform:none;opacity:1}95%,100%{opacity:0}}
+
+  /* круги */
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes spinR{to{transform:rotate(-360deg)}}
+  @keyframes inL{0%,10%{transform:translateX(-9px)}40%,80%{transform:none}100%{transform:translateX(-9px)}}
+  @keyframes inR{0%,10%{transform:translateX(9px)}40%,80%{transform:none}100%{transform:translateX(9px)}}
+  @keyframes apL{0%,100%{transform:none}50%{transform:translateX(-5px)}}
+  @keyframes apR{0%,100%{transform:none}50%{transform:translateX(5px)}}
+  @keyframes fade{0%,30%{opacity:0}45%,80%{opacity:1}95%,100%{opacity:0}}
+  @keyframes moon{0%{transform:translateX(-50px)}100%{transform:translateX(50px)}}
+  @keyframes hop{0%,40%,100%{transform:translateY(0)}20%{transform:translateY(-7px)}}
+  @keyframes tog{0%,35%{transform:translateX(0)}50%,85%{transform:translateX(28px)}100%{transform:translateX(0)}}
+  @keyframes rip{0%{transform:scale(.2);opacity:.9}100%{transform:scale(1.7);opacity:0}}
+  @keyframes click{0%,42%,58%,100%{transform:none}50%{transform:translate(1.5px,1.5px) scale(.9)}}
+  @keyframes pop{0%{transform:scale(0)}8%,85%{transform:scale(1)}95%,100%{transform:scale(0)}}
+  @keyframes draw{0%{stroke-dashoffset:140}40%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:-140}}
+  @keyframes squeeze{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.82)}}
+  @keyframes wob{0%,100%{transform:translate(0,0)}25%{transform:translate(3px,-3px)}50%{transform:translate(0,-5px)}75%{transform:translate(-3px,-2px)}}
+  @keyframes slideIn{0%,10%{transform:translateX(22px);opacity:0}35%,80%{transform:none;opacity:1}100%{transform:translateX(22px);opacity:0}}
+.c:target{box-shadow:0 0 0 3px #f2501c}</style></head>
+<body><a href="../" style="display:inline-block;margin-bottom:14px;font:600 14px Onest,sans-serif;color:#f2501c;text-decoration:none">← Все материалы Финес Студио</a>
+<h1>Финес Студио — ещё 50 логотипов, анимированные</h1>
+<p class="hint">В стиле №14, 25, 31 и 42. Номера идут с 51 по 100, чтобы не путать с первой подборкой. Назови номер — доведу и поставлю на сайт.</p>
+<div class="grid" id="g"></div>
+<script>
+const O='#f2501c',G='#3fb950',INK='#1c1b19',L='#fbfaf7',D='#0d1117',K='#14161c',NV='#0a1628',BK='#0b0b12',CY='#22d3ee';
+const sub=(t,c,extra='')=>`<span class="sub" style="color:${c};${extra}">${t}</span>`;
+const typed=(t,n)=>`<span class="type" style="--w:${n}ch;animation-timing-function:steps(${n},end)">${t}</span>`;
+const X=[
+/* ===== курсор и терминал (как 14 и 25) ===== */
+['Печатается в терминале', D, `<div class="mono" style="color:#e6edf3;font-size:36px;font-weight:700"><span style="color:${G}">&gt;</span> ${typed('финес',5)}<span class="cb bl" style="background:${G}"></span></div>${sub('// студио',G,'letter-spacing:.12em;text-transform:none;font-family:JetBrains Mono')}`],
+['Курсор растёт в кольце', K, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><circle cx="32" cy="32" r="24" fill="none" stroke="${O}" stroke-width="2.5" stroke-dasharray="6 5" class="rot" style="animation:spin 12s linear infinite"/><rect x="29" y="16" width="6" height="32" rx="2" fill="#f4f1ea" class="bl"/></svg><div class="w"><span class="mono" style="color:#f4f1ea;font-size:32px;font-weight:700">финес<span class="bl" style="color:${O}">_</span></span>${sub('студио',O)}</div></div>`],
+['Окно терминала', '#0b0f14', `<div style="width:230px;border-radius:12px;background:#161b22;box-shadow:0 0 0 1px #30363d;overflow:hidden"><div style="display:flex;gap:6px;padding:9px 11px;background:#1c2330"><i style="width:10px;height:10px;border-radius:50%;background:#ff5f57"></i><i style="width:10px;height:10px;border-radius:50%;background:#febc2e"></i><i style="width:10px;height:10px;border-radius:50%;background:#28c840"></i></div><div class="mono" style="padding:14px 14px 16px;color:#e6edf3;font-size:28px;font-weight:700"><span style="color:${G}">$</span> ${typed('финес',5)}<span class="cb bl" style="background:${G}"></span><div style="font-size:12px;color:#7d8590;font-weight:400;margin-top:6px">студия разработки</div></div></div>`],
+['Каретка в тексте', L, `<div style="font:800 54px Onest;letter-spacing:-.05em;color:${INK}">финес<span class="caret bl" style="background:${O}"></span></div>${sub('студио',O)}`],
+['Тег <финес/>', L, `<div class="mono" style="font-size:36px;font-weight:800;color:${INK}"><span style="display:inline-block;color:#9a968c;animation:tagL 2.4s ease-in-out infinite">&lt;</span>финес<span style="display:inline-block;color:${O};animation:slash 4s ease-in-out infinite">/</span><span style="display:inline-block;color:#9a968c;animation:tagR 2.4s ease-in-out infinite">&gt;</span></div>${sub('студио','#9a968c')}`],
+['Скобки с курсором', K, `<div class="lg row" style="margin:0"><div class="mono" style="width:64px;height:64px;border-radius:14px;background:#23262e;color:#f4f1ea;font-size:26px;font-weight:800;display:flex;align-items:center;justify-content:center">[<span class="bl" style="color:${O}">_</span>]</div><div class="w"><span style="font:800 34px Onest;color:#f4f1ea;letter-spacing:-.03em">финес</span>${sub('студио',O)}</div></div>`],
+['Путь в консоли', D, `<div class="mono" style="color:#e6edf3;font-size:44px;font-weight:800;letter-spacing:-.02em">финес</div><div class="mono" style="color:${G};font-size:15px">~/студио $ <span class="cb bl" style="background:${G}"></span></div>`],
+['Кольцо рисуется, курсор мигает', K, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><circle cx="32" cy="32" r="22" fill="none" stroke="${O}" stroke-width="3" stroke-linecap="round" stroke-dasharray="140" style="animation:draw 4s ease-in-out infinite" transform="rotate(-90 32 32)"/><rect x="29.5" y="17" width="5" height="30" rx="2" fill="#f4f1ea" class="bl"/></svg><div class="w"><span style="font:800 34px Onest;color:#f4f1ea;letter-spacing:-.03em">Финес</span>${sub('студио',O)}</div></div>`],
+['Блочный курсор бежит по буквам', D, `<div class="mono" style="position:relative;color:#e6edf3;font-size:46px;font-weight:800;line-height:1.1">финес<span class="bc"></span></div>${sub('студио',G)}`],
+['Загрузка…', L, `<div style="font:800 40px Unbounded;letter-spacing:-.04em;color:${INK}">финес<span style="color:${O};animation:ld 1.2s infinite">.</span><span style="color:${O};animation:ld 1.2s .2s infinite">.</span><span style="color:${O};animation:ld 1.2s .4s infinite">.</span></div>${sub('студио','#7a766d')}`],
+['Промпт >_ в круге', NV, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><circle cx="32" cy="32" r="29" fill="none" stroke="${CY}" stroke-width="2.5"/><path d="M19 23l9 9-9 9" fill="none" stroke="${CY}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="32" y="39" width="14" height="3.5" rx="1.5" fill="#fff" class="bl"/></svg><div class="w"><span style="font:800 34px Manrope;color:#fff;letter-spacing:-.03em">финес</span>${sub('студио',CY)}</div></div>`],
+['Фигурные скобки дышат', K, `<div class="lg row" style="margin:0"><div class="mono" style="font-size:44px;font-weight:800;color:#f4f1ea;display:flex;align-items:center"><span style="display:inline-block;color:${O};animation:tagL 2s ease-in-out infinite">{</span>ф<span style="display:inline-block;color:${O};animation:tagR 2s ease-in-out infinite">}</span></div><div class="w"><span class="mono" style="font-size:30px;font-weight:700;color:#f4f1ea">финес</span>${sub('студио','#8b8f99')}</div></div>`],
+['Буквы подбираются, как в коде', D, `<div class="mono scr" data-t="финес" style="color:#e6edf3;font-size:48px;font-weight:800">финес</div>${sub('студио',G)}`],
+
+/* ===== строчными с точкой (как 31) ===== */
+['Точка подпрыгивает', L, `<div style="font:800 60px Onest;letter-spacing:-.06em;color:${INK}">финес<span class="dot" style="background:${O};animation:bounce 2.2s ease-in-out infinite"></span></div>${sub('студио',O,'letter-spacing:.1em;text-transform:none;font-size:18px')}`],
+['Точка-радар', L, `<div style="font:800 60px Onest;letter-spacing:-.06em;color:${INK}">финес<span class="dot ping" style="background:${O};color:${O}"></span></div>${sub('студио',O,'letter-spacing:.1em;text-transform:none;font-size:18px')}`],
+['Точка закатывается', L, `<div style="font:800 60px Onest;letter-spacing:-.06em;color:${INK}">финес<span class="dot" style="background:${O};animation:roll 4s cubic-bezier(.2,.8,.3,1) infinite"></span></div>${sub('студио',O,'letter-spacing:.1em;text-transform:none;font-size:18px')}`],
+['Тёмная, точка светится', K, `<div style="font:800 60px Onest;letter-spacing:-.06em;color:#f4f1ea">финес<span class="dot" style="background:${O};animation:glow 2s ease-in-out infinite"></span></div>${sub('студио',O,'letter-spacing:.1em;text-transform:none;font-size:18px')}`],
+['Точка превращается в черту', L, `<div style="font:800 60px Onest;letter-spacing:-.06em;color:${INK}">финес<span class="dot" style="background:${O};animation:morph 3.5s ease-in-out infinite"></span></div>${sub('студио',O,'letter-spacing:.1em;text-transform:none;font-size:18px')}`],
+['Цвета меняются местами', L, `<div style="font:800 60px Onest;letter-spacing:-.06em"><span style="animation:cA 4s infinite">фин</span><span style="animation:cB 4s infinite">ес</span><span class="dot" style="background:${INK}"></span></div>${sub('студио','#7a766d','letter-spacing:.1em;text-transform:none;font-size:18px')}`],
+['Жирная, «студио» выезжает', L, `<div style="font:900 50px Unbounded;letter-spacing:-.05em;color:${INK}">финес<span style="color:${O}">.</span></div><span class="sub" style="color:${O};display:inline-block;animation:rise 4.5s ease infinite">студио</span>`],
+['Две строки, две точки', L, `<div class="w" style="font:800 46px Onest;letter-spacing:-.05em;color:${INK};gap:2px"><span>финес<span class="dot" style="background:${O};animation:pulse 2s ease-in-out infinite"></span></span><span style="color:#9a968c">студио<span class="dot" style="background:${O};animation:pulse 2s 1s ease-in-out infinite"></span></span></div>`],
+['Мишень с точкой', L, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="none" stroke="${INK}" stroke-width="3"/><circle cx="32" cy="32" r="9" fill="${O}" class="fb" style="animation:pulse 2s ease-in-out infinite"/></svg><div class="w"><span style="font:800 44px Onest;letter-spacing:-.05em;color:${INK}">финес<span style="color:${O}">.</span></span>${sub('студио','#7a766d')}</div></div>`],
+['Плашка с бликом', L, `<div class="pill" style="background:${INK};color:#fff;border-radius:999px;padding:12px 26px 16px;font:800 46px Onest;letter-spacing:-.05em">финес<span style="color:${O}">.</span></div>${sub('студио','#7a766d')}`],
+['Переливающийся градиент', L, `<div class="gt" style="font:900 50px Unbounded;letter-spacing:-.05em">финес.</div>${sub('студио','#7a766d')}`],
+['Контур заливается', L, `<div style="font:900 56px Onest;letter-spacing:-.04em"><span class="of">финес</span><span style="color:${O}">.</span></div>${sub('студио',O)}`],
+['Буквы всплывают по очереди', L, `<div class="st" style="font:800 58px Onest;letter-spacing:-.06em;color:${INK}"><span style="animation-delay:0s">ф</span><span style="animation-delay:.08s">и</span><span style="animation-delay:.16s">н</span><span style="animation-delay:.24s">е</span><span style="animation-delay:.32s">с</span><span class="dot" style="background:${O};animation:drop 4.5s cubic-bezier(.3,1.5,.5,1) infinite"></span></div>${sub('студио',O,'letter-spacing:.1em;text-transform:none;font-size:18px')}`],
+
+/* ===== пересекающиеся круги (как 42) ===== */
+['Круги съезжаются в Ф', L, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><circle cx="23" cy="32" r="17" fill="${O}" class="fb" style="mix-blend-mode:multiply;animation:inL 4s ease-in-out infinite"/><circle cx="41" cy="32" r="17" fill="${INK}" fill-opacity=".85" class="fb" style="mix-blend-mode:multiply;animation:inR 4s ease-in-out infinite"/><rect x="30.8" y="13" width="2.4" height="38" rx="1.2" fill="#fff" style="animation:fade 4s infinite"/></svg><div class="w"><span style="font:300 36px Jost;color:${INK}">Финес</span>${sub('студио',O)}</div></div>`],
+['Три круга вращаются', L, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><g class="rot" style="animation:spin 9s linear infinite"><circle cx="32" cy="22" r="15" fill="${O}" style="mix-blend-mode:multiply"/><circle cx="23" cy="38" r="15" fill="#ff4d8d" style="mix-blend-mode:multiply"/><circle cx="41" cy="38" r="15" fill="#ffc21a" style="mix-blend-mode:multiply"/></g></svg><div class="w"><span style="font:800 36px Onest;color:${INK};letter-spacing:-.04em">финес</span>${sub('студио',O)}</div></div>`],
+['Кольца дышат', L, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><circle cx="24" cy="32" r="16" fill="none" stroke="${O}" stroke-width="3.5" class="fb" style="animation:apL 2.6s ease-in-out infinite"/><circle cx="40" cy="32" r="16" fill="none" stroke="${INK}" stroke-width="3.5" class="fb" style="animation:apR 2.6s ease-in-out infinite"/><line x1="32" y1="8" x2="32" y2="56" stroke="${INK}" stroke-width="3.5" stroke-linecap="round"/></svg><div class="w"><span style="font:300 36px Jost;color:${INK}">Финес</span>${sub('студио',O)}</div></div>`],
+['Свет на тёмном', BK, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><g class="rot" style="animation:spin 6s linear infinite"><circle cx="24" cy="32" r="17" fill="${O}" style="mix-blend-mode:screen"/><circle cx="40" cy="32" r="17" fill="#2b6cff" style="mix-blend-mode:screen"/></g></svg><div class="w"><span style="font:300 36px Jost;color:#f4f1ea">Финес</span>${sub('студио',O)}</div></div>`],
+['Круг и его тень', L, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><circle cx="30" cy="34" r="20" fill="${O}"/><circle cx="34" cy="30" r="20" fill="none" stroke="${INK}" stroke-width="2.5" class="fb" style="animation:wob 3.5s ease-in-out infinite"/></svg><div class="w"><span style="font:300 36px Jost;color:${INK}">Финес</span>${sub('студио',O)}</div></div>`],
+['Затмение', L, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><defs><clipPath id="ecl"><circle cx="32" cy="32" r="24"/></clipPath></defs><circle cx="32" cy="32" r="24" fill="${O}"/><g clip-path="url(#ecl)"><circle cx="32" cy="32" r="24" fill="${L}" style="animation:moon 5s linear infinite"/></g><circle cx="32" cy="32" r="24" fill="none" stroke="${O}" stroke-width="1.5"/></svg><div class="w"><span style="font:300 36px Jost;color:${INK}">Финес</span>${sub('студио',O)}</div></div>`],
+['Линза — пересечение', L, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><defs><clipPath id="vs"><circle cx="41" cy="32" r="17"><animate attributeName="cx" values="41;35;47;41" dur="4s" repeatCount="indefinite"/></circle></clipPath></defs><circle cx="23" cy="32" r="17" fill="${O}" clip-path="url(#vs)"/><circle cx="23" cy="32" r="17" fill="none" stroke="${INK}" stroke-width="2.5"/><circle cx="41" cy="32" r="17" fill="none" stroke="${INK}" stroke-width="2.5"><animate attributeName="cx" values="41;35;47;41" dur="4s" repeatCount="indefinite"/></circle></svg><div class="w"><span style="font:300 36px Jost;color:${INK}">Финес</span>${sub('студио',O)}</div></div>`],
+['Сцепленные кольца', L, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><g class="rot" style="animation:spin 10s linear infinite"><circle cx="24" cy="32" r="15" fill="none" stroke="${O}" stroke-width="5"/><circle cx="40" cy="32" r="15" fill="none" stroke="${INK}" stroke-width="5"/><path d="M33.5 20.5A15 15 0 0 1 39 32" fill="none" stroke="${O}" stroke-width="5"/></g></svg><div class="w"><span style="font:800 36px Onest;color:${INK};letter-spacing:-.04em">финес</span>${sub('студио',O)}</div></div>`],
+['Три шарика волной', L, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64" style="width:78px"><circle cx="16" cy="34" r="13" fill="${O}" class="fb" style="mix-blend-mode:multiply;animation:hop 1.6s ease-in-out infinite"/><circle cx="32" cy="34" r="13" fill="#ff8a3d" class="fb" style="mix-blend-mode:multiply;animation:hop 1.6s .15s ease-in-out infinite"/><circle cx="48" cy="34" r="13" fill="#ffc21a" class="fb" style="mix-blend-mode:multiply;animation:hop 1.6s .3s ease-in-out infinite"/></svg><div class="w"><span style="font:800 36px Onest;color:${INK};letter-spacing:-.04em">финес</span>${sub('студио',O)}</div></div>`],
+['Переключатель', L, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64" style="width:76px"><rect x="2" y="16" width="60" height="32" rx="16" fill="none" stroke="${INK}" stroke-width="3"/><circle cx="18" cy="32" r="11" fill="${O}" class="fb" style="animation:tog 3s cubic-bezier(.6,0,.3,1) infinite"/></svg><div class="w"><span style="font:800 38px Onest;color:${INK};letter-spacing:-.035em">финес<span style="color:${O}">.</span></span>${sub('студио','#7a766d')}</div></div>`],
+['Цветок из кругов', L, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><g class="rot" style="animation:spin 14s linear infinite"><circle cx="32" cy="20" r="12" fill="${O}" fill-opacity=".7"/><circle cx="44" cy="32" r="12" fill="${O}" fill-opacity=".7"/><circle cx="32" cy="44" r="12" fill="${O}" fill-opacity=".7"/><circle cx="20" cy="32" r="12" fill="${O}" fill-opacity=".7"/></g><circle cx="32" cy="32" r="4" fill="${L}"/></svg><div class="w"><span style="font:300 36px Jost;color:${INK}">Финес</span>${sub('студио',O)}</div></div>`],
+['Планета и спутник', BK, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><circle cx="32" cy="32" r="18" fill="${O}"/><g class="rot" style="animation:spin 5s linear infinite"><circle cx="54" cy="32" r="8" fill="${CY}" style="mix-blend-mode:screen"/></g></svg><div class="w"><span style="font:300 36px Jost;color:#f4f1ea">Финес</span>${sub('студио',CY)}</div></div>`],
+['Ф из кругов сжимается', L, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><g class="rot" style="animation:squeeze 2.8s ease-in-out infinite"><circle cx="21" cy="32" r="14" fill="${O}" style="mix-blend-mode:multiply"/><circle cx="43" cy="32" r="14" fill="${O}" style="mix-blend-mode:multiply"/></g><rect x="29" y="6" width="6" height="52" rx="3" fill="${INK}"/></svg><div class="w"><span style="font:800 36px Onest;color:${INK};letter-spacing:-.04em">финес</span>${sub('студио',O)}</div></div>`],
+
+/* ===== гибриды ===== */
+['Курсор в пересечении кругов', K, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><circle cx="22" cy="32" r="18" fill="none" stroke="${O}" stroke-width="3.5"/><circle cx="42" cy="32" r="18" fill="none" stroke="#f4f1ea" stroke-width="3.5"/><rect x="29.5" y="21" width="5" height="22" rx="1.5" fill="${O}" class="bl"/></svg><div class="w"><span class="mono" style="color:#f4f1ea;font-size:30px;font-weight:700;margin-bottom:4px">финес<span class="bl" style="color:${O}">_</span></span>${sub('студио',O)}</div></div>`],
+['Промпт с точкой-курсором', D, `<div class="mono" style="color:#e6edf3;font-size:44px;font-weight:800"><span style="color:${G}">&gt;</span>финес<span class="bl" style="color:${G}">.</span></div>${sub('студио',G)}`],
+['Ф в круге, второй наезжает', L, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><circle cx="26" cy="32" r="20" fill="${INK}"/><text x="26" y="41" text-anchor="middle" font-family="JetBrains Mono" font-weight="800" font-size="26" fill="#fff">ф</text><circle cx="44" cy="32" r="14" fill="${O}" class="fb" style="mix-blend-mode:multiply;animation:slideIn 4s ease-in-out infinite"/></svg><div class="w"><span style="font:800 36px Onest;color:${INK};letter-spacing:-.04em">финес</span>${sub('студио',O)}</div></div>`],
+['Точка из двух кругов', L, `<div style="font:800 60px Onest;letter-spacing:-.06em;color:${INK};display:flex;align-items:baseline">финес<svg viewBox="0 0 20 20" style="width:.32em;height:.32em;margin-left:.03em;overflow:visible"><g class="rot" style="transform-origin:10px 10px;animation:spin 3s linear infinite"><circle cx="7" cy="10" r="6" fill="${O}" style="mix-blend-mode:multiply"/><circle cx="13" cy="10" r="6" fill="#ffc21a" style="mix-blend-mode:multiply"/></g></svg></div>${sub('студио',O,'letter-spacing:.1em;text-transform:none;font-size:18px')}`],
+['Печатается с точкой', D, `<div class="mono" style="color:#e6edf3;font-size:40px;font-weight:800"><span class="type" style="--w:6ch;animation-timing-function:steps(6,end)">финес<span style="color:${O}">.</span></span><span class="cb bl" style="background:#e6edf3"></span></div>${sub('студио',O)}`],
+['Два круга: > и _', K, `<div class="lg row" style="margin:0"><svg viewBox="0 0 92 46" style="width:92px;height:46px;overflow:visible"><circle cx="23" cy="23" r="21" fill="none" stroke="${O}" stroke-width="3"/><circle cx="69" cy="23" r="21" fill="none" stroke="#f4f1ea" stroke-width="3"/><path d="M16 15l8 8-8 8" fill="none" stroke="${O}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="61" y="27" width="16" height="4" rx="2" fill="#f4f1ea" class="bl"/></svg><div class="w"><span class="mono" style="color:#f4f1ea;font-size:30px;font-weight:700">финес</span>${sub('студио',O)}</div></div>`],
+['Выделение текста', L, `<div class="mono" style="position:relative;font-size:46px;font-weight:800;color:${INK}"><span style="position:absolute;left:-.15em;top:.02em;height:1.2em;background:#ffd2bf;border-radius:4px;z-index:-1;animation:sel 4s steps(5,end) infinite;padding-right:.3em"></span>финес</div>${sub('студио',O)}`],
+['Граф коммитов', L, `<svg viewBox="0 0 150 30" style="width:170px;height:34px;overflow:visible"><path d="M10 15H140" stroke="${INK}" stroke-width="3" stroke-linecap="round"/><circle cx="10" cy="15" r="6" fill="${INK}" class="fb" style="animation:pop 5s infinite"/><circle cx="53" cy="15" r="6" fill="${INK}" class="fb" style="animation:pop 5s .3s infinite"/><circle cx="96" cy="15" r="6" fill="${INK}" class="fb" style="animation:pop 5s .6s infinite"/><circle cx="140" cy="15" r="9" fill="${O}" class="fb" style="animation:pop 5s .9s infinite"/></svg><span style="font:800 42px Onest;color:${INK};letter-spacing:-.03em;margin-top:6px">финес<span style="color:${O}">.</span></span>${sub('студио','#7a766d')}`],
+['Спиннер вокруг ф', L, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" fill="none" stroke="#e3dfd6" stroke-width="4"/><circle cx="32" cy="32" r="27" fill="none" stroke="${O}" stroke-width="4" stroke-linecap="round" stroke-dasharray="40 130" class="rot" style="animation:spin 1.4s linear infinite"/><text x="32" y="42" text-anchor="middle" font-family="JetBrains Mono" font-weight="800" font-size="28" fill="${INK}">ф</text></svg><div class="w"><span style="font:800 38px Onest;color:${INK};letter-spacing:-.035em">финес<span style="color:${O}">.</span></span>${sub('студио','#7a766d')}</div></div>`],
+['Клик с волной', L, `<div class="lg row" style="margin:0"><svg class="m" viewBox="0 0 64 64" style="width:72px;height:72px"><circle cx="24" cy="24" r="12" fill="none" stroke="${O}" stroke-width="3" class="fb" style="animation:rip 1.8s ease-out infinite"/><circle cx="24" cy="24" r="8" fill="${O}"/><path d="M30 30v26l7-7 6 11 5-2.5-6-11h10Z" fill="${INK}" stroke="#fff" stroke-width="2" stroke-linejoin="round" class="fb" style="animation:click 1.8s infinite"/></svg><div class="w"><span style="font:800 38px Onest;color:${INK};letter-spacing:-.035em">финес<span style="color:${O}">.</span></span>${sub('студио','#7a766d')}</div></div>`],
+['Иконка приложения ф.', K, `<div class="lg row" style="margin:0"><div style="width:70px;height:70px;border-radius:19px;background:${O};display:flex;align-items:center;justify-content:center;font:800 42px Onest;color:#fff;box-shadow:0 8px 22px rgba(242,80,28,.35)">ф<span class="dot" style="background:#fff;margin-left:.08em;animation:pulse 2s ease-in-out infinite"></span></div><div class="w"><span style="font:800 36px Onest;color:#f4f1ea;letter-spacing:-.05em">финес</span>${sub('студио',O)}</div></div>`],
+];
+const g=document.getElementById('g');
+X.forEach(([idea,bg,html],i)=>{const c=document.createElement('div');c.className='c';c.id='L'+(51+i);c.style.background=bg;
+  const dark=['#0d1117','#14161c','#0a1628','#0b0b12','#0b0f14'].includes(bg);c.style.color=dark?'#f4f1ea':'#1c1b19';
+  c.innerHTML=`<span class="n">${51+i}</span><div class="lg">${html}</div><span class="cap">${idea}</span>`;g.append(c);});
+// перебор букв
+const AB='абвгдежзиклмнопрстуфхцчшэюя';
+document.querySelectorAll('.scr').forEach(el=>{const t=el.dataset.t;let f=0;
+  setInterval(()=>{f=(f+1)%70;const k=Math.floor(f/5);el.textContent=[...t].map((ch,j)=>j<k||f>=50?ch:AB[Math.floor(Math.random()*AB.length)]).join('')},70);});
+</script>
+</body></html>

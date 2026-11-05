@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Финес Студио — История одного бизнеса · макет 36</title>
+<meta name="description" content="Финес Студио: Telegram-боты, CRM-системы, веб-сервисы и интеграции для малого бизнеса. Тонкая работа для вашего бизнеса.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{min-height:100vh;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0}
+h1,h2,h3,h4{text-wrap:balance}
+p{text-wrap:pretty}
+@keyframes fspin{to{transform:rotate(360deg)}}
+.flogo{display:inline-flex;flex-direction:column;align-items:flex-start;font-family:'Onest',sans-serif;line-height:.82;--lg:30px;flex:none}
+.flogo .fw{font-weight:800;letter-spacing:-.05em;font-size:var(--lg);display:inline-flex;align-items:baseline}
+.flogo .fdot{width:.32em;height:.32em;margin-left:.03em;display:inline-block}
+.flogo .fs{font-size:max(11px,calc(var(--lg)*.4));font-weight:600;letter-spacing:.24em;opacity:.8;margin-top:.32em;padding-left:.05em}
+.mkbadge{position:fixed;bottom:10px;left:10px;z-index:9999;font:500 10.5px/1 'Onest',sans-serif;letter-spacing:.02em;padding:5px 10px;border-radius:99px;background:rgba(20,20,20,.78);color:#fff;pointer-events:none;white-space:nowrap;backdrop-filter:blur(6px);box-shadow:0 2px 10px rgba(0,0,0,.15)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}.rv.d5{transition-delay:.4s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@media (max-width:640px){.mkbadge{font-size:10px;bottom:6px;left:6px}}
+
+body{font-family:'Lora',serif;background:#fffaf3;color:#2a211b;font-size:19px;line-height:1.7}
+.w{max-width:1100px;margin:0 auto;padding:0 24px}
+.nr{max-width:680px;margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;position:sticky;top:0;background:rgba(255,250,243,.92);backdrop-filter:blur(8px);z-index:20;border-bottom:1px solid #eee2d2}
+header .pg{font-family:'Onest';font-size:14px;color:#8a7766}
+.prog{position:fixed;top:0;left:0;height:3px;background:#f2501c;width:0;z-index:30}
+.bt{display:inline-block;font-family:'Onest';background:#f2501c;color:#fff;border-radius:99px;padding:13px 24px;font-weight:700;font-size:16px;transition:.2s}
+.bt:hover{background:#2a211b}
+.hero{text-align:center;padding:110px 0 90px}
+.hero .k{font-family:'Onest';font-size:14px;letter-spacing:.24em;text-transform:uppercase;color:#f2501c}
+.hero h1{font-family:'Playfair Display';font-size:clamp(42px,6.4vw,92px);line-height:1.02;font-weight:800;margin:20px auto 24px;max-width:960px;letter-spacing:-.02em}
+.hero h1 i{color:#f2501c}
+.hero p{font-size:21px;color:#5f5145;max-width:620px;margin:0 auto}
+.hero .sc{margin-top:46px;font-family:'Onest';font-size:14px;color:#8a7766;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(6px)}}
+.ch{padding:90px 0;border-top:1px solid #eee2d2}
+.ch .lb{font-family:'Onest';font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#f2501c;margin-bottom:12px}
+.ch h2{font-family:'Playfair Display';font-size:clamp(32px,4.4vw,56px);line-height:1.08;margin-bottom:26px;font-weight:700}
+.ch p{margin-bottom:18px}
+.ch p:first-of-type::first-letter{font-family:'Playfair Display';float:left;font-size:4.2em;line-height:.82;padding:6px 10px 0 0;color:#f2501c;font-weight:800}
+.qb{font-family:'Playfair Display';font-style:italic;font-size:clamp(24px,2.8vw,34px);line-height:1.3;border-left:4px solid #f2501c;padding-left:24px;margin:34px 0}
+.scene{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center;margin:40px 0}
+.pic{border-radius:20px;aspect-ratio:4/3;position:relative;overflow:hidden;display:grid;place-items:center;font-family:'Onest'}
+.chaos{background:#f3e3d0}
+.chaos span{position:absolute;background:#fff;border-radius:10px;padding:8px 12px;font-size:14px;box-shadow:0 8px 20px -10px rgba(0,0,0,.3);white-space:nowrap}
+.chaos span:nth-child(1){left:6%;top:10%;transform:rotate(-6deg)}.chaos span:nth-child(2){right:6%;top:22%;transform:rotate(5deg);background:#ffe1d6}.chaos span:nth-child(3){left:12%;top:44%;transform:rotate(3deg)}.chaos span:nth-child(4){right:10%;top:58%;transform:rotate(-4deg);background:#fff3c4}.chaos span:nth-child(5){left:8%;bottom:10%;transform:rotate(-2deg)}
+.phone{background:linear-gradient(135deg,#ffe3d4,#fff3c4)}
+.phone .sc2{width:62%;background:#fff;border-radius:22px;padding:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.35);font-size:14px;line-height:1.4}
+.phone .sc2 b{display:block;margin-bottom:8px;font-size:14px}
+.phone .sc2 p{background:#f2efe9;border-radius:12px;padding:7px 10px;margin:5px 0!important;font-size:13.5px}
+.phone .sc2 p::first-letter{all:unset}
+.phone .sc2 p.u{background:#f2501c;color:#fff;margin-left:20%!important}
+.phone .sc2 .kb{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:8px}.phone .sc2 .kb span{border:1px solid #e3d9cc;border-radius:8px;text-align:center;padding:5px;font-size:12.5px}
+.num{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:40px 0}
+.num div{background:#fff;border-radius:18px;padding:24px;border:1px solid #eee2d2;font-family:'Onest'}
+.num b{display:block;font-size:44px;letter-spacing:-.03em;color:#f2501c;line-height:1.05;font-weight:800}
+.num span{font-size:15px;color:#5f5145}
+.more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;font-family:'Onest'}
+.more>div{background:#fff;border:1px solid #eee2d2;border-radius:18px;padding:22px;transition:transform .2s}
+.more>div:hover{transform:translateY(-4px)}
+.more .m{font-size:30px;font-weight:800;color:#f2501c;letter-spacing:-.03em}
+.more h3{font-size:16px;margin:4px 0}.more p{font-size:14.5px;color:#5f5145;line-height:1.5}
+.svc{font-family:'Onest'}
+.svc .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) auto;gap:24px;padding:20px 0;border-bottom:1px solid #eee2d2;align-items:baseline}
+.svc h3{font-family:'Playfair Display';font-size:24px}.svc p{font-size:16px;color:#5f5145;line-height:1.5}.svc b{white-space:nowrap}
+.faq{font-family:'Onest'}
+.faq details{border-bottom:1px solid #eee2d2;padding:16px 0;font-size:17px}.faq summary{font-weight:600;cursor:pointer}.faq p{color:#5f5145;margin-top:6px;font-size:16px}
+.end{text-align:center;padding:100px 0;border-top:1px solid #eee2d2}
+.end h2{font-family:'Playfair Display';font-size:clamp(36px,5.4vw,72px);line-height:1.04;margin-bottom:18px}
+.end p{color:#5f5145;margin-bottom:30px}
+footer{font-family:'Onest';font-size:14px;color:#8a7766;display:flex;justify-content:space-between;padding:20px 0 40px;flex-wrap:wrap;gap:10px}
+@media(max-width:860px){header .pg{display:none}.scene,.num,.more{grid-template-columns:minmax(0,1fr)}.svc .row{grid-template-columns:minmax(0,1fr);gap:6px}.chaos span{font-size:12.5px}.hero{padding:70px 0 60px}.phone .sc2{width:84%}}
+</style>
+</head>
+<body id="top">
+<div class="mkbadge">Макет 36 · История одного бизнеса</div>
+<div class="prog" id="pg"></div><header><a class="flogo" href="#top" aria-label="Финес Студио"><span class="fw">финес<svg class="fdot" viewBox="0 0 20 20" aria-hidden="true"><g style="transform-origin:10px 10px;animation:fspin 3s linear infinite"><circle cx="7" cy="10" r="6" fill="#f2501c" style="mix-blend-mode:multiply"/><circle cx="13" cy="10" r="6" fill="#ffc21a" style="mix-blend-mode:multiply"/></g></svg></span><span class="fs">студио</span></a><span class="pg">История о том, как кофейня перестала терять заказы · 6 минут чтения</span><a class="bt" style="padding:10px 18px;font-size:14px" href="https://t.me/fines_studio">Написать</a></header>
+<div class="w"><section class="hero"><div class="k rv">Финес Студио рассказывает</div><h1 class="rv d1">Как сеть кофеен перестала <i>терять</i> утренние заказы</h1><p class="rv d2">История одного бизнеса — и того, что мы называем тонкой работой для вашего бизнеса.</p><div class="sc">↓ листайте</div></section>
+<section class="ch"><div class="nr"><div class="lb rv">Глава 1 · Утро понедельника</div><h2 class="rv">8:40. Очередь до двери, телефон разрывается</h2><p class="rv">Анна открыла третью кофейню «Зерно» и поняла, что утро стало лотереей. Гости хотели забрать кофе по дороге на работу, писали в директ, звонили, а бариста в это время варил капучино для очереди. Сообщения терялись, заказы путались, часть гостей просто уходила.</p><p class="rv">«Мы теряли не деньги — мы теряли постоянных гостей», — говорит Анна.</p></div>
+<div class="scene"><div class="pic chaos rv"><span>«Можно латте на 8:50?»</span><span>Пропущенный звонок (4)</span><span>«Вы ещё работаете?»</span><span>Директ: 23 непрочитанных</span><span>«Я уже 10 минут жду…»</span></div><div class="nr rv d1"><p class="qb">Знакомо? Почти каждый наш проект начинается с этой картины.</p></div></div></section>
+<section class="ch"><div class="nr"><div class="lb rv">Глава 2 · Разбор</div><h2 class="rv">30 минут созвона вместо месяца совещаний</h2><p class="rv">Мы созвонились с Анной и прошли путь одного заказа: где гость пишет, кто видит, когда начинают готовить. Оказалось, что проблема не в бариста, а в том, что у заказов нет одного входа.</p><p class="rv">На следующий день Анна получила смету: бот предзаказа с оплатой, экран заказов для бариста, три недели работы. Цена — в договоре, без звёздочек.</p></div></section>
+<section class="ch"><div class="nr"><div class="lb rv">Глава 3 · Решение</div><h2 class="rv">Бот, который принимает заказ за 20 секунд</h2></div>
+<div class="scene"><div class="nr rv"><p>Гость открывает бота, выбирает напиток, кофейню и время. Оплачивает через СБП. Бариста видит заказ на планшете с таймером. Когда кофе готов — бот пишет гостю.</p><p>Каждую пятницу мы показывали Анне, что готово. На второй неделе она попросила добавить «как в прошлый раз» — и это стало самой популярной кнопкой.</p></div><div class="pic phone rv d1"><div class="sc2"><b>☕ Зерно · предзаказ</b><p class="u">Как в прошлый раз</p><p>Флэт уайт 0,3 на овсяном, к 8:50 на Ленина, 12. Оплатить 290 ₽?</p><div class="kb"><span>Оплатить СБП</span><span>Изменить</span></div></div></div></div></section>
+<section class="ch"><div class="nr"><div class="lb rv">Глава 4 · Через месяц</div><h2 class="rv">Что изменилось</h2></div><div class="num"><div class="rv d0"><b>31%</b><span>заказов идёт через бота</span></div><div class="rv d1"><b>−9 мин</b><span>среднее ожидание утром</span></div><div class="rv d2"><b>+14%</b><span>выручки в часы пик</span></div></div><div class="nr"><p class="qb rv">«Утро снова стало спокойным. А гости пишут, что это самый удобный кофе в городе».<br><small style="font-family:Onest;font-size:15px;font-style:normal;color:#8a7766">— Анна, основательница «Зерна»</small></p></div></section>
+<section class="ch"><div class="nr"><div class="lb rv">Глава 5 · Другие истории</div><h2 class="rv">Похожие финалы у других</h2></div><div class="more"><div class="rv d0"><div class="m">18 → 6%</div><h3>Студия маникюра «Лак»</h3><p>неявок после запуска. Клиентки записываются сами, бот напоминает за сутки и за два часа, мастера видят расписание.</p></div><div class="rv d1"><div class="m">15 мин</div><h3>Поставщик «СтройДвор»</h3><p>вместо 2 часов на заявку. Остатки и цены подтягиваются из 1С, менеджер собирает счёт в два клика.</p></div><div class="rv d2"><div class="m">−70%</div><h3>Автосервис «Гараж 24»</h3><p>звонков «ну что там?». Клиент видит этапы, фото деталей и согласует допработы в кабинете.</p></div><div class="rv d0"><div class="m">×2,4</div><h3>Школа «Speak Up»</h3><p>заявок за три месяца. Квиз подбирает курс, заявка сразу падает в воронку с тегами и источником.</p></div><div class="rv d1"><div class="m">+22%</div><h3>Доставка «Грядка»</h3><p>к среднему чеку. Каталог в Telegram, корзина, оплата и списание остатков без таблиц.</p></div></div></section>
+<section class="ch svc"><div class="nr" style="max-width:none"><div class="lb rv">Эпилог · Что мы делаем</div><h2 class="rv">Ваша история может быть следующей</h2><div class="row rv"><h3>Telegram-боты</h3><p>Запись, заявки, оплата и рассылки прямо в мессенджере. Бот работает ночью и в выходные и не забывает перезвонить.</p><b>от 40 000 ₽</b></div><div class="row rv"><h3>CRM-системы</h3><p>Своя CRM под ваш процесс, а не процесс под чужую CRM. Клиенты, сделки, склад, роли и отчёты в одном окне.</p><b>от 120 000 ₽</b></div><div class="row rv"><h3>Веб-сервисы</h3><p>Личные кабинеты, бронирование, внутренние панели. Проектируем, пишем, запускаем и поддерживаем.</p><b>от 150 000 ₽</b></div><div class="row rv"><h3>Интеграции</h3><p>Связываем 1С, amoCRM, Битрикс24, кассы, телефонию и Google Таблицы — данные больше не переносят руками.</p><b>от 25 000 ₽</b></div><div class="row rv"><h3>Сайты для бизнеса</h3><p>Быстрые сайты, которые приводят заявки: лендинги, сайты услуг, каталоги. С аналитикой и ботом для заявок.</p><b>от 60 000 ₽</b></div></div></section>
+<section class="ch faq"><div class="nr"><div class="lb rv">Примечания</div><h2 class="rv">Частые вопросы</h2><details><summary>Сколько стоит бот?</summary><p>Простой бот записи или заявок — от 40 000 ₽. Точную цену называем после бесплатного разбора и фиксируем в договоре.</p></details><details><summary>Сколько времени займёт разработка?</summary><p>Бот — 2–3 недели, сайт — 2–4, CRM — 4–8. Срок прописываем в договоре вместе с этапами.</p></details><details><summary>Код и доступы будут нашими?</summary><p>Да. Передаём исходники, доступы к серверу и админкам. Права на результат — ваши по договору.</p></details><details><summary>Как проходит оплата?</summary><p>Работаем по договору, безнал для ИП и ООО. Обычно 50% на старте и 50% после приёмки.</p></details><details><summary>Что если после запуска что-то сломается?</summary><p>30 дней гарантии бесплатно. Дальше — поддержка от 5 000 ₽ в месяц или разовые доработки.</p></details><details><summary>Можно доработать то, что уже есть?</summary><p>Да. Берём на поддержку существующие боты, сайты и CRM — сначала делаем аудит кода.</p></details></div></section>
+<section class="end"><h2 class="rv">Расскажите свою историю</h2><p class="rv d1">Напишите, где у вас «утро понедельника». Ответим за 15 минут.</p><a class="bt rv d2" href="https://t.me/fines_studio">Написать @fines_studio</a></section>
+<footer><span>© 2026 Финес Студио</span><span>Тонкая работа для вашего бизнеса.</span></footer></div>
+<script>(function(){var els=document.querySelectorAll('.rv');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -5% 0px'});els.forEach(function(e){io.observe(e)})})();
+const pg=document.getElementById('pg');addEventListener('scroll',()=>{const h=document.documentElement;pg.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});</script>
+</body>
+</html>
