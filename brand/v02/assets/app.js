@@ -1,0 +1,1 @@
+document.querySelectorAll('.sw button').forEach(b=>b.addEventListener('click',()=>{const h=b.dataset.hex;(navigator.clipboard?navigator.clipboard.writeText(h):Promise.reject()).catch(()=>{}).finally(()=>{b.classList.add('ok');setTimeout(()=>b.classList.remove('ok'),1400)})}));

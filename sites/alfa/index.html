@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Финес Студио — Telegram-боты, CRM и веб-сервисы</title>
+<meta name="description" content="Разрабатываем Telegram-ботов, CRM-системы и веб-сервисы под задачи бизнеса. Первый результат через 2–3 дня, цена фиксируется в договоре.">
+<link rel="canonical" href="https://mayaznvch-hue.github.io/fines-brand/sites/alfa/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Финес Студио">
+<meta property="og:url" content="https://mayaznvch-hue.github.io/fines-brand/sites/alfa/">
+<meta property="og:title" content="Финес Студио — Telegram-боты, CRM и веб-сервисы">
+<meta property="og:description" content="Боты, CRM и веб-сервисы под ваш процесс. Первый результат через 2–3 дня, цена в договоре, код остаётся у вас.">
+<meta name="theme-color" content="#f2f3f5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%2314161c'/%3E%3Ccircle cx='24' cy='24' r='8' fill='%23f2501c'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/onest-cyrillic-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/onest-cyrillic-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://mayaznvch-hue.github.io/fines-brand/sites/alfa/#org",
+      "name": "Финес Студио",
+      "url": "https://mayaznvch-hue.github.io/fines-brand/sites/alfa/",
+      "description": "Студия разработки IT-решений: Telegram-боты, CRM-системы, веб-сервисы, интеграции и автоматизация.",
+      "sameAs": ["https://t.me/fines_studio"],
+      "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "url": "https://t.me/fines_studio", "availableLanguage": "ru"}
+    },
+    {
+      "@type": "Service", "name": "Разработка Telegram-ботов для бизнеса", "serviceType": "Telegram-боты",
+      "description": "Запись, приём заявок, оплата, рассылки и ответы на типовые вопросы в мессенджере.",
+      "provider": {"@id": "https://mayaznvch-hue.github.io/fines-brand/sites/alfa/#org"},
+      "offers": {"@type": "Offer", "priceCurrency": "RUB", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 15000, "priceCurrency": "RUB"}}
+    },
+    {
+      "@type": "Service", "name": "CRM-система под заказ", "serviceType": "CRM",
+      "description": "Клиенты, сделки, задачи и напоминания в одной системе. Удобно работать с телефона.",
+      "provider": {"@id": "https://mayaznvch-hue.github.io/fines-brand/sites/alfa/#org"},
+      "offers": {"@type": "Offer", "priceCurrency": "RUB", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 40000, "priceCurrency": "RUB"}}
+    },
+    {
+      "@type": "Service", "name": "Разработка веб-сервисов и сайтов", "serviceType": "Веб-сервисы",
+      "description": "Личные кабинеты, сайты с онлайн-записью и оплатой, внутренние сервисы для сотрудников.",
+      "provider": {"@id": "https://mayaznvch-hue.github.io/fines-brand/sites/alfa/#org"},
+      "offers": {"@type": "Offer", "priceCurrency": "RUB", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 30000, "priceCurrency": "RUB"}}
+    },
+    {
+      "@type": "Service", "name": "Интеграции и автоматизация бизнеса", "serviceType": "Автоматизация",
+      "description": "Связываем сайт, CRM, таблицы, 1С и мессенджеры, чтобы данные переносились сами. Отчёты и уведомления.",
+      "provider": {"@id": "https://mayaznvch-hue.github.io/fines-brand/sites/alfa/#org"},
+      "offers": {"@type": "Offer", "priceCurrency": "RUB", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 15000, "priceCurrency": "RUB"}}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Сколько стоит проект?", "acceptedAnswer": {"@type": "Answer", "text": "Зависит от задачи. Ориентиры указаны в разделе «Решения». Точную стоимость и срок называем после короткого созвона или переписки, оценка бесплатная."}},
+        {"@type": "Question", "name": "Может ли цена измениться в процессе?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Стоимость фиксируется в договоре до начала работ. Если вы решите добавить новые функции, мы оценим их отдельно и только с вашего согласия."}},
+        {"@type": "Question", "name": "Нужно ли готовое техническое задание?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Опишите задачу своими словами, а уточняющие вопросы и ТЗ мы подготовим сами."}},
+        {"@type": "Question", "name": "Как проходит оплата?", "acceptedAnswer": {"@type": "Answer", "text": "Обычно 50% перед стартом и 50% после приёмки. Для крупных проектов делим оплату на этапы."}},
+        {"@type": "Question", "name": "Кому принадлежит готовое решение?", "acceptedAnswer": {"@type": "Answer", "text": "Вам. Передаём исходный код, доступы к сервисам и инструкцию. Бот, CRM или сервис регистрируются на ваш аккаунт."}},
+        {"@type": "Question", "name": "Что будет после запуска?", "acceptedAnswer": {"@type": "Answer", "text": "Первый месяц бесплатно исправляем ошибки. Дальше дорабатываем и добавляем функции по мере роста бизнеса."}},
+        {"@type": "Question", "name": "Можно ли доработать то, что уже есть?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Подключимся к вашему боту, таблицам или CRM и доработаем их без переделки с нуля."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+
+<!-- ===== SVG illustrations (original artwork) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gOr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8a5c"/><stop offset=".55" stop-color="#f2501c"/><stop offset="1" stop-color="#c63a0c"/></linearGradient>
+    <radialGradient id="rOr" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#ffb594"/><stop offset=".45" stop-color="#f2501c"/><stop offset="1" stop-color="#a92f08"/></radialGradient>
+    <radialGradient id="rMilk" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#efe9dc"/><stop offset="1" stop-color="#c9bfa9"/></radialGradient>
+    <radialGradient id="rGr" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#5a6070"/><stop offset=".55" stop-color="#2a2e38"/><stop offset="1" stop-color="#0d0f13"/></radialGradient>
+    <linearGradient id="gGr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3f4b"/><stop offset="1" stop-color="#14161c"/></linearGradient>
+    <linearGradient id="gWh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e8e9ee"/></linearGradient>
+    <linearGradient id="gSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d7d9df"/><stop offset="1" stop-color="#b9bcc5"/></linearGradient>
+    <radialGradient id="shd" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#14161c" stop-opacity=".22"/><stop offset="1" stop-color="#14161c" stop-opacity="0"/></radialGradient>
+  </defs>
+
+  <!-- hero: composition of spheres + block -->
+  <symbol id="art-hero" viewBox="0 0 300 240">
+    <ellipse cx="150" cy="214" rx="120" ry="16" fill="url(#shd)"/>
+    <rect x="70" y="96" width="150" height="104" rx="26" fill="url(#gGr)"/>
+    <rect x="70" y="96" width="150" height="30" rx="15" fill="#fff" opacity=".06"/>
+    <text x="92" y="168" font-family="Onest, sans-serif" font-weight="800" font-size="42" fill="#f4f1ea" letter-spacing="-2.5">фc</text>
+    <circle cx="166" cy="160" r="6" fill="#f2501c"/>
+    <circle cx="214" cy="84" r="54" fill="url(#rOr)"/>
+    <circle cx="74" cy="70" r="30" fill="url(#rMilk)"/>
+    <circle cx="246" cy="182" r="18" fill="url(#rMilk)"/>
+    <rect x="36" y="150" width="40" height="40" rx="12" fill="url(#rOr)" transform="rotate(-14 56 170)"/>
+  </symbol>
+
+  <!-- bot: phone with chat bubbles -->
+  <symbol id="art-bot" viewBox="0 0 240 200">
+    <ellipse cx="120" cy="184" rx="86" ry="12" fill="url(#shd)"/>
+    <g transform="rotate(-8 120 100)">
+      <rect x="78" y="20" width="96" height="164" rx="22" fill="url(#gGr)"/>
+      <rect x="86" y="30" width="80" height="144" rx="15" fill="#f4f1ea"/>
+      <rect x="94" y="48" width="48" height="18" rx="9" fill="#fff"/>
+      <rect x="108" y="74" width="50" height="18" rx="9" fill="#f2501c"/>
+      <rect x="94" y="100" width="56" height="18" rx="9" fill="#fff"/>
+      <rect x="94" y="152" width="64" height="12" rx="6" fill="#e3ddd0"/>
+    </g>
+    <rect x="148" y="40" width="78" height="44" rx="18" fill="url(#gOr)"/>
+    <path d="M160 82 154 98 174 82z" fill="#d9420f"/>
+    <circle cx="170" cy="62" r="5" fill="#fff"/><circle cx="187" cy="62" r="5" fill="#fff"/><circle cx="204" cy="62" r="5" fill="#fff"/>
+    <rect x="18" y="104" width="72" height="40" rx="16" fill="url(#gWh)"/>
+    <path d="M78 142 92 154 84 140z" fill="#e8e9ee"/>
+    <rect x="30" y="116" width="38" height="6" rx="3" fill="#c9ccd3"/><rect x="30" y="127" width="24" height="6" rx="3" fill="#c9ccd3"/>
+    <circle cx="44" cy="58" r="20" fill="url(#rOr)"/>
+  </symbol>
+
+  <!-- crm: stacked cards + chart -->
+  <symbol id="art-crm" viewBox="0 0 240 200">
+    <ellipse cx="120" cy="184" rx="96" ry="12" fill="url(#shd)"/>
+    <rect x="56" y="18" width="150" height="110" rx="20" fill="#e3e5e9" transform="rotate(6 130 70)"/>
+    <rect x="40" y="40" width="160" height="128" rx="22" fill="url(#gWh)"/>
+    <rect x="40" y="40" width="160" height="128" rx="22" fill="none" stroke="#dfe1e6"/>
+    <circle cx="66" cy="66" r="12" fill="url(#rOr)"/>
+    <rect x="86" y="58" width="60" height="7" rx="3.5" fill="#1c1b19"/>
+    <rect x="86" y="70" width="38" height="6" rx="3" fill="#c9ccd3"/>
+    <rect x="62" y="122" width="18" height="30" rx="5" fill="#d7d9df"/>
+    <rect x="88" y="108" width="18" height="44" rx="5" fill="#d7d9df"/>
+    <rect x="114" y="94" width="18" height="58" rx="5" fill="url(#gOr)"/>
+    <rect x="140" y="112" width="18" height="40" rx="5" fill="#d7d9df"/>
+    <rect x="166" y="100" width="18" height="52" rx="5" fill="#2a2e38"/>
+    <circle cx="198" cy="40" r="26" fill="url(#rGr)"/>
+    <path d="m186 40 8 8 15-16" fill="none" stroke="#f2501c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <!-- web: browser window -->
+  <symbol id="art-web" viewBox="0 0 240 200">
+    <ellipse cx="120" cy="184" rx="96" ry="12" fill="url(#shd)"/>
+    <rect x="24" y="34" width="180" height="136" rx="22" fill="url(#gWh)"/>
+    <rect x="24" y="34" width="180" height="136" rx="22" fill="none" stroke="#dfe1e6"/>
+    <path d="M24 56a22 22 0 0 1 22-22h136a22 22 0 0 1 22 22v4H24z" fill="#2a2e38"/>
+    <circle cx="44" cy="48" r="4.5" fill="#f2501c"/><circle cx="58" cy="48" r="4.5" fill="#f4f1ea"/><circle cx="72" cy="48" r="4.5" fill="#6b6f78"/>
+    <rect x="40" y="74" width="84" height="10" rx="5" fill="#1c1b19"/>
+    <rect x="40" y="90" width="64" height="7" rx="3.5" fill="#c9ccd3"/>
+    <rect x="40" y="108" width="54" height="22" rx="8" fill="url(#gOr)"/>
+    <rect x="134" y="72" width="54" height="80" rx="12" fill="#f4f1ea"/>
+    <circle cx="161" cy="102" r="14" fill="url(#rOr)"/>
+    <rect x="146" y="124" width="30" height="6" rx="3" fill="#c9bfa9"/>
+    <rect x="40" y="140" width="80" height="12" rx="6" fill="#eceef1"/>
+    <path d="M168 136 196 148 183 152 190 168 181 172 174 156 165 164z" fill="#1c1b19" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+  </symbol>
+
+  <!-- integrations: connected spheres -->
+  <symbol id="art-int" viewBox="0 0 240 200">
+    <ellipse cx="120" cy="184" rx="96" ry="12" fill="url(#shd)"/>
+    <path d="M62 132 120 70 182 128" fill="none" stroke="#d7d9df" stroke-width="12" stroke-linecap="round"/>
+    <path d="M62 132H182" fill="none" stroke="#d7d9df" stroke-width="12" stroke-linecap="round"/>
+    <path d="M62 132 120 70" fill="none" stroke="#f2501c" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 10"/>
+    <circle cx="120" cy="68" r="38" fill="url(#rOr)"/>
+    <rect x="102" y="58" width="36" height="20" rx="6" fill="#fff" opacity=".92"/>
+    <rect x="108" y="64" width="18" height="3.5" rx="1.75" fill="#f2501c"/><rect x="108" y="70" width="12" height="3.5" rx="1.75" fill="#f2501c"/>
+    <circle cx="60" cy="134" r="30" fill="url(#rGr)"/>
+    <circle cx="182" cy="130" r="32" fill="url(#rMilk)"/>
+    <path d="M48 134h24M60 122v24" stroke="#f4f1ea" stroke-width="5" stroke-linecap="round"/>
+    <rect x="168" y="118" width="28" height="24" rx="5" fill="none" stroke="#1c1b19" stroke-width="4"/>
+    <path d="M168 126h28M178 118v24" stroke="#1c1b19" stroke-width="3"/>
+  </symbol>
+
+  <!-- clock / speed -->
+  <symbol id="art-clock" viewBox="0 0 200 180">
+    <ellipse cx="104" cy="166" rx="70" ry="10" fill="url(#shd)"/>
+    <circle cx="104" cy="88" r="70" fill="url(#rOr)"/>
+    <circle cx="104" cy="88" r="52" fill="#fff"/>
+    <circle cx="104" cy="88" r="52" fill="none" stroke="#ffe0d3" stroke-width="3"/>
+    <path d="M104 88V58M104 88l22 12" stroke="#1c1b19" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="104" cy="88" r="7" fill="#f2501c"/>
+    <rect x="94" y="8" width="20" height="14" rx="5" fill="#2a2e38"/>
+    <path d="M18 60h26M10 82h28M20 104h20" stroke="#f2501c" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+  </symbol>
+
+  <!-- coins: free estimate -->
+  <symbol id="art-coins" viewBox="0 0 140 140">
+    <ellipse cx="70" cy="128" rx="52" ry="8" fill="url(#shd)"/>
+    <ellipse cx="62" cy="112" rx="40" ry="12" fill="#a92f08"/><rect x="22" y="98" width="80" height="14" fill="#c63a0c"/><ellipse cx="62" cy="98" rx="40" ry="12" fill="#f2501c"/>
+    <ellipse cx="62" cy="88" rx="40" ry="12" fill="#a92f08"/><rect x="22" y="74" width="80" height="14" fill="#d9420f"/><ellipse cx="62" cy="74" rx="40" ry="12" fill="#ff7a47"/>
+    <circle cx="96" cy="46" r="30" fill="url(#rMilk)"/>
+    <text x="96" y="57" text-anchor="middle" font-family="Onest, sans-serif" font-weight="800" font-size="30" fill="#1c1b19">0</text>
+  </symbol>
+
+  <!-- paper plane -->
+  <symbol id="art-plane" viewBox="0 0 200 170">
+    <ellipse cx="100" cy="156" rx="60" ry="8" fill="#000" opacity=".12"/>
+    <path d="M14 84 186 16 150 146 104 112z" fill="#fff"/>
+    <path d="M186 16 104 112 96 150 76 102z" fill="#f4f1ea"/>
+    <path d="M186 16 76 102 14 84z" fill="#ffffff"/>
+    <path d="M186 16 96 150 104 112z" fill="#e3ddd0"/>
+    <path d="M30 136c20-6 30-16 34-30" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 10" opacity=".85"/>
+  </symbol>
+
+  <!-- mini icons for quick strip -->
+  <symbol id="ic-bot" viewBox="0 0 48 48"><rect width="48" height="48" rx="14" fill="#ffe9e0"/><rect x="12" y="13" width="24" height="18" rx="7" fill="url(#gOr)"/><path d="m16 30-2 7 8-6z" fill="#c63a0c"/><circle cx="19" cy="22" r="2.4" fill="#fff"/><circle cx="29" cy="22" r="2.4" fill="#fff"/></symbol>
+  <symbol id="ic-crm" viewBox="0 0 48 48"><rect width="48" height="48" rx="14" fill="#eceef1"/><rect x="12" y="26" width="6" height="10" rx="2" fill="#b9bcc5"/><rect x="21" y="18" width="6" height="18" rx="2" fill="url(#gOr)"/><rect x="30" y="12" width="6" height="24" rx="2" fill="#2a2e38"/></symbol>
+  <symbol id="ic-web" viewBox="0 0 48 48"><rect width="48" height="48" rx="14" fill="#f4f1ea"/><rect x="10" y="13" width="28" height="22" rx="5" fill="#fff" stroke="#1c1b19" stroke-width="2.5"/><path d="M10 19h28" stroke="#1c1b19" stroke-width="2.5"/><circle cx="24" cy="27" r="3.5" fill="#f2501c"/></symbol>
+  <symbol id="ic-int" viewBox="0 0 48 48"><rect width="48" height="48" rx="14" fill="#14161c"/><path d="M15 31 24 17l9 14z" fill="none" stroke="#6b6f78" stroke-width="2.5" stroke-linejoin="round"/><circle cx="24" cy="17" r="5" fill="url(#rOr)"/><circle cx="15" cy="31" r="4.5" fill="#f4f1ea"/><circle cx="33" cy="31" r="4.5" fill="#f4f1ea"/></symbol>
+</svg>
+
+<!-- ===== Segment strip ===== -->
+<div class="segbar">
+  <div class="wrap">
+    <nav class="segs" aria-label="Для кого">
+      <button class="seg is-active" data-seg="0" aria-pressed="true">Бизнесу</button>
+      <button class="seg" data-seg="3" aria-pressed="false">Стартапам</button>
+      <button class="seg" data-seg="4" aria-pressed="false">Партнёрам</button>
+    </nav>
+    <div class="seg-right">
+      <span class="hide-s">Отвечаем в течение рабочего дня</span>
+      <a href="https://t.me/fines_studio" target="_blank" rel="noopener noreferrer">@fines_studio</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Header ===== -->
+<header class="header" id="header">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Финес Студио — на главную">
+      <span class="logo-w">финес<i class="dot"></i></span><span class="logo-s">студио</span>
+    </a>
+    <nav class="menu" aria-label="Разделы">
+      <a href="#services">Решения</a>
+      <a href="#calc">Цены</a>
+      <a href="#compare">Отличия</a>
+      <a href="#process">Процесс</a>
+      <a href="#quiz">Подбор</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <div class="h-actions">
+      <a class="btn btn-grey btn-sm btn-tg" href="#quiz">Подобрать решение</a>
+      <a class="btn btn-accent btn-sm" href="https://t.me/fines_studio" target="_blank" rel="noopener noreferrer">Обсудить в Telegram</a>
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<nav class="mmenu" id="mmenu" aria-label="Мобильное меню">
+  <a class="mlink" href="#services">Решения</a>
+  <a class="mlink" href="#calc">Цены и калькулятор</a>
+  <a class="mlink" href="#compare">Отличия от агентства</a>
+  <a class="mlink" href="#fears">Чего боятся перед заказом</a>
+  <a class="mlink" href="#process">Процесс</a>
+  <a class="mlink" href="#quiz">Подобрать решение за 4 шага</a>
+  <a class="mlink" href="#faq">Вопросы</a>
+  <a class="mlink" href="#contact">Связаться</a>
+  <a class="btn btn-accent btn-block" href="https://t.me/fines_studio" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+</nav>
+
+<main id="top">
+
+  <!-- задача блока: за 3 секунды объяснить, что делаем и почему мы (результат + срок + отличие) / закрывает страх: «долго», «непонятно, чем отличаются» -->
+  <section class="hero" aria-label="Главное">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="carousel" id="carousel" aria-roledescription="карусель" aria-label="Предложения студии">
+          <div class="c-track" id="cTrack">
+            <article class="slide s-white" aria-roledescription="слайд" aria-label="1 из 5">
+              <div>
+                <span class="tag">Тонкая работа · Финес Студио</span>
+                <h1>Telegram-бот или CRM под ваш процесс. <em>Первый результат через 2–3&nbsp;дня, цена — в&nbsp;договоре.</em></h1>
+                <p>Пишем код без менеджеров и наценок в смете: вы говорите напрямую с разработчиком.</p>
+                <ul class="facts" aria-label="Коротко о главном">
+                  <li><b>2–3 дня</b> до первого результата</li>
+                  <li><b>Цена</b> в договоре</li>
+                  <li><b>Код</b> ваш</li>
+                </ul>
+                <div class="row">
+                  <a class="btn btn-accent" href="https://t.me/fines_studio?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D1%83." target="_blank" rel="noopener noreferrer">Обсудить задачу в Telegram</a>
+                  <a class="btn btn-grey" href="#quiz">Узнать цену своей задачи</a>
+                </div>
+              </div>
+              <svg class="art" aria-hidden="true"><use href="#art-hero"/></svg>
+            </article>
+            <article class="slide s-peach" aria-roledescription="слайд" aria-label="2 из 5">
+              <div>
+                <span class="tag">Telegram-боты</span>
+                <h2>Заявки, запись и оплата <em>прямо в&nbsp;мессенджере</em></h2>
+                <div class="big"><b>от 15 000 ₽</b><span>срок от 3 дней</span></div>
+                <div class="row">
+                  <a class="btn btn-accent" href="#calc" data-calc="bot">Рассчитать бота</a>
+                  <a class="btn btn-light" href="https://t.me/fines_studio?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20Telegram-%D0%B1%D0%BE%D1%82%D0%B0." target="_blank" rel="noopener noreferrer">Обсудить бота в Telegram</a>
+                </div>
+              </div>
+              <svg class="art" aria-hidden="true"><use href="#art-bot"/></svg>
+            </article>
+            <article class="slide s-dark" aria-roledescription="слайд" aria-label="3 из 5">
+              <div>
+                <span class="tag">CRM под вас</span>
+                <h2>Клиенты, сделки и задачи <em>в&nbsp;одной системе</em></h2>
+                <div class="big"><b style="color:#fff">от 40 000 ₽</b><span style="color:#b9bcc5">срок от 7 дней</span></div>
+                <div class="row">
+                  <a class="btn btn-accent" href="#calc" data-calc="crm">Рассчитать CRM</a>
+                  <a class="btn btn-ghost-w" href="#services" data-filter="crm">Что входит в CRM</a>
+                </div>
+              </div>
+              <svg class="art" aria-hidden="true"><use href="#art-crm"/></svg>
+            </article>
+            <article class="slide s-milk" aria-roledescription="слайд" aria-label="4 из 5">
+              <div>
+                <span class="tag">Веб-сервисы и сайты</span>
+                <h2>Личные кабинеты и сервисы <em>под ваш процесс</em></h2>
+                <div class="big"><b>от 30 000 ₽</b><span>срок от 5 дней</span></div>
+                <div class="row">
+                  <a class="btn btn-accent" href="#calc" data-calc="web">Рассчитать сервис</a>
+                  <a class="btn btn-light" href="#services" data-filter="web">Что входит в сервис</a>
+                </div>
+              </div>
+              <svg class="art" aria-hidden="true"><use href="#art-web"/></svg>
+            </article>
+            <article class="slide s-white" aria-roledescription="слайд" aria-label="5 из 5">
+              <div>
+                <span class="tag">Интеграции и автоматизация</span>
+                <h2>Сайт, CRM, 1С и таблицы <em>обмениваются данными сами</em></h2>
+                <div class="big"><b>от 15 000 ₽</b><span>срок от 2 дней</span></div>
+                <div class="row">
+                  <a class="btn btn-accent" href="#calc" data-calc="int">Рассчитать интеграцию</a>
+                  <a class="btn btn-grey" href="#services" data-filter="int">Что можно связать</a>
+                </div>
+              </div>
+              <svg class="art" aria-hidden="true"><use href="#art-int"/></svg>
+            </article>
+          </div>
+          <div class="c-ui">
+            <div class="c-dots" id="cDots" role="tablist" aria-label="Выбор слайда"></div>
+            <div class="c-arrows">
+              <button class="c-arrow" id="cPrev" aria-label="Предыдущий слайд"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+              <button class="c-arrow" id="cNext" aria-label="Следующий слайд"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="card mini">
+            <svg class="mini-art" aria-hidden="true"><use href="#art-clock"/></svg>
+            <div class="mini-top">
+              <h3>Первый результат</h3>
+              <p>Показываем рабочую версию, а не только ТЗ</p>
+            </div>
+            <div class="num">через 2–3 дня</div>
+          </div>
+          <div class="card mini dark">
+            <svg class="mini-art" aria-hidden="true"><use href="#art-coins"/></svg>
+            <div class="mini-top">
+              <h3>Оценка бесплатная</h3>
+              <p>Называем стоимость и срок до старта</p>
+            </div>
+            <div>
+              <div class="num">0 ₽</div>
+              <a class="link" href="#quiz">Узнать цену своей задачи →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick">
+        <a class="q" href="#services" data-filter="bot"><svg aria-hidden="true"><use href="#ic-bot"/></svg><div><b>Telegram-боты</b><span>от 15 000 ₽</span></div></a>
+        <a class="q" href="#services" data-filter="crm"><svg aria-hidden="true"><use href="#ic-crm"/></svg><div><b>CRM под вас</b><span>от 40 000 ₽</span></div></a>
+        <a class="q" href="#services" data-filter="web"><svg aria-hidden="true"><use href="#ic-web"/></svg><div><b>Веб-сервисы и сайты</b><span>от 30 000 ₽</span></div></a>
+        <a class="q" href="#services" data-filter="int"><svg aria-hidden="true"><use href="#ic-int"/></svg><div><b>Интеграции</b><span>от 15 000 ₽</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- задача блока: показать услуги с ценами «от» и сроками, закрыть SEO-группы (Telegram-боты, CRM под заказ, веб-сервис, автоматизация) / закрывает страх: «непонятно, сколько стоит» -->
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><span class="eyebrow">Решения</span><h2>Что мы разрабатываем.</h2></div>
+        <p>Каждое решение проектируем под ваш процесс, а не подстраиваем бизнес под готовую коробку.</p>
+      </div>
+
+      <div class="chips" role="tablist" aria-label="Фильтр решений" id="chips">
+        <button class="chip" role="tab" aria-selected="true" data-f="all">Все <span class="cnt"></span></button>
+        <button class="chip" role="tab" aria-selected="false" data-f="bot">Боты <span class="cnt"></span></button>
+        <button class="chip" role="tab" aria-selected="false" data-f="crm">CRM <span class="cnt"></span></button>
+        <button class="chip" role="tab" aria-selected="false" data-f="web">Сайты и сервисы <span class="cnt"></span></button>
+        <button class="chip" role="tab" aria-selected="false" data-f="int">Интеграции <span class="cnt"></span></button>
+        <button class="chip" role="tab" aria-selected="false" data-f="fast">Срок до 3 дней <span class="cnt"></span></button>
+        <button class="chip" role="tab" aria-selected="false" data-f="budget">Бюджет до 30 000 ₽ <span class="cnt"></span></button>
+      </div>
+
+      <div class="bento" id="bento">
+        <article class="card svc tint" data-kind="bot" data-tags="bot fast budget">
+          <div class="svc-top">
+            <div><h3>Telegram-боты</h3><p>Запись, приём заявок, оплата, рассылки и ответы на типовые вопросы в мессенджере, которым уже пользуются ваши клиенты.</p></div>
+            <svg class="art" aria-hidden="true"><use href="#art-bot"/></svg>
+          </div>
+          <ul class="feats"><li>Запись</li><li>Приём заявок</li><li>Оплата</li><li>Рассылки</li><li>Ответы на вопросы</li></ul>
+          <div class="svc-price">
+            <div><div class="price">от 15 000 ₽</div><span class="term">от 3 дней</span></div>
+            <div class="svc-btns"><a class="btn btn-grey" href="#calc" data-calc="bot">Рассчитать</a><a class="btn btn-accent" href="https://t.me/fines_studio?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20Telegram-%D0%B1%D0%BE%D1%82." target="_blank" rel="noopener noreferrer">Обсудить бота</a></div>
+          </div>
+        </article>
+        <article class="card svc" data-kind="crm" data-tags="crm">
+          <div class="svc-top">
+            <div><h3>CRM под вас</h3><p>Клиенты, сделки, задачи и напоминания в одной системе. Удобно работать с телефона, интерфейс без лишних функций.</p></div>
+            <svg class="art" aria-hidden="true"><use href="#art-crm"/></svg>
+          </div>
+          <ul class="feats"><li>Клиенты</li><li>Сделки</li><li>Задачи</li><li>Напоминания</li><li>С телефона</li></ul>
+          <div class="svc-price">
+            <div><div class="price">от 40 000 ₽</div><span class="term">от 7 дней</span></div>
+            <div class="svc-btns"><a class="btn btn-grey" href="#calc" data-calc="crm">Рассчитать</a><a class="btn btn-accent" href="https://t.me/fines_studio?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20CRM." target="_blank" rel="noopener noreferrer">Обсудить CRM</a></div>
+          </div>
+        </article>
+        <article class="card svc" data-kind="web" data-tags="web budget">
+          <div class="svc-top">
+            <div><h3>Веб-сервисы и сайты</h3><p>Личные кабинеты, сайты с онлайн-записью и оплатой, внутренние сервисы для сотрудников. Работают с телефона и компьютера.</p></div>
+            <svg class="art" aria-hidden="true"><use href="#art-web"/></svg>
+          </div>
+          <ul class="feats"><li>Личные кабинеты</li><li>Онлайн-запись</li><li>Оплата</li><li>Сервисы для сотрудников</li></ul>
+          <div class="svc-price">
+            <div><div class="price">от 30 000 ₽</div><span class="term">от 5 дней</span></div>
+            <div class="svc-btns"><a class="btn btn-grey" href="#calc" data-calc="web">Рассчитать</a><a class="btn btn-accent" href="https://t.me/fines_studio?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%B2%D0%B5%D0%B1-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81." target="_blank" rel="noopener noreferrer">Обсудить сервис</a></div>
+          </div>
+        </article>
+        <article class="card svc" data-kind="int" data-tags="int fast budget">
+          <div class="svc-top">
+            <div><h3>Интеграции и автоматизация</h3><p>Связываем сайт, CRM, таблицы, 1С и мессенджеры, чтобы данные переносились сами. Настраиваем отчёты и уведомления.</p></div>
+            <svg class="art" aria-hidden="true"><use href="#art-int"/></svg>
+          </div>
+          <ul class="feats"><li>Сайт</li><li>CRM</li><li>Таблицы</li><li>1С</li><li>Мессенджеры</li><li>Отчёты</li></ul>
+          <div class="svc-price">
+            <div><div class="price">от 15 000 ₽</div><span class="term">от 2 дней</span></div>
+            <div class="svc-btns"><a class="btn btn-grey" href="#calc" data-calc="int">Рассчитать</a><a class="btn btn-accent" href="https://t.me/fines_studio?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F." target="_blank" rel="noopener noreferrer">Обсудить интеграцию</a></div>
+          </div>
+        </article>
+        <p class="empty" id="empty">Под этот фильтр решений нет. Напишите нам, подберём вариант.</p>
+      </div>
+
+      <div class="statement">
+        <div class="card st-card rv">
+          <span class="eyebrow">Как мы работаем</span>
+          <p>Над вашим проектом работают <b>два разработчика.</b> Менеджеров между нами нет: вы обсуждаете задачу с теми, кто её реализует. За счёт этого сроки короче, смета честнее, а ход работы виден на каждом этапе.</p>
+          <div class="who"><span class="avs"><i></i><i></i></span>Финес Студио · напрямую, без посредников</div>
+        </div>
+        <div class="card st-side rv">
+          <div>
+            <div class="num">2</div>
+            <h3>разработчика и ноль менеджеров</h3>
+            <p>Вы платите только за разработку.</p>
+          </div>
+          <a class="btn btn-light" href="https://t.me/fines_studio" target="_blank" rel="noopener noreferrer">Написать разработчику напрямую</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- задача блока: дать прикинуть бюджет самому и отправить расчёт в Telegram / закрывает страх: «цена вырастет», «не знаю бюджет» -->
+  <section class="section" id="calc">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><span class="eyebrow">Калькулятор</span><h2>Калькулятор стоимости разработки.</h2></div>
+        <p>Выберите решение, объём и желаемый срок. Точную цену назовём после бесплатной оценки.</p>
+      </div>
+      <div class="calc">
+        <form class="card calc-form" id="calcForm">
+          <div class="field">
+            <div class="f-label"><span id="typeLbl">Что разрабатываем</span></div>
+            <div class="types" role="radiogroup" aria-labelledby="typeLbl" id="types">
+              <button type="button" class="type" role="radio" aria-checked="true" data-type="bot">Telegram-бот<small>от 15 000 ₽</small></button>
+              <button type="button" class="type" role="radio" aria-checked="false" data-type="crm">CRM<small>от 40 000 ₽</small></button>
+              <button type="button" class="type" role="radio" aria-checked="false" data-type="web">Веб-сервис или сайт<small>от 30 000 ₽</small></button>
+              <button type="button" class="type" role="radio" aria-checked="false" data-type="int">Интеграция<small>от 15 000 ₽</small></button>
+            </div>
+          </div>
+          <div class="field">
+            <label class="f-label" for="rScope"><span>Объём: функций и сценариев</span><output id="oScope" for="rScope">1</output></label>
+            <input class="range" type="range" id="rScope" min="1" max="10" step="1" value="1">
+            <div class="r-scale"><span>1 · базовый</span><span>10 · большой проект</span></div>
+            <p class="f-hint" id="hScope">Например: приём заявок и уведомление в чат.</p>
+          </div>
+          <div class="field">
+            <label class="f-label" for="rTerm"><span>Желаемый срок</span><output id="oTerm" for="rTerm">3 дня</output></label>
+            <input class="range" type="range" id="rTerm" min="2" max="60" step="1" value="3">
+            <div class="r-scale"><span id="tMin">2 дня</span><span>60 дней</span></div>
+            <p class="f-hint" id="hTerm">Комфортный срок для этого объёма.</p>
+          </div>
+        </form>
+        <div class="card calc-res" aria-live="polite">
+          <span class="lbl">Примерная стоимость</span>
+          <div class="total" id="total"><small>от</small><span id="tVal">15 000</span> ₽</div>
+          <span class="lbl" id="tSub">Telegram-бот · 1 функция · 3 дня</span>
+          <ul class="breakdown">
+            <li><span>База решения</span><b id="bBase">15 000 ₽</b></li>
+            <li><span>Дополнительный объём</span><b id="bScope">0 ₽</b></li>
+            <li><span>Ускорение срока</span><b id="bRush">0 ₽</b></li>
+          </ul>
+          <div class="pay">
+            <div><span>50% перед стартом</span><b id="p1">7 500 ₽</b></div>
+            <div><span>50% после приёмки</span><b id="p2">7 500 ₽</b></div>
+          </div>
+          <a class="btn btn-accent btn-block" id="calcSend" href="https://t.me/fines_studio" target="_blank" rel="noopener noreferrer">Отправить расчёт в Telegram</a>
+          <p class="note">Ориентир, а не оферта. Базовые цены — из раздела «Решения»; итоговую стоимость фиксируем в договоре после бесплатной оценки.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- задача блока: отличия от агентства в фактах / закрывает страх: «переплачу за менеджеров», «долго» -->
+  <section class="section" id="compare">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><span class="eyebrow">Преимущества</span><h2>Агентство или Финес Студио.</h2></div>
+        <p>Сравнение с типовой схемой работы агентства. Сроки и стоимость зависят от задачи.</p>
+      </div>
+      <div class="cmp-grid">
+        <div class="card cmp rv">
+          <table>
+            <thead><tr><th></th><th>Через агентство</th><th class="us">Финес Студио</th></tr></thead>
+            <tbody>
+              <tr><td>Цена</td><td class="a">в смете менеджеры, аккаунты, офис</td><td class="b">платите только за разработку</td></tr>
+              <tr><td>Сроки</td><td class="a">недели и месяцы</td><td class="b">дни</td></tr>
+              <tr><td>Общение</td><td class="a">через менеджера</td><td class="b">напрямую с разработчиком</td></tr>
+              <tr><td>Правки</td><td class="a">по ТЗ и допсоглашениям</td><td class="b">в рабочем порядке, без допсоглашений</td></tr>
+              <tr><td>Первый результат</td><td class="a">после согласования ТЗ</td><td class="b">через 2–3 дня</td></tr>
+            </tbody>
+          </table>
+          <p class="foot">Сравнение с типовой схемой работы агентства. Сроки и стоимость зависят от задачи.</p>
+        </div>
+        <div class="card fast rv">
+          <div>
+            <h3>Первый результат</h3>
+            <p>Не ждём согласования объёмного ТЗ: показываем работающую версию и правим по ходу.</p>
+          </div>
+          <div class="num">2–3<small>дня</small></div>
+          <svg class="art" aria-hidden="true"><use href="#art-clock"/></svg>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- задача блока: снять типовые страхи перед заказом ответами из фактов / закрывает страх: «пропадут», «вырастет цена», «нет ТЗ», «предоплата», «привязка», «не разберёмся», «долго», «мало людей» -->
+  <section class="section" id="fears">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><span class="eyebrow">Честные ответы</span><h2>Чего обычно боятся перед заказом.</h2></div>
+        <p>Отвечаем фактами, которые потом закрепляем в договоре.</p>
+      </div>
+      <div class="fears">
+        <article class="card fear rv dark"><span class="fq">«Сделают и пропадут»</span><p>Первый месяц после запуска бесплатно исправляем ошибки. Исходный код, доступы и инструкция остаются у вас.</p></article>
+        <article class="card fear rv"><span class="fq">«Цена вырастет в процессе»</span><p>Стоимость фиксируем в договоре до старта. Новые функции оцениваем отдельно и только с вашего согласия.</p></article>
+        <article class="card fear rv"><span class="fq">«У меня нет ТЗ»</span><p>Оно не нужно. Опишите задачу своими словами, уточняющие вопросы и ТЗ подготовим сами.</p></article>
+        <article class="card fear rv"><span class="fq">«Страшно платить вперёд»</span><p>50% перед стартом, 50% после приёмки. Промежуточные результаты показываем по ходу работы.</p></article>
+        <article class="card fear rv"><span class="fq">«Привяжут к себе»</span><p>Бот, CRM или сервис регистрируются на ваш аккаунт. Решение принадлежит вам, а не студии.</p></article>
+        <article class="card fear rv dark"><span class="fq">«Сотрудники не разберутся»</span><p>Показываем вашей команде, как пользоваться системой, и оставляем короткую инструкцию.</p></article>
+        <article class="card fear rv"><span class="fq">«Это надолго»</span><p>Первый результат через <span class="nw">2–3 дня</span>. Срок сдачи фиксируем в договоре.</p></article>
+        <article class="card fear rv"><span class="fq">«Нас двое — это мало?»</span><p>Зато вы говорите напрямую с тем, кто пишет код: без менеджеров и испорченного телефона.</p></article>
+      </div>
+      <div class="fears-cta rv">
+        <p>Остался свой страх? Спросите разработчика напрямую.</p>
+        <a class="btn btn-accent" href="https://t.me/fines_studio?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B." target="_blank" rel="noopener noreferrer">Задать вопрос в Telegram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- задача блока: показать 4 шага от заявки до запуска / закрывает страх: «у меня нет ТЗ», «не понимаю, как это будет» -->
+  <section class="section" id="process">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><span class="eyebrow">Процесс</span><h2>Четыре этапа от заявки до запуска.</h2></div>
+        <a class="btn btn-dark" href="https://t.me/fines_studio" target="_blank" rel="noopener noreferrer">Описать задачу в Telegram</a>
+      </div>
+      <ol class="steps" style="list-style:none;margin:0;padding:0">
+        <li class="card step rv"><div class="sn"><b>1</b><i class="bar"></i></div><h3>Заявка</h3><p>Опишите задачу в Telegram своими словами. Готовое ТЗ не требуется.</p></li>
+        <li class="card step rv"><div class="sn"><b>2</b><i class="bar"></i></div><h3>Оценка</h3><p>Разбираем задачу, называем стоимость и срок. Оценка бесплатная.</p></li>
+        <li class="card step rv"><div class="sn"><b>3</b><i class="bar"></i></div><h3>Разработка</h3><p>Показываем промежуточные результаты и вносим правки по ходу работы.</p></li>
+        <li class="card step rv"><div class="sn"><b>4</b><i class="bar"></i></div><h3>Запуск</h3><p>Внедряем решение, обучаем сотрудников и остаёмся на связи.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- задача блока: гарантии, которые закрепляем в договоре / закрывает страх: «обманут», «сделают небезопасно» -->
+  <section class="section" id="guarantees">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><span class="eyebrow">Гарантии</span><h2>Что фиксируем до старта.</h2></div>
+        <p>Цена, срок и порядок оплаты прописаны в договоре.</p>
+      </div>
+      <div class="guar" style="margin-top:0">
+        <div class="card g rv">
+          <span class="gn">01</span>
+          <div><h3>Фиксированная цена</h3><p>Стоимость согласуем до старта и закрепляем в договоре. Доплат по ходу работы не будет.</p></div>
+        </div>
+        <div class="card g rv">
+          <span class="gn">02</span>
+          <div><h3>Сроки в договоре</h3><p>Срок сдачи фиксируем письменно. Промежуточные результаты показываем по ходу работы.</p></div>
+        </div>
+        <div class="card g rv">
+          <span class="gn">03</span>
+          <div><h3>Всё остаётся у вас</h3><p>Передаём исходный код, доступы и инструкцию. Решение принадлежит вам, а не студии.</p></div>
+        </div>
+        <div class="card g wide rv">
+          <span class="gn">04</span>
+          <div><h3>Оплата по этапам</h3><p>50% перед стартом, оставшиеся 50% после приёмки работы.</p></div>
+          <div class="split">
+            <div><b>50%</b><span>перед стартом</span></div>
+            <div><b>50%</b><span>после приёмки</span></div>
+          </div>
+        </div>
+        <div class="card g rv">
+          <span class="gn">05</span>
+          <div><h3>Обучение</h3><p>Показываем вашей команде, как пользоваться системой, и оставляем короткую инструкцию.</p></div>
+        </div>
+        <div class="card g full rv">
+          <div class="stat">1 <em>месяц</em></div>
+          <div><h3>Поддержка после запуска</h3><p>Первый месяц бесплатно исправляем ошибки. Затем дорабатываем по договорённости.</p></div>
+        </div>
+      </div>
+      <!-- согласовать с владельцем: новый пункт -->
+      <div class="card sec-strip rv">
+        <div class="ss-head"><span class="ss-ic" aria-hidden="true"></span><h3>Проверяем безопасность перед запуском</h3></div>
+        <ul>
+          <li>Ключи и токены не попадают в код</li>
+          <li>Проверяем всё, что вводят пользователи</li>
+          <li>Защищаем от спама и ботов</li>
+          <li>Работаем только по HTTPS</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- задача блока: довести до заявки тех, кто не готов писать; итог — мини-ТЗ в Telegram / закрывает страх: «не знаю, что мне нужно», «нет ТЗ» -->
+  <section class="section" id="quiz">
+    <div class="wrap">
+      <div class="quiz-grid">
+        <div class="card quiz-intro rv">
+          <span class="eyebrow">Подбор за 4 шага</span>
+          <h2>Не знаете, с&nbsp;чего начать?</h2>
+          <p>Ответьте на 4 вопроса кнопками. В конце покажем, что подойдёт, и соберём мини-ТЗ — его можно сразу отправить нам в Telegram.</p>
+          <ul class="qi-list">
+            <li>Около минуты, только кнопки</li>
+            <li>Рекомендация и цена «от»</li>
+            <li>Мини-ТЗ одним сообщением в Telegram</li>
+          </ul>
+          <svg class="art" aria-hidden="true"><use href="#art-int"/></svg>
+        </div>
+        <div class="card quiz" id="quizBox" aria-live="polite">
+          <div class="qz-top">
+            <span class="qz-step" id="qzStep">Шаг 1 из 4</span>
+            <button type="button" class="qz-back" id="qzBack" hidden>← Назад</button>
+          </div>
+          <div class="qz-bar" role="progressbar" aria-label="Прогресс подбора" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0" id="qzBar"><i></i></div>
+          <div class="qz-steps">
+            <fieldset class="qz" data-step="0" data-key="need">
+              <legend>Что нужно?</legend>
+              <div class="qz-opts">
+                <button type="button" class="opt" data-v="bot">Telegram-бот<small>заявки, запись, оплата</small></button>
+                <button type="button" class="opt" data-v="crm">CRM<small>клиенты, сделки, задачи</small></button>
+                <button type="button" class="opt" data-v="web">Веб-сервис или сайт<small>кабинет, запись, оплата</small></button>
+                <button type="button" class="opt" data-v="int">AI-ассистент или автоматизация<small>связать сервисы, отчёты</small></button>
+                <button type="button" class="opt wide" data-v="unknown">Пока не знаю<small>поможем разобраться</small></button>
+              </div>
+            </fieldset>
+            <fieldset class="qz" data-step="1" data-key="sphere" hidden>
+              <legend>Сфера бизнеса</legend>
+              <div class="qz-opts">
+                <button type="button" class="opt" data-v="Услуги с записью клиентов">Услуги с записью<small>салоны, клиники, мастера</small></button>
+                <button type="button" class="opt" data-v="Торговля и магазины">Торговля<small>магазины, доставка</small></button>
+                <button type="button" class="opt" data-v="Обучение и курсы">Обучение<small>курсы, школы</small></button>
+                <button type="button" class="opt" data-v="B2B и производство">B2B и производство<small>заявки, склад, отделы</small></button>
+                <button type="button" class="opt wide" data-v="Другая сфера">Другое<small>расскажу в сообщении</small></button>
+              </div>
+            </fieldset>
+            <fieldset class="qz" data-step="2" data-key="when" hidden>
+              <legend>Когда нужно запустить?</legend>
+              <div class="qz-opts">
+                <button type="button" class="opt" data-v="Как можно скорее">Как можно скорее</button>
+                <button type="button" class="opt" data-v="В течение месяца">В течение месяца</button>
+                <button type="button" class="opt" data-v="В течение 2–3 месяцев">В течение 2–3 месяцев</button>
+                <button type="button" class="opt" data-v="Пока присматриваюсь">Пока присматриваюсь</button>
+              </div>
+            </fieldset>
+            <fieldset class="qz" data-step="3" data-key="budget" hidden>
+              <legend>Ориентир бюджета</legend>
+              <div class="qz-opts">
+                <button type="button" class="opt" data-v="15 000 – 30 000 ₽">15 000 – 30 000 ₽<small>бот или интеграция</small></button>
+                <button type="button" class="opt" data-v="30 000 – 40 000 ₽">30 000 – 40 000 ₽<small>веб-сервис или сайт</small></button>
+                <button type="button" class="opt" data-v="от 40 000 ₽">от 40 000 ₽<small>CRM или крупнее</small></button>
+                <button type="button" class="opt" data-v="Пока не знаю">Пока не знаю<small>оценка бесплатная</small></button>
+              </div>
+            </fieldset>
+            <div class="qz-res" id="qzRes" hidden>
+              <span class="eyebrow">Вам подойдёт</span>
+              <h3 id="qzRec">Telegram-бот</h3>
+              <div class="qz-price"><b id="qzPrice">от 15 000 ₽</b><span id="qzTerm">срок от 3 дней</span></div>
+              <p class="qz-sub">Ваше мини-ТЗ — уйдёт в Telegram одним сообщением:</p>
+              <ul class="qz-list" id="qzList"></ul>
+              <label class="l" for="qzNote">Пара слов о задаче <span class="opt-l">(необязательно)</span></label>
+              <textarea class="inp" id="qzNote" maxlength="500" rows="3" placeholder="Например: хотим, чтобы клиенты записывались сами"></textarea>
+              <div class="hp" aria-hidden="true"><label for="qzHp">Не заполняйте это поле</label><input type="text" id="qzHp" name="website" tabindex="-1" autocomplete="off"></div>
+              <p class="err" id="qzErr" role="alert"></p>
+              <div class="qz-btns">
+                <button type="button" class="btn btn-accent" id="qzSend">Отправить в Telegram</button>
+                <button type="button" class="btn btn-grey" id="qzReset">Пройти заново</button>
+              </div>
+              <p class="fine">Оценка бесплатная, отвечаем в течение рабочего дня. Цены «от» — из раздела «Решения».</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- задача блока: добить оставшиеся вопросы (FAQPage в JSON-LD) / закрывает страх: «остались сомнения» -->
+  <section class="section" id="faq">
+    <div class="wrap faq-grid">
+      <div class="card faq-intro rv">
+        <span class="eyebrow">Вопросы</span>
+        <h2>Частые вопросы.</h2>
+        <p>Ответы на вопросы, которые нам задают чаще всего. Если вашего вопроса здесь нет, напишите нам в Telegram.</p>
+        <a class="btn btn-accent" href="https://t.me/fines_studio" target="_blank" rel="noopener noreferrer">Задать свой вопрос в Telegram</a>
+      </div>
+      <div class="acc" id="acc">
+        <div class="qa"><button aria-expanded="false"><span>Сколько стоит проект?</span><i class="pm"></i></button><div class="ans"><div><p>Зависит от задачи. Ориентиры указаны в разделе «Решения», а прикинуть цену можно в калькуляторе. Точную стоимость и срок называем после короткого созвона или переписки, оценка бесплатная.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false"><span>Может ли цена измениться в процессе?</span><i class="pm"></i></button><div class="ans"><div><p>Нет. Стоимость фиксируется в договоре до начала работ. Если вы решите добавить новые функции, мы оценим их отдельно и только с вашего согласия.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false"><span>Нужно ли готовое техническое задание?</span><i class="pm"></i></button><div class="ans"><div><p>Нет. Опишите задачу своими словами, а уточняющие вопросы и ТЗ мы подготовим сами — по вашему рассказу.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false"><span>Как проходит оплата?</span><i class="pm"></i></button><div class="ans"><div><p>Обычно 50% перед стартом и 50% после приёмки. Для крупных проектов делим оплату на этапы.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false"><span>Кому принадлежит готовое решение?</span><i class="pm"></i></button><div class="ans"><div><p>Вам. Передаём исходный код, доступы к сервисам и инструкцию. Бот, CRM или сервис регистрируются на ваш аккаунт.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false"><span>Что будет после запуска?</span><i class="pm"></i></button><div class="ans"><div><p>Первый месяц бесплатно исправляем ошибки. Дальше дорабатываем и добавляем функции по мере роста бизнеса.</p></div></div></div>
+        <div class="qa"><button aria-expanded="false"><span>Можно ли доработать то, что уже есть?</span><i class="pm"></i></button><div class="ans"><div><p>Да. Подключимся к вашему боту, таблицам или CRM и доработаем их без переделки с нуля.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- задача блока: короткая заявка (4 поля) с переходом в Telegram / закрывает страх: «долго заполнять», «сайт соберёт мои данные» -->
+  <section class="section" id="contact">
+    <div class="wrap contact">
+      <div class="card c-info rv">
+        <svg class="art" aria-hidden="true"><use href="#art-plane"/></svg>
+        <div class="c-top">
+          <span class="eyebrow" style="color:#fff;opacity:.85">Связаться</span>
+          <h2>Расскажите о задаче.</h2>
+          <p>Напишите в Telegram студии. Отвечаем в течение рабочего дня.</p>
+        </div>
+        <ul class="c-points">
+          <li>Готовое ТЗ не требуется</li>
+          <li>Оценка стоимости и срока бесплатная</li>
+          <li>Общаетесь напрямую с разработчиком</li>
+        </ul>
+        <div>
+          <a class="handle" href="https://t.me/fines_studio" target="_blank" rel="noopener noreferrer">@fines_studio</a>
+          <small>Telegram студии · ответ в течение рабочего дня</small>
+        </div>
+      </div>
+      <form class="card c-form rv" id="leadForm" novalidate>
+        <h3>Получить бесплатную оценку</h3>
+        <p>4 коротких поля. Соберём сообщение и откроем Telegram — сайт ничего не отправляет и не хранит.</p>
+        <span class="l" id="needLbl">Что нужно</span>
+        <div class="chips" id="needs" role="group" aria-labelledby="needLbl">
+          <button type="button" class="chip is-on" aria-pressed="true" data-v="Telegram-бот">Telegram-бот</button>
+          <button type="button" class="chip" aria-pressed="false" data-v="CRM">CRM</button>
+          <button type="button" class="chip" aria-pressed="false" data-v="Веб-сервис или сайт">Веб-сервис или сайт</button>
+          <button type="button" class="chip" aria-pressed="false" data-v="Автоматизация">Автоматизация</button>
+          <button type="button" class="chip" aria-pressed="false" data-v="Доработка существующего">Доработка</button>
+        </div>
+        <div class="two">
+          <div>
+            <label class="l" for="fSphere">Сфера бизнеса</label>
+            <input class="inp" id="fSphere" type="text" maxlength="80" placeholder="Например: салон красоты" autocomplete="off">
+          </div>
+          <div>
+            <label class="l" for="fWhen">Когда нужно</label>
+            <select class="inp" id="fWhen">
+              <option>Как можно скорее</option>
+              <option>В течение месяца</option>
+              <option>В течение 2–3 месяцев</option>
+              <option>Пока присматриваюсь</option>
+            </select>
+          </div>
+        </div>
+        <label class="l" for="fText">Задача своими словами</label>
+        <textarea class="inp" id="fText" placeholder="Например: хотим принимать записи через бота и видеть их в таблице" maxlength="1000"></textarea>
+        <div class="hp" aria-hidden="true"><label for="fHp">Не заполняйте это поле</label><input type="text" id="fHp" name="website" tabindex="-1" autocomplete="off"></div>
+        <p class="err" id="fErr" role="alert"></p>
+        <button class="btn btn-accent btn-block" type="submit" id="fSend">Получить оценку в Telegram</button>
+        <p class="fine">Готовое ТЗ не требуется. Оценка бесплатная, ответ в течение рабочего дня.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-top">
+      <div class="f-brand">
+        <a class="logo logo-plate" href="#top" aria-label="Финес Студио — наверх">
+          <span class="logo-w">финес<i class="dot"></i></span><span class="logo-s">студио</span>
+        </a>
+        <p>Разрабатываем Telegram-ботов, CRM-системы и веб-сервисы под задачи бизнеса.</p>
+      </div>
+      <div class="f-col">
+        <h4>Решения</h4>
+        <ul>
+          <li><a href="#services" data-filter="bot">Telegram-боты</a></li>
+          <li><a href="#services" data-filter="crm">CRM под вас</a></li>
+          <li><a href="#services" data-filter="web">Веб-сервисы и сайты</a></li>
+          <li><a href="#services" data-filter="int">Интеграции и автоматизация</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Студия</h4>
+        <ul>
+          <li><a href="#calc">Калькулятор</a></li>
+          <li><a href="#compare">Отличия от агентства</a></li>
+          <li><a href="#fears">Чего боятся перед заказом</a></li>
+          <li><a href="#guarantees">Гарантии</a></li>
+          <li><a href="#quiz">Подбор решения</a></li>
+          <li><a href="#process">Процесс</a></li>
+          <li><a href="#faq">Вопросы</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Связь</h4>
+        <ul>
+          <li><a class="tg" href="https://t.me/fines_studio" target="_blank" rel="noopener noreferrer">@fines_studio</a></li>
+          <li>Ответ в течение рабочего дня</li>
+          <li><a href="#contact">Оставить заявку</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bot">
+      <div>
+        <p>© 2026 Финес Студио. Разработка IT-решений для бизнеса.</p>
+        <p class="legal">Информация на сайте, включая цены, носит справочный характер и не является публичной офертой (ст. 437 ГК РФ). Сайт не собирает персональные данные и не использует cookies и счётчики.</p>
+        <p>Шрифты: Onest — SIL Open Font License.</p>
+      </div>
+      <a class="up" href="#top">Наверх ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

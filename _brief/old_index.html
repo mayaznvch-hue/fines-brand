@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Финес Студио — студия разработки IT-решений</title>
+<meta name="description" content="Разрабатываем Telegram-ботов, CRM-системы и веб-сервисы под задачи бизнеса.">
+<meta property="og:title" content="Финес Студио — студия разработки IT-решений">
+<meta property="og:description" content="Разрабатываем Telegram-ботов, CRM-системы и веб-сервисы под задачи бизнеса.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#fbfaf7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='17' cy='24' r='14' fill='%23f2501c'/%3E%3Ccircle cx='31' cy='24' r='14' fill='%23ffc21a'/%3E%3Cpath d='M24 11.9a14 14 0 0 1 0 24.2a14 14 0 0 1 0-24.2z' fill='%23d63a0e'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/onest-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/content.json" as="fetch" crossorigin>
+<script>
+  // apply theme before paint (no flash)
+  (function(){try{var t=localStorage.getItem('kompas-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="booting">
+<div class="progress" id="progress"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top" aria-label="Финес Студио — на главную">
+      <span class="wm"><b>финес<svg class="fdot" viewBox="0 0 48 48" aria-hidden="true"><defs><clipPath id="fd1"><circle cx="17" cy="24" r="14"/></clipPath></defs><g class="spin"><circle cx="17" cy="24" r="14" fill="var(--accent)"/><circle cx="31" cy="24" r="14" fill="var(--dot-2)"/><circle cx="31" cy="24" r="14" fill="var(--dot-mix)" clip-path="url(#fd1)"/></g></svg></b><i>студио</i></span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Разделы"></nav>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Выбрать тему" aria-expanded="false" aria-controls="themePop"><i></i></button>
+      <a class="btn btn-primary btn-sm" data-tg href="#">Написать</a>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="theme-pop" id="themePop" role="dialog" aria-label="Тема оформления">
+  <p>Тема оформления</p>
+  <div class="theme-grid" id="themeGrid"></div>
+</div>
+
+<div class="mmenu" id="mmenu"></div>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" id="heroBg"><div class="aura" aria-hidden="true"><i></i><i></i><i></i></div></div>
+    <div class="hero-in">
+      <div class="hero-mark fade-up"><svg class="mark emblem" viewBox="0 0 48 48" aria-hidden="true"><defs><clipPath id="fd2"><circle cx="17" cy="24" r="14"/></clipPath></defs><g class="spin"><circle cx="17" cy="24" r="14" fill="var(--accent)"/><circle cx="31" cy="24" r="14" fill="var(--dot-2)"/><circle cx="31" cy="24" r="14" fill="var(--dot-mix)" clip-path="url(#fd2)"/></g></svg></div>
+      <span class="eyebrow fade-up" data-bind="hero.eyebrow"></span>
+      <h1 class="h-xl" id="heroTitle"></h1>
+      <p class="lead fade-up" style="transition-delay:.55s" data-bind="hero.subtitle"></p>
+      <div class="hero-cta fade-up" style="transition-delay:.7s">
+        <a class="btn btn-primary" href="#contact" data-bind="hero.ctaPrimary"></a>
+        <a class="btn btn-ghost" id="heroSecondary" href="#services"><span data-bind="hero.ctaSecondary"></span> <span class="chev">›</span></a>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"></div>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement" aria-label="О нас">
+    <div class="pin"><div class="sticky"><p id="statement"></p></div></div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap-wide">
+      <div class="sec-head rv">
+        <span class="eyebrow" data-bind="services.eyebrow"></span>
+        <h2 class="h-lg" data-bind="services.title"></h2>
+        <p class="lead" data-bind="services.subtitle"></p>
+      </div>
+      <div class="bento" id="bento"></div>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section class="alt" id="compare">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow" data-bind="compare.eyebrow"></span>
+        <h2 class="h-lg" data-bind="compare.title"></h2>
+      </div>
+      <div class="cmp rv" id="cmp"></div>
+      <p class="footnote rv" data-bind="compare.footnote"></p>
+      <div class="guar" id="guar"></div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow" data-bind="process.eyebrow"></span>
+        <h2 class="h-lg" data-bind="process.title"></h2>
+      </div>
+      <div class="proc rv" id="proc"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap faq-grid">
+      <div class="faq-side rv">
+        <span class="eyebrow" data-bind="faq.eyebrow"></span>
+        <h2 class="h-lg" data-bind="faq.title"></h2>
+        <p data-bind="faq.text"></p>
+        <a class="btn btn-line" data-tg>Задать свой вопрос ›</a>
+      </div>
+      <div class="faq rv d1" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="alt" id="contact">
+    <div class="wrap contact-solo">
+      <div class="rv">
+        <span class="eyebrow" data-bind="contact.eyebrow"></span>
+        <h2 class="h-lg" data-bind="contact.title"></h2>
+        <p class="lead" data-bind="contact.text"></p>
+        <div class="tg-list" id="tgList"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap bigmark" aria-hidden="true"><span><b>финес<svg class="fdot" viewBox="0 0 48 48" aria-hidden="true"><defs><clipPath id="fd3"><circle cx="17" cy="24" r="14"/></clipPath></defs><g class="spin"><circle cx="17" cy="24" r="14" fill="var(--accent)"/><circle cx="31" cy="24" r="14" fill="var(--dot-2)"/><circle cx="31" cy="24" r="14" fill="var(--dot-mix)" clip-path="url(#fd3)"/></g></svg></b><em>студио</em></span></div>
+  <div class="wrap foot">
+    <div class="foot-txt"><span data-bind="footer.text"></span><small data-bind="footer.legal"></small></div>
+    <div class="foot-themes" id="footThemes" aria-label="Тема"></div>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>
