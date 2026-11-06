@@ -542,3 +542,11 @@ em{font-style:italic;font-family:var(--serif)}
 @media (max-width:640px){.bento--fears .fear:nth-child(n){grid-column:span 12}}
 .hero__sub,.sec__lead,.fear__a,.qz__hint{text-wrap:pretty}
 @media (max-width:640px){.hero__q{font-size:clamp(34px,9.6vw,48px)}}
+/* 768: integration card is too narrow for text + flow side by side */
+@media (max-width:900px){
+  .c-int{display:flex}
+  .c-int .flow{flex-direction:row;flex-wrap:wrap;padding:0;background:none;border:0}
+  .c-int .flow li+li{margin-top:0}
+  .c-int .flow li+li::after{content:none}
+  .c-int .flow li+li::before{content:"→"}
+}

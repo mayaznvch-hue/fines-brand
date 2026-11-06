@@ -11,13 +11,13 @@
   var fmt = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0'); };
   /* очистка пользовательского текста: управляющие символы, лишние пробелы, длина */
   var clean = function (s, max) {
-    return String(s || '').replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '')
+    return String(s || '').replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F\u2060]/g, '').replace(/\u00a0/g, ' ')
       .replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim().slice(0, max || 800);
   };
   var tgLink = function (text) {
     var t = String(text);
     if (t.length > MAX_MSG) t = t.slice(0, MAX_MSG - 1) + '…';
-    return TG + '?text=' + encodeURIComponent(t);
+    return TG + '?text=' + encodeURIComponent(String(t).replace(/\u2060/g, '').replace(/\u00a0/g, ' '));
   };
   var openTg = function (url) {
     var w = window.open(url, '_blank', 'noopener,noreferrer');

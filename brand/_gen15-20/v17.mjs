@@ -75,9 +75,9 @@ build({
   hero: `<div class="ey">БРЕНДБУК · ВАРИАНТ 17 · ПО МОТИВАМ МАКЕТА 07</div><h1>Тёмный <i>премиум</i></h1><p class="lead">Ювелирная мастерская кода: чёрный бархат, медь и антиква. Для студии, которая продаёт внимание к деталям.</p><div class="big"><span class="hl">${`<svg class="mk" viewBox="0 0 64 64">${mark({ bg: 'transparent', m1: IV, m2: CU, dot: A })}</svg>`}${wm()}</span></div>`,
   css: `
 body.v17{--bg:${BK};--fg:${IV};--fg2:${TX};--muted:${MU};--line:#26221d;--line2:#3a332b;--card:${BK2};--card2:#191612;--acc:${A};--acc-t:${CU2};--on-acc:#fff;--light:${IV};--dark:${BK};--ink:${BK};--paper:${IV};--r:0px;--r2:0px;--bf:'Manrope',sans-serif;--hf:'Cormorant Garamond',serif;--cf:'Manrope',sans-serif;--wf:'Cormorant Garamond',serif;--ww:600;--wls:-.02em;--sf:'Manrope',sans-serif;--stc:${CU};--bar:rgba(11,10,9,.92);--bnbg:${BK};--bnfg:${IV};--btr:0;--ic-guide:${CU};--ic-c:${CU2};--chatbg:#1d1a16;--hw:500;--shadow:0 20px 50px rgba(0,0,0,.6)}
-.v17 .st{letter-spacing:.32em;font-size:.24em;text-transform:uppercase;margin-top:.5em;font-weight:600}
+.v17 .st{letter-spacing:.32em;--str:.24;text-transform:uppercase;margin-top:.5em;font-weight:600}
 .v17 .wm .d{background:radial-gradient(circle at 35% 35%,#ffb27a,${A} 60%);animation:glow 2.4s ease-in-out infinite}
-.v17 .L .st{--stc:#8d5a35}
+.v17 .L .st,.v17 .cx-light .st,.v17 .dont .pv .st,.v17 .paper .st,.v17 .mail .st{--stc:#8d5a35}
 .v17 .hero h1{font-size:clamp(60px,10vw,150px);line-height:.92;font-weight:500;letter-spacing:-.01em}
 .v17 .hero h1 i,.v17 .sh h2 i,.v17 i{font-style:italic;color:${CU2}}
 .v17 .L i,.v17 .paper.blank i{color:#8d5a35}

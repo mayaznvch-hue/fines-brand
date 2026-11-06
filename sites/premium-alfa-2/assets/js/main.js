@@ -9,8 +9,8 @@
   var $$ = function (s, c) { return Array.prototype.slice.call((c || d).querySelectorAll(s)); };
   var el = function (tag, cls, text) { var e = d.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
   var MAX_MSG = 1500;
-  var clean = function (v, max) { return String(v || '').replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '').replace(/[ \t]+/g, ' ').trim().slice(0, max || 1000); };
-  var tgUrl = function (msg) { return TG + '?text=' + encodeURIComponent(String(msg).replace(/\u00a0/g, ' ').slice(0, MAX_MSG)); };
+  var clean = function (v, max) { return String(v || '').replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F\u2060]/g, '').replace(/\u00a0/g, ' ').replace(/[ \t]+/g, ' ').trim().slice(0, max || 1000); };
+  var tgUrl = function (msg) { return TG + '?text=' + encodeURIComponent(String(msg).replace(/\u2060/g, '').replace(/\u00a0/g, ' ').slice(0, MAX_MSG)); };
   /* единая защита от повторной отправки: 10 секунд */
   var lastSend = 0;
   var cooldown = function () { var now = Date.now(); if (now - lastSend < 10000) return Math.ceil((10000 - (now - lastSend)) / 1000); lastSend = now; return 0; };
@@ -25,9 +25,9 @@
       line.textContent = '';
       nodes.forEach(function (n) {
         if (n.nodeType === 3) {
-          n.textContent.split(/(\s+)/).forEach(function (part) {
+          n.textContent.split(/([ \t\r\n]+)/).forEach(function (part) {
             if (!part) return;
-            if (/^\s+$/.test(part)) { line.appendChild(d.createTextNode(' ')); return; }
+            if (/^[ \t\r\n]+$/.test(part)) { line.appendChild(d.createTextNode(' ')); return; }
             var w = d.createElement('span'); w.className = 'wd';
             var i = d.createElement('span'); i.className = 'wd__i'; i.style.setProperty('--i', idx++);
             i.textContent = part; w.appendChild(i); line.appendChild(w);
@@ -50,9 +50,9 @@
       Array.prototype.slice.call(el.childNodes).forEach(function (n) {
         if (n.nodeType === 3) {
           var frag = d.createDocumentFragment();
-          n.textContent.split(/(\s+)/).forEach(function (p) {
+          n.textContent.split(/([ \t\r\n]+)/).forEach(function (p) {
             if (!p) return;
-            if (/^\s+$/.test(p)) { frag.appendChild(d.createTextNode(p)); return; }
+            if (/^[ \t\r\n]+$/.test(p)) { frag.appendChild(d.createTextNode(p)); return; }
             var s = d.createElement('span'); s.className = 'lw'; s.textContent = p; frag.appendChild(s); stWords.push(s);
           });
           el.replaceChild(frag, n);
@@ -457,7 +457,7 @@
     };
     var LBL = { what: 'Что нужно', sphere: 'Сфера бизнеса', when: 'Запуск', budget: 'Бюджет' };
     var ans = {}, at = 0, N = steps.length;
-    var label = function (step, v) { var b = $('.opt[data-v="' + v + '"]', step); return b ? b.lastChild.textContent.trim() : v; };
+    var label = function (step, v) { var b = $('.opt[data-v="' + v + '"]', step); return b ? b.lastChild.textContent.replace(/\u2060/g, '').replace(/\u00a0/g, ' ').trim() : v; };
     var render = function (focus) {
       steps.forEach(function (st, i) { st.hidden = i !== at; });
       res.hidden = at < N;

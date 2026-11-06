@@ -107,7 +107,7 @@ body.v18{--bg:${BG};--fg:${GR};--fg2:#2c3038;--muted:${MU};--line:#e3e5e9;--line
 .v18 .bn-st ul{background:#fff;color:${GR};border-radius:5cqw;padding:5cqw}.v18 .bn-st li{border-bottom:1px solid #eee}.v18 .bn-st li:last-child{border:0;padding-bottom:0}
 .v18 .bn-st .cta{background:${GR}}
 .v18 .bn-sq .row{background:${PEACH};border-radius:4cqw;padding:4cqw;margin-left:-1cqw;margin-right:-1cqw}
-.v18 .bn-sq .k{color:${MU}}
+.v18 .bn-sq .k{color:${MU}}.v18 .pb2 .k{color:#fff}
 .v18 .bn-mr{--bnbg:${GR};--bnfg:#fff}.v18 .bn-mr .wm .w{color:#fff}.v18 .bn-mr .pr{color:#fff}
 .v18 .bn-wd .in{width:58%}
 .v18 .deco.bento{right:4%;top:8%;bottom:8%;width:34%;display:grid;gap:2cqw}

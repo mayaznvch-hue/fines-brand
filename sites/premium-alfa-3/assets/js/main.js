@@ -125,13 +125,13 @@
      ====================================================================== */
   var MAX_MSG = 1500, COOLDOWN = 10000;
   function clean(v, max) {
-    v = String(v == null ? '' : v).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '').replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
+    v = String(v == null ? '' : v).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F\u2060]/g, '').replace(/\u00a0/g, ' ').replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
     return max && v.length > max ? v.slice(0, max).trim() + '…' : v;
   }
   function tgUrl(msg) {
     msg = clean(msg);
     if (msg.length > MAX_MSG) msg = msg.slice(0, MAX_MSG - 1) + '…';
-    return TG + '?text=' + encodeURIComponent(msg);
+    return TG + '?text=' + encodeURIComponent(String(msg).replace(/\u2060/g, '').replace(/\u00a0/g, ' '));
   }
   function openTg(url) {
     var w = window.open(url, '_blank');
@@ -188,7 +188,7 @@
     }
     function render() {
       var r = REC[ans.need] || null;
-      $('#qzRec').textContent = r ? r.t : 'Ответьте на вопросы слева';
+      $('#qzRec').textContent = r ? r.t : 'Ответьте на\u00a0вопросы слева';
       var p = r ? r.p : 15000;
       $('#qzPrice').textContent = fmt(p);
       $('#qzTerm').textContent = r ? r.d : 'от 2 дней';

@@ -80,13 +80,13 @@
   var chat = $('#tgChat'), status = $('#tgStatus');
   var script = [
     { who: 'me', text: '/start' },
-    { who: 'bot', text: 'Привет! Я бот записи 👋 Что вас интересует?' },
+    { who: 'bot', text: 'Привет! Я\u00a0бот записи 👋 Что вас интересует?' },
     { kb: ['Стрижка', 'Окрашивание', 'Маникюр'], pick: 0 },
-    { who: 'bot', text: 'Выберите удобное время на пятницу:' },
+    { who: 'bot', text: 'Выберите удобное время на\u00a0пятницу:' },
     { kb: ['11:00', '14:30', '18:00'], pick: 1 },
-    { who: 'bot', text: 'Записал вас на пятницу, 14:30. Пришлю напоминание за 2 часа ✂️', cls: 'ok' },
+    { who: 'bot', text: 'Записал вас на\u00a0пятницу, 14:30. Пришлю напоминание за\u00a02 часа ✂️', cls: 'ok' },
     { who: 'me', text: 'Супер, спасибо!' },
-    { who: 'bot', text: 'Заявка уже в CRM у администратора 🙌' }
+    { who: 'bot', text: 'Заявка уже в\u00a0CRM у\u00a0администратора 🙌' }
   ];
   var timers = [];
   function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
@@ -145,9 +145,9 @@
   /* ---------- calculator ---------- */
   var PRICES = {
     bot: { name: 'Telegram-бот', price: 15000, days: 3 },
-    crm: { name: 'CRM под вас', price: 40000, days: 7 },
+    crm: { name: 'CRM под\u00a0вас', price: 40000, days: 7 },
     web: { name: 'Веб-сервис или сайт', price: 30000, days: 5 },
-    int: { name: 'Интеграции и автоматизация', price: 15000, days: 2 }
+    int: { name: 'Интеграции и\u00a0автоматизация', price: 15000, days: 2 }
   };
   var fmt = function (n) { return n.toLocaleString('ru-RU').replace(/\u00a0|,/g, ' ') + ' ₽'; };
   var dayWord = function (n) { var m = n % 10, h = n % 100; return (m === 1 && h !== 11) ? 'дня' : 'дней'; };
@@ -157,7 +157,7 @@
     var picked = boxes.filter(function (b) { return b.checked; }).map(function (b) { return PRICES[b.value]; });
     $$('.svc-add').forEach(function (btn) {
       var on = boxes.some(function (b) { return b.checked && b.value === btn.dataset.add; });
-      btn.classList.toggle('on', on); btn.textContent = on ? '✓ в расчёте' : '+ в расчёт';
+      btn.classList.toggle('on', on); btn.textContent = on ? '✓ в\u00a0расчёте' : '+ в\u00a0расчёт';
       btn.setAttribute('aria-pressed', String(on));
     });
     if (!picked.length) {
@@ -228,7 +228,6 @@
     text = clean(text, MAX_MSG);
     return TG + '?text=' + encodeURIComponent(text);
   }
-  window.FinesTG = tgUrl; // for tests only, no secrets here
   $$('a.js-tg[data-tg]').forEach(function (a) { a.href = tgUrl(a.dataset.tg); });
 
   /* anti-spam: 10 s cooldown between sends */
@@ -251,7 +250,7 @@
     var needs = $$('input[name="need"]:checked', form).map(function (c) { return clean(c.value, 60); });
     var text = clean($('#briefText').value, 300), when = clean($('#briefWhen').value, 60), who = clean($('#briefWho').value, 60);
     if (!needs.length && text.length < 3) {
-      err.textContent = 'Отметьте, что нужно, или напишите сферу и задачу хотя бы парой слов.';
+      err.textContent = 'Отметьте, что нужно, или напишите сферу и\u00a0задачу хотя бы\u00a0парой слов.';
       $('#briefText').focus(); return;
     }
     var lines = ['Здравствуйте! Заявка с сайта Финес Студио.'];
@@ -261,17 +260,17 @@
     if (who) lines.push('Обращаться: ' + who);
     var res = openTg(tgUrl(lines.join('\n')), form);
     form.dataset.status = res;
-    err.textContent = res === 'cooldown' ? 'Заявка уже открыта в Telegram. Повторно можно через 10 секунд.' : '';
+    err.textContent = res === 'cooldown' ? 'Заявка уже открыта в\u00a0Telegram. Повторно можно через 10 секунд.' : '';
   });
   ['#briefText', '#briefWho'].forEach(function (s) { $(s).addEventListener('input', function () { if (err.textContent) err.textContent = ''; }); });
 
   /* ---------- quiz ---------- */
   var qz = $('#quizForm'), steps = $$('.qz-step', qz), cur = 1, TOTAL = 4;
   var REC = {
-    bot: { t: 'Telegram-бот', p: 'от 15\u00a0000\u00a0₽', d: 'от 3 дней' },
-    crm: { t: 'CRM под вас', p: 'от 40\u00a0000\u00a0₽', d: 'от 7 дней' },
-    web: { t: 'Веб-сервис или сайт', p: 'от 30\u00a0000\u00a0₽', d: 'от 5 дней' },
-    int: { t: 'Интеграции и автоматизация', p: 'от 15\u00a0000\u00a0₽', d: 'от 2 дней' }
+    bot: { t: 'Telegram-бот', p: 'от\u00a015\u00a0000\u00a0₽', d: 'от\u00a03 дней' },
+    crm: { t: 'CRM под\u00a0вас', p: 'от\u00a040\u00a0000\u00a0₽', d: 'от\u00a07 дней' },
+    web: { t: 'Веб-сервис или сайт', p: 'от\u00a030\u00a0000\u00a0₽', d: 'от\u00a05 дней' },
+    int: { t: 'Интеграции и\u00a0автоматизация', p: 'от\u00a015\u00a0000\u00a0₽', d: 'от\u00a02 дней' }
   };
   var LABELS = { need: 'Что нужно', sphere: 'Сфера', when: 'Запуск', budget: 'Бюджет' };
   var back = $('#qzBack'), restart = $('#qzRestart'), bar = $('#qzBar'), cnt = $('#qzCount'), pb = $('.qz-bar', qz);
@@ -297,7 +296,7 @@
       var b = document.createElement('b'); b.textContent = r.t + ', ' + r.p; rec.appendChild(b);
       rec.append(' · срок ' + r.d + '. Точную цену назовём после бесплатной оценки.');
     } else {
-      rec.textContent = 'Подберём решение вместе: опишите процесс, а мы предложим бота, CRM или автоматизацию и назовём цену после бесплатной оценки.';
+      rec.textContent = 'Подберём решение вместе: опишите процесс, а\u00a0мы\u00a0предложим бота, CRM или автоматизацию и\u00a0назовём цену после бесплатной оценки.';
     }
     var ul = $('#qzSum'); ul.replaceChildren();
     Object.keys(LABELS).forEach(function (k) {
@@ -331,7 +330,7 @@
   $('#qzSend').addEventListener('click', function (e) {
     e.preventDefault(); buildQuizLink();
     var res = openTg($('#qzSend').href, qz); qz.dataset.status = res;
-    $('.qz-note', qz).textContent = res === 'cooldown' ? 'Чат уже открыт. Повторно можно через 10 секунд.' : 'Откроется чат @fines_studio с готовым текстом. Оценка бесплатная, отвечаем в течение рабочего дня.';
+    $('.qz-note', qz).textContent = res === 'cooldown' ? 'Чат уже открыт. Повторно можно через 10 секунд.' : 'Откроется чат @fines_studio с\u00a0готовым текстом. Оценка бесплатная, отвечаем в\u00a0течение рабочего дня.';
   });
   qz.addEventListener('submit', function (e) { e.preventDefault(); });
   show(1);

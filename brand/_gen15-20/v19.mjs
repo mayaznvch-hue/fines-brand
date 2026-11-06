@@ -86,7 +86,7 @@ build({
   css: `
 body.v19{--bg:${CR};--fg:${K};--fg2:#2a2a2a;--muted:#595350;--line:${K};--line2:${K};--card:#fff;--card2:#fff;--acc:${O};--acc-t:#c73a00;--on-acc:${K};--light:#fff;--dark:${V};--ink:${K};--paper:#fff;--r:14px;--r2:12px;--bf:'Geologica',sans-serif;--hf:'Unbounded',sans-serif;--cf:'Geologica',sans-serif;--wf:'Unbounded',sans-serif;--ww:900;--wls:-.05em;--sf:'Geologica',sans-serif;--stc:${K};--bar:${Y};--bnbg:${V};--bnfg:#fff;--br:16px;--btr:12px;--ic-c:${K};--chatbg:#c9b8ff;--hw:900;--shadow:6px 6px 0 ${K}}
 .v19 .wm .d{border:.03em solid ${K};width:.24em;height:.24em}
-.v19 .st{background:${Y};color:${K};padding:.15em .4em;align-self:flex-start;font-weight:600;letter-spacing:.06em;border:2px solid ${K};margin-top:.35em;font-size:.26em}
+.v19 .st{background:${Y};color:${K};padding:.15em .4em;align-self:flex-start;font-weight:600;letter-spacing:.06em;border:2px solid ${K};margin-top:.35em;--str:.26}
 .v19 .top{border-bottom:3px solid ${K}}
 .v19 .top nav a{color:${K};font-weight:600}
 .v19 .card,.v19 .sw,.v19 .icons figure,.v19 .els .e,.v19 .merch figure,.v19 .dont figure,.v19 .tile,.v19 .phr li{border:3px solid ${K};box-shadow:5px 5px 0 ${K}}
@@ -117,6 +117,8 @@ body.v19{--bg:${CR};--fg:${K};--fg2:#2a2a2a;--muted:#595350;--line:${K};--line2:
 .v19 .bn-st .ttl{font-size:11.5cqw;line-height:.92}
 .v19 .bn-st li{border-bottom:2px solid rgba(255,255,255,.3)}
 .v19 .bn-sq{--bnbg:${P};--bnfg:${K}}.v19 .bn-sq .ttl{font-size:10cqw;line-height:.92;max-width:70%}.v19 .bn-sq .row .mt{font-weight:600}
+@media(max-width:600px){.v19 .bn-sq .ttl{font-size:9cqw}.v19 .bn-sq .fn{margin-top:1.5cqw}.v19 .bn.bn-wd .ttl{font-size:5.4cqw}.v19 .bn-wd .sb{margin-top:0}.v19 .ths .ttl{font-size:6cqw}}
+.v19 .bn.bn-st .ttl{font-size:9cqw}.v19 .bn-sq .ttl{max-width:78%;font-size:9cqw}.v19 .bn-sq .fn{margin-top:1.5cqw}
 .v19 .bn-mr{--bnbg:${Y};--bnfg:${K}}.v19 .bn-mr .ttl{font-size:9cqw}
 .v19 .bn-wd .ttl{font-size:7.4cqw;line-height:.9}
 .v19 .bn-tg{--bnbg:${K};--bnfg:#fff}.v19 .bn-tg .chips span{background:${Y};color:${K};border:2px solid ${Y}}

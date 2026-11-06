@@ -549,3 +549,17 @@ textarea.inp{min-height:120px;resize:vertical;line-height:1.45}
 .qz-res textarea{resize:vertical}
 @media (max-width:600px){.header .wrap{gap:8px}.h-actions .btn-sm{padding:0 12px;font-size:14px}.slide .row .btn{width:100%}}
 .qz-bar{background:#e3e5e9}
+
+/* final polish: WCAG AA contrast for text on orange / orange text */
+:root{--accent-deep:#c93c0b;--accent-text:#c43a0c}
+.btn-accent{background:var(--accent-deep)}
+.btn-accent:hover{background:#b03408}
+.eyebrow,.cmp thead th.us,.mini .link,.st-side .btn-light,.cmp td.b::before{color:var(--accent-text)}
+.st-side,.c-info,.quiz-intro,.g.wide .split div:first-child,.step:first-child .sn b{background:var(--accent-deep)}
+.st-side p,.c-info p,.c-info small{color:#fff3ee}
+.quiz-intro .eyebrow,.c-info .eyebrow{color:#fff;opacity:1}
+.quiz-intro p{color:#fff}
+.g.wide .split span{opacity:1}
+.g.full p{color:#565a63}
+.mini.dark .link,.st-card .eyebrow{color:var(--accent)}
+.c-info .c-top .eyebrow{color:#fff;opacity:1}

@@ -106,7 +106,6 @@
     });
   });
   go(0);
-  window.__carousel = { go: go, get cur() { return cur; } };
 
   /* ---------- Service filter chips ---------- */
   var chips = $$("#chips .chip"), cards = $$("#bento .svc"), empty = $("#empty");
@@ -141,10 +140,10 @@
   /* ---------- Calculator ---------- */
   // Base prices & minimal terms from content.json → services.items
   var TYPES = {
-    bot: { name: "Telegram-бот", base: 15000, step: 6000, minDays: 3, perUnit: 2, hints: ["приём заявок и уведомление в чат", "запись с выбором времени и напоминаниями", "приём оплаты и рассылки", "каталог, корзина, личный кабинет в боте"] },
-    crm: { name: "CRM", base: 40000, step: 12000, minDays: 7, perUnit: 4, hints: ["клиенты, сделки и задачи", "воронки, напоминания и роли сотрудников", "отчёты, интеграция с ботом и сайтом", "несколько отделов, сложные права и аналитика"] },
-    web: { name: "Веб-сервис или сайт", base: 30000, step: 9000, minDays: 5, perUnit: 3, hints: ["сайт с формой и онлайн-записью", "онлайн-оплата и личный кабинет", "внутренний сервис для сотрудников", "сервис с ролями, API и интеграциями"] },
-    int: { name: "Интеграция", base: 15000, step: 5000, minDays: 2, perUnit: 1.5, hints: ["одна связка: сайт → таблица или CRM", "несколько систем и уведомления", "обмен с 1С и регулярные отчёты", "сквозная автоматизация процесса"] }
+    bot: { name: "Telegram-бот", base: 15000, step: 6000, minDays: 3, perUnit: 2, hints: ["приём заявок и\u00a0уведомление в\u00a0чат", "запись с\u00a0выбором времени и\u00a0напоминаниями", "приём оплаты и\u00a0рассылки", "каталог, корзина, личный кабинет в\u00a0боте"] },
+    crm: { name: "CRM", base: 40000, step: 12000, minDays: 7, perUnit: 4, hints: ["клиенты, сделки и\u00a0задачи", "воронки, напоминания и\u00a0роли сотрудников", "отчёты, интеграция с\u00a0ботом и\u00a0сайтом", "несколько отделов, сложные права и\u00a0аналитика"] },
+    web: { name: "Веб-сервис или сайт", base: 30000, step: 9000, minDays: 5, perUnit: 3, hints: ["сайт с\u00a0формой и\u00a0онлайн-записью", "онлайн-оплата и\u00a0личный кабинет", "внутренний сервис для\u00a0сотрудников", "сервис с\u00a0ролями, API и\u00a0интеграциями"] },
+    int: { name: "Интеграция", base: 15000, step: 5000, minDays: 2, perUnit: 1.5, hints: ["одна связка: сайт → таблица или CRM", "несколько систем и\u00a0уведомления", "обмен с\u00a01С и\u00a0регулярные отчёты", "сквозная автоматизация процесса"] }
   };
   var type = "bot", termTouched = false;
   var rScope = $("#rScope"), rTerm = $("#rTerm");
@@ -169,8 +168,8 @@
     $("#tMin").textContent = days(t.minDays);
     $("#hScope").textContent = "Например: " + t.hints[Math.min(3, Math.floor((s - 1) / 2.5))] + ".";
     var hT = $("#hTerm");
-    if (d < cm) { hT.textContent = "Быстрее комфортного срока (" + days(cm) + "): +" + Math.round(rushK * 100) + "% за ускорение. Минимум для этого объёма: " + days(hardMin) + "."; hT.classList.add("warn"); }
-    else { hT.textContent = d === cm ? "Комфортный срок для этого объёма." : "Без спешки: цена не меняется, срок с запасом."; hT.classList.remove("warn"); }
+    if (d < cm) { hT.textContent = "Быстрее комфортного срока (" + days(cm) + "): +" + Math.round(rushK * 100) + "% за\u00a0ускорение. Минимум для\u00a0этого объёма: " + days(hardMin) + "."; hT.classList.add("warn"); }
+    else { hT.textContent = d === cm ? "Комфортный срок для\u00a0этого объёма." : "Без\u00a0спешки: цена не\u00a0меняется, срок с\u00a0запасом."; hT.classList.remove("warn"); }
     $("#tVal").textContent = fmt(total);
     $("#tSub").textContent = t.name + " · " + s + " " + plural(s, "функция", "функции", "функций") + " · " + days(d);
     $("#bBase").textContent = fmt(t.base) + " ₽";
@@ -200,7 +199,6 @@
   $$("[data-calc]").forEach(function (a) { a.addEventListener("click", function () { setType(a.getAttribute("data-calc")); }); });
   var cf = $("#calcForm"); if (cf) cf.addEventListener("submit", function (e) { e.preventDefault(); });
   setType("bot");
-  window.__calc = { setType: setType, calc: calc };
 
   /* ---------- FAQ accordion ---------- */
   $$("#acc .qa").forEach(function (qa, i) {
@@ -222,7 +220,6 @@
   }
   function tgUrl(msg) { return TG + "?text=" + encodeURIComponent(msg.slice(0, MAX_MSG)); }
   function openTg(url) {
-    window.__lastLead = url;
     var w = window.open(url, "_blank", "noopener,noreferrer");
     if (!w) location.href = url;
   }
@@ -237,7 +234,6 @@
     if (btn) { btn.disabled = true; setTimeout(function () { btn.disabled = false; }, COOLDOWN); }
     return true;
   }
-  window.__lead = { clean: clean, MAX_MSG: MAX_MSG, reset: function () { lastSend = 0; $$("button[disabled]").forEach(function (b) { b.disabled = false; }); } };
 
   /* ---------- Lead form → t.me ---------- */
   var needs = $$("#needs .chip");
@@ -251,10 +247,10 @@
     err.textContent = "";
     var picked = needs.filter(function (c) { return c.classList.contains("is-on"); }).map(function (c) { return c.getAttribute("data-v"); });
     var t = clean(txt.value, 1000), sp = clean(sphere.value, 80);
-    if (t.length < 10) { txt.classList.add("bad"); err.textContent = "Опишите задачу хотя бы парой фраз — так оценка будет точнее."; txt.focus(); return; }
+    if (t.length < 10) { txt.classList.add("bad"); err.textContent = "Опишите задачу хотя бы\u00a0парой фраз — так оценка будет точнее."; txt.focus(); return; }
     if (!guard($("#fHp"), $("#fSend"), err)) return;
     var msg = "Здравствуйте! Хочу получить оценку (с сайта Финес Студио).\n" +
-      "Что нужно: " + (picked.length ? picked.join(", ") : "пока не определились") + "\n" +
+      "Что нужно: " + (picked.length ? picked.join(", ") : "пока не\u00a0определились") + "\n" +
       (sp ? "Сфера: " + sp + "\n" : "") +
       "Когда: " + $("#fWhen").value + "\n" +
       "Задача: " + t;
@@ -263,13 +259,13 @@
 
   /* ---------- Quiz (4 steps → mini-brief in Telegram) ---------- */
   var REC = {
-    bot: { name: "Telegram-бот", price: "от 15 000 ₽", term: "срок от 3 дней" },
-    crm: { name: "CRM под ваш процесс", price: "от 40 000 ₽", term: "срок от 7 дней" },
-    web: { name: "Веб-сервис или сайт", price: "от 30 000 ₽", term: "срок от 5 дней" },
-    int: { name: "Интеграции и автоматизация", price: "от 15 000 ₽", term: "срок от 2 дней" },
-    unknown: { name: "Начнём с бесплатной оценки", price: "от 15 000 ₽", term: "подберём решение после разговора" }
+    bot: { name: "Telegram-бот", price: "от\u00a015 000 ₽", term: "срок от\u00a03 дней" },
+    crm: { name: "CRM под\u00a0ваш процесс", price: "от\u00a040 000 ₽", term: "срок от\u00a07 дней" },
+    web: { name: "Веб-сервис или сайт", price: "от\u00a030 000 ₽", term: "срок от\u00a05 дней" },
+    int: { name: "Интеграции и\u00a0автоматизация", price: "от\u00a015 000 ₽", term: "срок от\u00a02 дней" },
+    unknown: { name: "Начнём с\u00a0бесплатной оценки", price: "от\u00a015 000 ₽", term: "подберём решение после разговора" }
   };
-  var NEED_LABEL = { bot: "Telegram-бот", crm: "CRM", web: "Веб-сервис или сайт", int: "AI-ассистент или автоматизация", unknown: "Пока не знаю" };
+  var NEED_LABEL = { bot: "Telegram-бот", crm: "CRM", web: "Веб-сервис или сайт", int: "AI-ассистент или автоматизация", unknown: "Пока не\u00a0знаю" };
   var qSteps = $$("#quizBox .qz"), qRes = $("#qzRes"), qBack = $("#qzBack"), qBar = $("#qzBar"), qStep = $("#qzStep");
   var qi = 0, ans = {};
   var LABELS = { need: "Что нужно", sphere: "Сфера бизнеса", when: "Когда запустить", budget: "Ориентир бюджета" };
@@ -310,7 +306,7 @@
       "3. Когда запустить: " + ans.when + "\n" +
       "4. Бюджет: " + ans.budget + "\n" +
       "Рекомендация сайта: " + r.name + ", " + r.price + "\n" +
-      (note ? "Комментарий: " + note : "Детали расскажу в переписке.");
+      (note ? "Комментарий: " + note : "Детали расскажу в\u00a0переписке.");
     return tgUrl(msg);
   }
   qSteps.forEach(function (f, k) {
@@ -328,12 +324,11 @@
   $("#qzReset").addEventListener("click", function () { ans = {}; $("#qzNote").value = ""; qShow(0); });
   $("#qzSend").addEventListener("click", function () {
     var e = $("#qzErr"); e.textContent = "";
-    if (!ans.need || !ans.sphere || !ans.when || !ans.budget) { e.textContent = "Ответьте на все 4 вопроса."; return; }
+    if (!ans.need || !ans.sphere || !ans.when || !ans.budget) { e.textContent = "Ответьте на\u00a0все 4 вопроса."; return; }
     if (!guard($("#qzHp"), $("#qzSend"), e)) return;
     openTg(qBuild());
   });
   qShow(0);
-  window.__quiz = { build: qBuild, get step() { return qi; }, get answers() { return ans; } };
 
   /* ---------- Reveal on scroll ---------- */
   var rv = $$(".rv");

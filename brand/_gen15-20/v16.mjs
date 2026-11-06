@@ -86,6 +86,7 @@ build({
 body.v16{--bg:${FOG};--fg:${INK};--fg2:#34443a;--muted:#55665a;--line:rgba(47,91,69,.16);--line2:rgba(47,91,69,.3);--card:${CREAM};--card2:#fbf8f0;--acc:${A};--acc-t:#b8441a;--on-acc:#fff;--light:${CREAM};--dark:${MOSS};--ink:${INK};--paper:${CREAM};--r:28px;--r2:20px;--bf:'Manrope',sans-serif;--hf:'Manrope',sans-serif;--cf:'Manrope',sans-serif;--wf:'Manrope',sans-serif;--ww:800;--wls:-.055em;--sf:'Manrope',sans-serif;--stc:${MOSS};--bar:rgba(223,232,216,.92);--bnbg:${MOSS};--bnfg:${CREAM};--br:28px;--btr:99px;--ic-blob:${SAGE};--ic-c:${MOSS};--chatbg:#c9d8c4;--hw:800;--shadow:0 18px 40px rgba(47,91,69,.16)}
 .v16 .D .st,.v16 .bn .st,.v16 .bc .st{--stc:${SAGE}}
 .v16 .st{font-weight:500;letter-spacing:.08em}
+.v16 .bn.th,.v16 .bn.reel{--tnum:${SAGE}}
 .v16 .wm .d{animation:breathe 3.2s ease-in-out infinite}
 @keyframes breathe{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(232,96,44,0)}50%{transform:scale(1.18);box-shadow:0 0 12px 3px rgba(232,96,44,.45)}}
 .v16 .sh h2,.v16 .hero h1{font-weight:800;letter-spacing:-.035em}

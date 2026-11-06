@@ -602,3 +602,19 @@ select{appearance:none;-webkit-appearance:none;background:var(--bg) url("data:im
   .mq-track{animation:none}
   .rv{opacity:1;transform:none}
 }
+
+/* final polish: WCAG AA contrast */
+.hero-facts b,.cmp-head .cmp-us{color:#c43a0c}
+.hero-facts li:nth-child(2) b{color:var(--dark)}
+.hero-facts li:nth-child(3) b{color:var(--lime)}
+.pill--orange{background:#c93c0b}
+.pill--orange:hover{background:#b03408}
+.card--orange .tag{background:var(--dark);color:#fff}
+.card--orange .tag--line{background:transparent;color:var(--dark);opacity:1}
+.card--dark .tag--dark{background:#c93c0b}
+.svc-list li{background:rgba(255,255,255,.3)}
+.card--orange .eyebrow{color:var(--dark)}
+.fear-n,.g-n{opacity:.75}
+.card--orange .g-n,.card--orange .fear-n{opacity:1}
+.card--lime .fear-n,.card--lime .g-n{opacity:.8}
+@media (min-width:1041px){.svc--bot .art-bubbles{margin:auto -6px auto auto;max-width:440px;width:70%}}
