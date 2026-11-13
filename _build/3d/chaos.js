@@ -14,7 +14,7 @@
 
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var small = window.innerWidth <= 700;
-  var cols = small ? 44 : 64, rows = small ? 26 : 38, N = cols * rows;
+  var cols = small ? 40 : 54, rows = small ? 24 : 32, N = cols * rows;
   var GX = 1.6, GY = GX * (rows - 1) / (cols - 1);
 
   var VS = [
@@ -28,8 +28,8 @@
     ' c+=.07*vec3(sin(uT*.6+aS.x*40.),cos(uT*.5+aS.y*71.),sin(uT*.4+aS.x*23.));',
     ' c.xz=r(uT*.16)*c.xz;c.yz=r(.35)*c.yz;',
     ' vec3 g=aG;g.z+=.05*sin(uT*.8+g.x*1.7+g.y*1.2);',
-    ' g.yz=r(-.46-uS*.75+uTilt.y)*g.yz;',
-    ' g.xz=r(.30+uS*.3+uTilt.x)*g.xz;',
+    ' g.yz=r(-.5-uS*.6+uTilt.y)*g.yz;',
+    ' g.xz=r(uS*.25+uTilt.x)*g.xz;',
     ' vec3 q=mix(c,g,p);',
     ' q+=sin(p*3.14159)*.35*vec3(aS.y-.5,aS.x-.5,aS.y-.5);',
     ' float z=q.z+4.2;float k=4.2/z;',
@@ -40,7 +40,7 @@
     ' float base=mix(.75+aS.y*1.1,1.,p);',
     ' gl_PointSize=uPx*base*k*(1.+aS.z*.5);',
     ' float depth=smoothstep(5.7,2.9,z);',
-    ' vA=mix(.16+.84*depth*depth,.66+.34*depth,p);',
+    ' vA=mix(.16+.84*depth*depth,1.,p);',
     ' vK=aS.z;',
     '}'
   ].join('\n');
@@ -50,7 +50,7 @@
     ' float d=length(gl_PointCoord-.5);',
     ' float a=smoothstep(.5,.34,d);',
     ' vec3 col=mix(vec3(.957,.945,.918),vec3(.949,.314,.110),vK);',
-    ' gl_FragColor=vec4(col,a*mix(vA*.82,min(1.,vA+.35),vK));',
+    ' gl_FragColor=vec4(col,a*mix(vA*.9,min(1.,vA+.35),vK));',
     '}'
   ].join('\n');
 
@@ -136,7 +136,7 @@
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.uniform1f(U.uT, t); gl.uniform1f(U.uP, P); gl.uniform1f(U.uS, S); gl.uniform1f(U.uAsp, W / H);
     gl.uniform1f(U.uScale, scale);
-    gl.uniform1f(U.uPx, dpr * Math.max(2.1, Math.min(3.2, Rpx * 2 / cols * 0.4)));
+    gl.uniform1f(U.uPx, dpr * Math.max(2.3, Math.min(3.8, Rpx * 2 / cols * 0.42)));
     gl.uniform1f(U.uMA, ma);
     gl.uniform2f(U.uOff, off[0], off[1]); gl.uniform2f(U.uTilt, tx, ty); gl.uniform2f(U.uM, mx, my);
     gl.drawArrays(gl.POINTS, 0, N);
