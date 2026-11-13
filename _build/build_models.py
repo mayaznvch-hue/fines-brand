@@ -10,7 +10,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'sites' / 'finesstudio'
 OUT = ROOT / 'sites' / '3d-models'
-V = '2'
+V = '3'
 
 MODELS = [
     ('plane', 'Telegram-бот', 'Запись, заявки и оплата в мессенджере, которым клиенты уже пользуются.', 'бумажный самолёт'),
