@@ -114,8 +114,8 @@
     var N = [1.35, 0, 0], C = [-0.8, -0.06, 0], L = [-1.15, 0.3, 1.0], R = [-1.15, 0.3, -1.0], K = [-0.62, -0.62, 0];
     var wingL = flat([N, C, L]), wingR = flat([N, R, C]), keel = flat([N, K, C]), dot = sphere(1, 14, 10);
     function fly(t, o) { o.p[1] += 0.09 * Math.sin(t * 1.3); o.r[0] = 0.2 * Math.sin(t * 0.9); o.r[2] = 0.05 * Math.sin(t * 1.3 + 1); }
-    var parts = [P(wingL, 'c', [0.5, 0.1, 0], 0, 0, fly), P(wingR, 's', [0.5, 0.1, 0], 0, 0, fly), P(keel, 'k', [0.5, 0.1, 0], 0, 0, fly)];
-    [[-1.0, -0.12, 0.1], [-1.42, -0.3, 0.075], [-1.78, -0.52, 0.055]].forEach(function (d, i) {
+    var parts = [P(wingL, 'c', [0.5, 0.1, 0], 0, 0, fly), P(wingR, 'c', [0.5, 0.1, 0], 0, 0, fly), P(keel, 's', [0.5, 0.1, 0], 0, 0, fly)];
+    [[-1.0, 0.04, 0.1], [-1.4, 0.02, 0.075], [-1.74, 0, 0.055]].forEach(function (d, i) {
       parts.push(P(dot, 'o', [d[0], d[1], 0], 0, 0, function (t, o) { var k = d[2] * (0.75 + 0.25 * Math.sin(t * 3 - i * 1.1)); o.s = [k, k, k]; o.p[1] += 0.05 * Math.sin(t * 1.3 - 0.5 - i * 0.4); }));
     });
     return { scale: 0.6, tilt: [0.62, -0.62, 0.34], sway: [0.16, 0.5], still: 1, parts: parts };
@@ -171,7 +171,7 @@
     var parts = [P(rbox(0.74, 0.74, 0.74, 0.13, 3), 's')];
     nodes.forEach(function (n, i) {
       parts.push(P(node, 'g', n), P(rod([0, 0, 0], n, 0.018, 8), 'k'));
-      parts.push(P(pulse, 'o', [0, 0, 0], 0, 0, function (t, o) { var k = 0.36 + 0.42 * (0.5 - 0.5 * Math.cos(t * 1.15 + i * 1.7)); o.p = [n[0] * k, n[1] * k, n[2] * k]; }));
+      parts.push(P(pulse, 'o', [0, 0, 0], 0, 0, function (t, o) { var k = 0.46 + 0.25 * (0.5 - 0.5 * Math.cos(t * 1.15 + i * 1.7)); o.p = [n[0] * k, n[1] * k, n[2] * k]; }));
     });
     return { scale: 0.6, tilt: [0.18, 0.4, 0], sway: [0.5, 0.3], still: 1.2, parts: parts };
   };
@@ -208,17 +208,17 @@
 
   // 08 · Сайт и веб-сервис: интерфейс в слоях
   SC.site = function () {
-    function lv(n) { return function (t, o) { o.p[2] = 0.05 + n * (0.1 + 0.16 * (0.5 + 0.5 * Math.sin(t * 0.8))); }; }
+    function lv(n) { return function (t, o) { o.p[2] = 0.05 + n * (0.08 + 0.1 * (0.5 + 0.5 * Math.sin(t * 0.8))); }; }
     var cardg = rbox(0.76, 0.44, 0.06, 0.05), dot = sphere(0.04, 10, 8);
     var parts = [
       P(rbox(2.7, 1.84, 0.08, 0.09, 3), 'k'),
       P(rbox(2.5, 0.05, 0.03, 0.01), 'g', [0, 0.62, 0.05]),
       P(dot, 'o', [-1.14, 0.76, 0.07]), P(dot, 'c', [-1.0, 0.76, 0.07]), P(dot, 'c', [-0.86, 0.76, 0.07]),
-      P(rbox(1.5, 0.6, 0.06, 0.05), 'g', [-0.5, 0.17, 0], 0, 0, lv(1)),
+      P(rbox(1.4, 0.6, 0.06, 0.05), 'g', [-0.4, 0.17, 0], 0, 0, lv(1)),
       P(rbox(0.86, 0.6, 0.06, 0.05), 's', [0.82, 0.17, 0], 0, 0, lv(2)),
-      P(cardg, 'k', [-0.87, -0.5, 0], 0, 0, lv(1)), P(cardg, 'k', [0, -0.5, 0], 0, 0, lv(1)), P(cardg, 'k', [0.87, -0.5, 0], 0, 0, lv(1)),
-      P(rbox(0.9, 0.08, 0.04, 0.02), 'c', [-0.5, 0.3, 0], 0, 0, lv(2)),
-      P(rbox(0.5, 0.16, 0.06, 0.05), 'o', [-0.7, 0.05, 0], 0, 0, lv(2.6))
+      P(cardg, 'g', [-0.72, -0.5, 0], 0, 0, lv(1)), P(cardg, 'g', [0.1, -0.5, 0], 0, 0, lv(1)), P(cardg, 'g', [0.92, -0.5, 0], 0, 0, lv(1)),
+      P(rbox(0.9, 0.08, 0.04, 0.02), 'c', [-0.42, 0.3, 0], 0, 0, lv(2)),
+      P(rbox(0.5, 0.16, 0.06, 0.05), 'o', [-0.62, 0.05, 0], 0, 0, lv(2.6))
     ];
     return { scale: 0.6, tilt: [-0.36, -0.58, 0], sway: [0.18, 0.4], still: 2, parts: parts };
   };
