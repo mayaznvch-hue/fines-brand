@@ -740,3 +740,18 @@ a,button,label,input,textarea{touch-action:manipulation}
 .mnote{margin-top:28px;color:var(--dim);font-size:14px;line-height:1.5;max-width:720px}
 @media (max-width:800px){.mpage{padding-top:32px}.mgrid{grid-template-columns:1fr}.mcard{padding:10px;border-radius:var(--r-lg);gap:12px}.mstage{border-radius:var(--r-md)}.mcap{padding:2px 8px 8px;gap:4px 12px}.mcap__d{font-size:14px}}
 @media (prefers-reduced-motion:reduce){.mstage canvas{transition:none}}
+/* ---------- палитры ---------- */
+html[data-pal=paper] .mstage{background:#e9e7e1;border-color:#e9e7e1}
+.pgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pnav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.pnav a{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--mute)}
+.pnav i{width:10px;height:10px;border-radius:50%;display:block}
+.ptitle{display:none}
+html[data-pal=blue] .ptitle--blue{display:block}html[data-pal=blue] .pnav a[data-p=blue]{color:var(--fg,#fff);border-color:currentColor}
+html[data-pal=brass] .ptitle--brass{display:block}html[data-pal=brass] .pnav a[data-p=brass]{color:var(--fg,#fff);border-color:currentColor}
+html[data-pal=emerald] .ptitle--emerald{display:block}html[data-pal=emerald] .pnav a[data-p=emerald]{color:var(--fg,#fff);border-color:currentColor}
+html[data-pal=mono] .ptitle--mono{display:block}html[data-pal=mono] .pnav a[data-p=mono]{color:var(--fg,#fff);border-color:currentColor}
+html[data-pal=paper] .ptitle--paper{display:block}html[data-pal=paper] .pnav a[data-p=paper]{color:var(--fg,#fff);border-color:currentColor}
+html:not([data-pal]) .ptitle--base{display:block}
+@media (max-width:1000px){.pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:800px){.pgrid{grid-template-columns:1fr}}

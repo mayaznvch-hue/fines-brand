@@ -10,7 +10,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'sites' / 'finesstudio'
 OUT = ROOT / 'sites' / '3d-models'
-V = '3'
+V = '4'
 
 MODELS = [
     ('plane', 'Telegram-бот', 'Запись, заявки и оплата в мессенджере, которым клиенты уже пользуются.', 'бумажный самолёт'),
@@ -40,6 +40,21 @@ CSS = """
 .mnote{margin-top:28px;color:var(--dim);font-size:14px;line-height:1.5;max-width:720px}
 @media (max-width:800px){.mpage{padding-top:32px}.mgrid{grid-template-columns:1fr}.mcard{padding:10px;border-radius:var(--r-lg);gap:12px}.mstage{border-radius:var(--r-md)}.mcap{padding:2px 8px 8px;gap:4px 12px}.mcap__d{font-size:14px}}
 @media (prefers-reduced-motion:reduce){.mstage canvas{transition:none}}
+/* ---------- палитры ---------- */
+html[data-pal=paper] .mstage{background:#e9e7e1;border-color:#e9e7e1}
+.pgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pnav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.pnav a{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--mute)}
+.pnav i{width:10px;height:10px;border-radius:50%;display:block}
+.ptitle{display:none}
+html[data-pal=blue] .ptitle--blue{display:block}html[data-pal=blue] .pnav a[data-p=blue]{color:var(--fg,#fff);border-color:currentColor}
+html[data-pal=brass] .ptitle--brass{display:block}html[data-pal=brass] .pnav a[data-p=brass]{color:var(--fg,#fff);border-color:currentColor}
+html[data-pal=emerald] .ptitle--emerald{display:block}html[data-pal=emerald] .pnav a[data-p=emerald]{color:var(--fg,#fff);border-color:currentColor}
+html[data-pal=mono] .ptitle--mono{display:block}html[data-pal=mono] .pnav a[data-p=mono]{color:var(--fg,#fff);border-color:currentColor}
+html[data-pal=paper] .ptitle--paper{display:block}html[data-pal=paper] .pnav a[data-p=paper]{color:var(--fg,#fff);border-color:currentColor}
+html:not([data-pal]) .ptitle--base{display:block}
+@media (max-width:1000px){.pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:800px){.pgrid{grid-template-columns:1fr}}
 """
 
 cards = ''
@@ -107,4 +122,20 @@ css = OUT / 'assets' / 'css' / 'style.css'
 css.write_text(css.read_text(encoding='utf-8') + CSS, encoding='utf-8', newline='\n')
 shutil.copy(ROOT / '_build' / '3d' / 'models.js', OUT / 'assets' / 'js' / 'models.js')
 (OUT / 'index.html').write_text(HTML, encoding='utf-8', newline='\n')
+
+# ---------- страница палитр: palettes.html?pal=имя ----------
+PALS = [('blue', 'Синий', 'Холодный графит и один синий акцент. Самый «айтишный».', '#2966fa'), ('brass', 'Латунь', 'Тёплый графит и латунный акцент. Дороже и спокойнее оранжевого.', '#cc9945'), ('emerald', 'Изумруд', 'Графит с зелёным подтоном и изумрудный акцент.', '#149e70'), ('mono', 'Монохром', 'Только серые, акцент белый. Самый строгий.', '#ffffff'), ('paper', 'Бумага', 'Светлое окно, тёмные формы, оранжевый акцент остаётся.', '#f2501c')]
+SHOW = ['chat', 'bars', 'hub', 'kanban', 'lock', 'pay']
+byk = {m[0]: m for m in MODELS}
+pcards = ''.join('''      <figure class="mcard">
+        <div class="mstage" data-m="%s" role="img" aria-label="3D-модель: %s"></div>
+        <figcaption class="mcap"><span class="mono mcap__n">%02d</span><span class="mcap__t">%s</span></figcaption>
+      </figure>
+''' % (k, byk[k][3], i, byk[k][1]) for i, k in enumerate(SHOW, 1))
+nav = '<a href="palettes.html" data-p="base"><i style="background:#f2501c"></i>Сейчас</a>' + ''.join('<a href="palettes.html?pal=%s" data-p="%s"><i style="background:%s"></i>%s</a>' % (k, k, c, t) for k, t, d, c in PALS)
+titles = '<div class="sh ptitle ptitle--base"><p class="label mono"><b>[0]</b> Раскраска</p><h2>Сейчас <span class="w3">графит и оранжевый.</span></h2></div>' + ''.join('<div class="sh ptitle ptitle--%s"><p class="label mono"><b>[%d]</b> Раскраска</p><h2>%s <span class="w3">%s</span></h2></div>' % (k, i, t, d) for i, (k, t, d, c) in enumerate(PALS, 1))
+a, b = HTML.index('    <div class="sh">'), HTML.index('  </div>\n</section>')
+PHTML = HTML[:a] + '    ' + titles + '\n    <nav class="pnav" aria-label="Раскраски">' + nav + '</nav>\n    <div class="mgrid pgrid">\n' + pcards + '    </div>\n' + HTML[b:]
+PHTML = PHTML.replace('10 3D-моделей (макет)', 'раскраски 3D-моделей (макет)').replace("style-src 'self' 'unsafe-inline'", "style-src 'self' 'unsafe-inline'")
+(OUT / 'palettes.html').write_text(PHTML, encoding='utf-8', newline='\n')
 print('built', OUT.name, sum(1 for _ in OUT.rglob('*') if _.is_file()), 'files,', (OUT / 'assets' / 'js' / 'models.js').stat().st_size, 'bytes js,', len(MODELS), 'models')

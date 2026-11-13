@@ -105,7 +105,18 @@
     o: { c: [0.95, 0.315, 0.11], m: [0.52, 0.6, 0.34, 0.12] }, // акцент
     d: { c: [0.15, 0.15, 0.18], m: [0.5, 0.8, 0.22, 0.6] }     // тёмная основа
   };
-  function P(g, m, p, r, s, f) { return { g: g, m: MAT[m], p: p || [0, 0, 0], r: r || [0, 0, 0], s: s || [1, 1, 1], f: f || null }; }
+  /* ---------- палитры: только цвета, свет и геометрия те же. ?pal=имя или data-pal у сцены ---------- */
+  var PAL = {
+    blue: { g: [0.24, 0.26, 0.32], k: [0.36, 0.39, 0.46], s: [0.72, 0.75, 0.82], c: [0.93, 0.95, 0.98], o: [0.16, 0.4, 0.98], d: [0.13, 0.14, 0.18] },
+    brass: { g: [0.29, 0.27, 0.25], k: [0.42, 0.4, 0.37], s: [0.76, 0.73, 0.68], c: [0.96, 0.93, 0.87], o: [0.8, 0.6, 0.27], d: [0.16, 0.15, 0.14] },
+    emerald: { g: [0.24, 0.28, 0.27], k: [0.36, 0.41, 0.4], s: [0.73, 0.78, 0.76], c: [0.94, 0.96, 0.94], o: [0.08, 0.62, 0.44], d: [0.13, 0.16, 0.155] },
+    mono: { g: [0.25, 0.25, 0.27], k: [0.36, 0.36, 0.38], s: [0.5, 0.5, 0.53], c: [0.62, 0.62, 0.64], o: [1, 1, 1], d: [0.14, 0.14, 0.16] },
+    paper: { g: [0.38, 0.38, 0.41], k: [0.29, 0.29, 0.32], s: [0.2, 0.2, 0.24], c: [0.11, 0.11, 0.14], o: [0.95, 0.315, 0.11], d: [0.46, 0.455, 0.45] }
+  };
+  var gpal = /[?&]pal=([a-z]+)/.exec(location.search);
+  gpal = gpal && PAL[gpal[1]] ? gpal[1] : '';
+  if (gpal) document.documentElement.setAttribute('data-pal', gpal);
+  function P(g, m, p, r, s, f) { return { g: g, k: m, m: MAT[m], p: p || [0, 0, 0], r: r || [0, 0, 0], s: s || [1, 1, 1], f: f || null }; }
 
   /* ---------- сцены ---------- */
   var SC = {};
@@ -281,6 +292,7 @@
   function Stage(el) {
     var make = SC[el.getAttribute('data-m')];
     if (!make) return;
+    var pal = PAL[el.getAttribute('data-pal') || gpal] || null;
     var def = null, cv = null, gl = null, U = null, bufs = [], raf = 0, t0 = 0, W = 0, H = 0, live = false, tx = 0, ty = 0;
 
     function start() {
@@ -343,7 +355,7 @@
         gl.uniformMatrix3fv(U.uR, false, mul(S, rot(o.r)));
         if (def.off) { o.p[0] += def.off[0]; o.p[1] += def.off[1]; o.p[2] += def.off[2]; }
         gl.uniform3fv(U.uT, app(S, o.p)); gl.uniform3fv(U.uSc, o.s);
-        gl.uniform3fv(U.uCol, p.m.c); gl.uniform4fv(U.uMt, p.m.m);
+        gl.uniform3fv(U.uCol, pal ? pal[p.k] : p.m.c); gl.uniform4fv(U.uMt, p.m.m);
         if (last !== p.buf) { last = p.buf; gl.bindBuffer(gl.ARRAY_BUFFER, last.b); gl.vertexAttribPointer(U.aP, 3, gl.FLOAT, false, 24, 0); gl.vertexAttribPointer(U.aN, 3, gl.FLOAT, false, 24, 12); }
         gl.drawArrays(gl.TRIANGLES, 0, last.n);
       }
