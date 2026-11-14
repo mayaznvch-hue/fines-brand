@@ -9,7 +9,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 B = ROOT / '_build'
 C = json.loads((ROOT / '_brief' / 'content.json').read_text(encoding='utf-8'))
 TG = C['brand']['telegram']
-BASE = 'https://mayaznvch-hue.github.io/fines-brand/sites/'
+BASE = 'https://egm-demo.github.io/fines-brand/sites/'
 
 SHORT = r'(?<![\w-])(в|и|с|к|у|о|а|на|по|за|от|до|из|не|но|под|без|для|или|что|как|50%) '
 
