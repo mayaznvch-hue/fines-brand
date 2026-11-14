@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Витрина из 10 лёгких 3D-моделей про услуги студии: sites/3d-models.
+"""Витрина из 20 лёгких 3D-моделей про услуги студии: sites/3d-models.
 Берёт стили и шрифты из готовой сборки sites/finesstudio, боевой сайт не трогает.
 Запуск из корня репозитория: python _build/build_models.py
 """
@@ -10,19 +10,29 @@ sys.stdout.reconfigure(encoding='utf-8')
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'sites' / 'finesstudio'
 OUT = ROOT / 'sites' / '3d-models'
-V = '4'
+V = '5'
 
 MODELS = [
-    ('plane', 'Telegram-бот', 'Запись, заявки и оплата в мессенджере, которым клиенты уже пользуются.', 'бумажный самолёт'),
-    ('chat', 'Ответы клиентам', 'Бот сам отвечает на типовые вопросы.', 'два объёмных сообщения в диалоге'),
-    ('funnel', 'Воронка продаж', 'Видно, сколько заявок дошло до каждого этапа.', 'четыре сужающихся кольца с шариками'),
+    ('plane', 'Telegram-бот', 'Запись, заявки и оплата в мессенджере, которым клиенты уже пользуются.', 'бумажный самолёт на орбите'),
+    ('chat', 'Ответы клиентам', 'Бот сам отвечает на типовые вопросы.', 'сообщения в диалоге и кнопки ответа'),
+    ('funnel', 'Воронка продаж', 'Видно, сколько заявок дошло до каждого этапа.', 'воронка, по стенке которой скатываются шарики'),
     ('kanban', 'CRM', 'Каждая сделка на своём этапе, ничего не теряется.', 'доска с карточками сделок'),
-    ('hub', 'Интеграции', 'Сайт, CRM, таблицы, 1С и мессенджеры обмениваются данными сами.', 'центральный куб, связанный с пятью узлами'),
-    ('lock', 'Защита', 'Защита сайтов и систем от DDoS-⁠атак.', 'замок'),
+    ('hub', 'Интеграции', 'Сайт, CRM, таблицы, 1С и мессенджеры обмениваются данными сами.', 'центральный куб, связанный с пятью разными узлами'),
+    ('shield', 'Защита', 'Защита сайтов и систем от DDoS-⁠атак.', 'ядро под вращающимся щитом'),
     ('backup', 'Резервные копии', 'Данные копируются во второе хранилище.', 'два хранилища из дисков'),
     ('site', 'Сайты и веб-сервисы', 'Интерфейс под ваш процесс, а не готовая коробка.', 'окно сайта, разложенное на слои'),
     ('bars', 'Отчёты', 'Цифры по заявкам и продажам в одном окне.', 'растущие столбцы'),
-    ('pay', 'Оплата', 'Приём оплаты в боте и на сайте.', 'банковская карта'),
+    ('pay', 'Оплата', 'Приём оплаты в боте и на сайте.', 'банковская карта и волны оплаты'),
+    ('ai', 'ИИ-ассистент', 'Отвечает клиентам и сотрудникам по вашим данным.', 'сеть из узлов с бегущими сигналами'),
+    ('cal', 'Онлайн-запись', 'Клиент сам выбирает день и время.', 'календарь с выбранным днём'),
+    ('bell', 'Напоминания', 'Бот напомнит о визите, оплате и продлении.', 'колокольчик'),
+    ('gears', 'Автоматизация', 'Рутинные действия выполняются без участия людей.', 'три шестерни в зацеплении'),
+    ('doc', 'Документы', 'Счета и договоры собираются по шаблону.', 'стопка листов с печатью'),
+    ('devices', 'Адаптив', 'Одинаково удобно на телефоне и компьютере.', 'экран и телефон с одним интерфейсом'),
+    ('gauge', 'Мониторинг', 'Узнаём о сбое раньше ваших клиентов.', 'прибор со стрелкой'),
+    ('server', 'Хостинг и поддержка', 'Размещаем, обновляем и следим за работой.', 'три серверных блока'),
+    ('check', 'Соответствие закону', 'Сайты и системы под требования законодательства.', 'чек-лист с галочками'),
+    ('cube', '3D и анимация', 'Модели и движение для вашего сайта.', 'куб из восьми частей'),
 ]
 
 CSS = """
@@ -77,7 +87,7 @@ HTML = '''<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Финес Студио · 10 3D-моделей (макет)</title>
+<title>Финес Студио · 3D-модели (макет)</title>
 <meta name="format-detection" content="telephone=no">
 <meta name="theme-color" content="#0b0b0d">
 <link rel="stylesheet" href="assets/css/style.css?v=m%s">
@@ -97,7 +107,7 @@ HTML = '''<!doctype html>
   <div class="wrap">
     <div class="sh">
       <p class="label mono"><b>[3D]</b> Модели</p>
-      <h2 id="m-title">Десять моделей <span class="w3">про нашу работу.</span></h2>
+      <h2 id="m-title">Двадцать моделей <span class="w3">про нашу работу.</span></h2>
       <p class="sh__sub">Каждая написана кодом и запускается, только когда вы до неё долистали.</p>
     </div>
     <div class="mgrid">
@@ -125,7 +135,7 @@ shutil.copy(ROOT / '_build' / '3d' / 'models.js', OUT / 'assets' / 'js' / 'model
 
 # ---------- страница палитр: palettes.html?pal=имя ----------
 PALS = [('blue', 'Синий', 'Холодный графит и один синий акцент. Самый «айтишный».', '#2966fa'), ('brass', 'Латунь', 'Тёплый графит и латунный акцент. Дороже и спокойнее оранжевого.', '#cc9945'), ('emerald', 'Изумруд', 'Графит с зелёным подтоном и изумрудный акцент.', '#149e70'), ('mono', 'Монохром', 'Только серые, акцент белый. Самый строгий.', '#ffffff'), ('paper', 'Бумага', 'Светлое окно, тёмные формы, оранжевый акцент остаётся.', '#f2501c')]
-SHOW = ['chat', 'bars', 'hub', 'kanban', 'lock', 'pay']
+SHOW = ['chat', 'bars', 'hub', 'kanban', 'shield', 'pay']
 byk = {m[0]: m for m in MODELS}
 pcards = ''.join('''      <figure class="mcard">
         <div class="mstage" data-m="%s" role="img" aria-label="3D-модель: %s"></div>
@@ -136,6 +146,6 @@ nav = '<a href="palettes.html" data-p="base"><i style="background:#f2501c"></i>�
 titles = '<div class="sh ptitle ptitle--base"><p class="label mono"><b>[0]</b> Раскраска</p><h2>Сейчас <span class="w3">графит и оранжевый.</span></h2></div>' + ''.join('<div class="sh ptitle ptitle--%s"><p class="label mono"><b>[%d]</b> Раскраска</p><h2>%s <span class="w3">%s</span></h2></div>' % (k, i, t, d) for i, (k, t, d, c) in enumerate(PALS, 1))
 a, b = HTML.index('    <div class="sh">'), HTML.index('  </div>\n</section>')
 PHTML = HTML[:a] + '    ' + titles + '\n    <nav class="pnav" aria-label="Раскраски">' + nav + '</nav>\n    <div class="mgrid pgrid">\n' + pcards + '    </div>\n' + HTML[b:]
-PHTML = PHTML.replace('10 3D-моделей (макет)', 'раскраски 3D-моделей (макет)').replace("style-src 'self' 'unsafe-inline'", "style-src 'self' 'unsafe-inline'")
+PHTML = PHTML.replace('3D-модели (макет)', 'раскраски 3D-моделей (макет)').replace("style-src 'self' 'unsafe-inline'", "style-src 'self' 'unsafe-inline'")
 (OUT / 'palettes.html').write_text(PHTML, encoding='utf-8', newline='\n')
 print('built', OUT.name, sum(1 for _ in OUT.rglob('*') if _.is_file()), 'files,', (OUT / 'assets' / 'js' / 'models.js').stat().st_size, 'bytes js,', len(MODELS), 'models')
